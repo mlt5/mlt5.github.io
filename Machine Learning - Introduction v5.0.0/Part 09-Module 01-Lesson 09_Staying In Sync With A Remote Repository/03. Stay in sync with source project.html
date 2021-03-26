@@ -1,0 +1,953 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Stay in sync with source project
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Staying In Sync With A Remote Repository
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Create a Pull Request.html">
+       02. Create a Pull Request
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Stay in sync with source project.html">
+       03. Stay in sync with source project
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Manage an active PR.html">
+       04. Manage an active PR
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Squash Commits.html">
+       05. Squash Commits
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Course Wrap Up.html">
+       06. Course Wrap Up
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          03. Stay in sync with source project
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          While you're working on a topic branch of changes that you want to make to a repository, that repository will probably be receiving updates of its own from the original authors.
+         </p>
+         <h2 id="stars--watching">
+          Stars &amp; Watching
+         </h2>
+         <p>
+          If you want to keep up-to-date with the Repository, GitHub offers a convenient way to keep track of repositories - it lets you star repositories:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="_The Star button and level for a repository._" class="img img-fluid" src="img/ud456-l3-03-starred-repos.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            <em>
+             The Star button and level for a repository.
+            </em>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          You can go to
+          <a href="https://github.com/stars" rel="noopener noreferrer" target="_blank">
+           https://github.com/stars
+          </a>
+          to list out and filter all of the repositories that you have starred.
+         </p>
+         <p>
+          Starring is helpful if you want to keep track of certain repositories. But it's not entirely helpful if you need to actively keep up with a repositories development because you have to manually go to the stars page to view the repositories and see if they've changed.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <blockquote>
+          <h2 id="💡-stars--popularity-💡">
+           💡 Stars &amp; Popularity 💡
+          </h2>
+         </blockquote>
+         <blockquote>
+          <p>
+           Starring can be a useful feature to help you keep track of repositories you're interested in. But stars have also turned into a means of measuring a repo's popularity.
+          </p>
+         </blockquote>
+         <blockquote>
+          <p>
+           If you'd rather not increase a repository's stars, then check out "watching" a repository. Let's look at that right now!
+          </p>
+         </blockquote>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="watching-a-repository">
+          Watching A Repository
+         </h2>
+         <p>
+          If you need to keep up with a project's changes and want to be notified of when things change, GitHub offers a "Watch" feature:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt='_The Notification settings. "Watching" a repository will alert you to all activity._' class="img img-fluid" src="img/ud456-l3-03-watched-repos.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            <em>
+             The Notification settings. "Watching" a repository will alert you to all activity.
+            </em>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          If you're working on a repository quite often, then I'd suggest setting the watch setting to "Watching". This way GitHub will notify you whenever anything happens with the repository like people pushing changes to the repository, new issues being created, or comments being added to existing issues.
+         </p>
+         <h2 id="including-upstream-changes">
+          Including Upstream Changes
+         </h2>
+         <p>
+          Now that you know about watching your repository let say that you're watching it and you get notified that some commits have been pushed to the original, source repository. How do you go about getting those changes into your fork of the repository? If you want to keep doing development on your fork then you'd need your fork to stay in sync with the source repository as much as possible.
+         </p>
+         <p>
+          Let's see how we can get these changes from the remote repository into our repository.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L3 - Include Upstream Changes
+         </p>
+        </h3>
+        <video controls="">
+         <source src="03. L3 - Include Upstream Changes-VvoC6hN6FjU.mp4" type="video/mp4"/>
+         <track default="false" kind="subtitles" label="pt-BR" src="03. L3 - Include Upstream Changes-VvoC6hN6FjU.pt-BR.vtt" srclang="pt-BR"/>
+         <track default="false" kind="subtitles" label="zh-CN" src="03. L3 - Include Upstream Changes-VvoC6hN6FjU.zh-CN.vtt" srclang="zh-CN"/>
+         <track default="true" kind="subtitles" label="en" src="03. L3 - Include Upstream Changes-VvoC6hN6FjU.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="ar" src="03. L3 - Include Upstream Changes-VvoC6hN6FjU.ar.vtt" srclang="ar"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Incase Lam starts making changes to her project that I won't have in my fork of her project, I'll add her project as an additional remote so that I can stay in sync with her.
+         </p>
+         <p>
+          In my local repository, I already have one remote repository which is
+          <code>
+           origin
+          </code>
+          remote.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="_The terminal application showing the existing connect to the remote repository. This is my remote repository and has the shortname `origin`._" class="img img-fluid" src="img/ud456-l3-03-git-remotes-origin.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            <em>
+             The terminal application showing the existing connect to the remote repository. This is my remote repository and has the shortname
+             <code>
+              origin
+             </code>
+             .
+            </em>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Remember that the word
+          <code>
+           origin
+          </code>
+          is just the
+          <em>
+           default
+          </em>
+          name that's used when you
+          <code>
+           git clone
+          </code>
+          a remote repository for the first time. We're going to use the
+          <code>
+           git remote
+          </code>
+          command to
+          <em>
+           add a new
+          </em>
+          shortname and URL to this list. This will give us a connection to the source repository.
+         </p>
+         <pre><code class="bash language-bash">$ git remote add upstream https://github.com/udacity/course-collaboration-travel-plans.git</code></pre>
+         <p>
+          Notice that I've used the name
+          <code>
+           upstream
+          </code>
+          as the shortname to reference the source repository. As with the
+          <code>
+           origin
+          </code>
+          shortname, the word
+          <code>
+           upstream
+          </code>
+          here is not special in any way; It's just a regular word. This could have been any word… like the word "banana". But the word "upstream" is typically used to refer to the source repository.
+         </p>
+         <p>
+          Let's check out what the list of remotes looks like now after adding this new remote:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="_The terminal application show both information about both remotes - `origin` and `upstream`._" class="img img-fluid" src="img/ud456-l3-03-add-upstream-remote.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            <em>
+             The terminal application show both information about both remotes -
+             <code>
+              origin
+             </code>
+             and
+             <code>
+              upstream
+             </code>
+             .
+            </em>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="origin-vs-upstream-clarification">
+          Origin vs Upstream Clarification
+         </h3>
+         <p>
+          One thing that can be a tiny bit confusing right now is the difference between the
+          <code>
+           origin
+          </code>
+          and
+          <code>
+           upstream
+          </code>
+          . What might be confusing is that
+          <code>
+           origin
+          </code>
+          does
+          <em>
+           not
+          </em>
+          refer to the source repository (also known as the
+          <em>
+           "original"
+          </em>
+          repository) that we forked from. Instead, it's pointing to our forked repository. So even though it has the word
+          <code>
+           origin
+          </code>
+          is not actually the original repository.
+         </p>
+         <p>
+          Remember that the names
+          <code>
+           origin
+          </code>
+          and
+          <code>
+           upstream
+          </code>
+          are just the default or de facto names that are used. If it's clearer for you to name your
+          <code>
+           origin
+          </code>
+          remote
+          <code>
+           mine
+          </code>
+          and the
+          <code>
+           upstream
+          </code>
+          remote
+          <code>
+           source-repo
+          </code>
+          , then by all means, go ahead and rename them. What you name your remote repositories in your local repository does not affect the source repository at all.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="_Using the `git remote rename` command to rename `origin` to `mine` and `upstream` to `source-repo`._" class="img img-fluid" src="img/ud456-l3-03-rename-repos.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            <em>
+             Using the
+             <code>
+              git remote rename
+             </code>
+             command to rename
+             <code>
+              origin
+             </code>
+             to
+             <code>
+              mine
+             </code>
+             and
+             <code>
+              upstream
+             </code>
+             to
+             <code>
+              source-repo
+             </code>
+             .
+            </em>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <blockquote>
+          <h2 id="⚠️-resetting-remote-names-⚠️">
+           ⚠️ Resetting Remote Names ⚠️
+          </h2>
+         </blockquote>
+         <blockquote>
+          <p>
+           The image above demos the renaming of the remotes, but I have returned them to their default/defacto names of
+           <code>
+            origin
+           </code>
+           and
+           <code>
+            upstream
+           </code>
+           with the following commands:
+          </p>
+         </blockquote>
+         <blockquote>
+          <pre><code class="bash language-bash">$ git remote rename mine origin
+$ git remote rename source-repo upstream</code></pre>
+         </blockquote>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="retrieving-upstream-changes">
+          Retrieving Upstream Changes
+         </h2>
+         <p>
+          Now to get the changes from upstream remote repository, all we have to do is run a
+          <code>
+           git fetch
+          </code>
+          and use the
+          <code>
+           upstream
+          </code>
+          shortname rather than the
+          <code>
+           origin
+          </code>
+          shortname:
+         </p>
+         <pre><code class="bash language-bash">$ git fetch upstream master</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="_The terminal application showing the results of doing `git fetch upstream master`.  A new branch is added to the local repository._" class="img img-fluid" src="img/ud456-l3-03-fetch-upstream-changes.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            <em>
+             The terminal application showing the results of doing
+             <code>
+              git fetch upstream master
+             </code>
+             .  A new branch is added to the local repository.
+            </em>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Now that you've added a connection to the new
+             <code>
+              upstream
+             </code>
+             remote repository, if you run
+             <code>
+              git fetch upstream master
+             </code>
+             will that update
+             <em>
+              your forked repository
+             </em>
+             on GitHub?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1493148150986" name="300410" type="radio" value="a1493148150986"/>
+           <label for="a1493148150986">
+            <p>
+             Yes
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1493148182704" name="300410" type="radio" value="a1493148182704"/>
+           <label for="a1493148182704">
+            <p>
+             No
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          No
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now that we've fetched all of the changes from the upstream remote repository, let's do a log to see what new information we have in our local repository. I'm using the following
+          <code>
+           git log
+          </code>
+          command to make sure I display
+          <em>
+           all
+          </em>
+          commits from
+          <em>
+           all
+          </em>
+          branches (including remote and tracking branches!):
+         </p>
+         <pre><code class="bash language-bash">$ git log --oneline --graph --decorate --all</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="_The terminal application showing the log of my local repository after fetching  the `upstream` remote's changes._" class="img img-fluid" src="img/ud456-l3-03-git-log-of-upstream-changes.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            <em>
+             The terminal application showing the log of my local repository after fetching  the
+             <code>
+              upstream
+             </code>
+             remote's changes.
+            </em>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          It can be a bit difficult to read with the wrapping of the commit messages but you should be able to see that there is now an
+          <code>
+           upstream/master
+          </code>
+          remote branch that is ahead of the local
+          <code>
+           master
+          </code>
+          branch.
+          <code>
+           upstream/master
+          </code>
+          is on commit
+          <code>
+           52e493f
+          </code>
+          while the
+          <code>
+           master
+          </code>
+          branch is on commit
+          <code>
+           1c12194
+          </code>
+          .
+         </p>
+         <p>
+          We can use the
+          <code>
+           upstream/master
+          </code>
+          branch to keep track of where the source repository's master branch is. We can now get any changes that are made to the source repository's
+          <code>
+           master
+          </code>
+          branch by just running
+          <code>
+           git fetch upstream master
+          </code>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <div>
+          <p>
+           <strong>
+            QUESTION:
+           </strong>
+           <p>
+            Using
+            <code>
+             git fetch upstream master
+            </code>
+            pulled in the changes from the
+            <code>
+             master
+            </code>
+            branch on the
+            <code>
+             upstream
+            </code>
+            remote repository.
+           </p>
+           <p>
+            What single command would we use if we want to fetch the
+            <code>
+             upstream/master
+            </code>
+            changes
+            <em>
+             and
+            </em>
+            merge them into the
+            <code>
+             master
+            </code>
+            branch?
+           </p>
+          </p>
+          <div class="" form-group"="">
+           <label for="answer">
+            <strong>
+             ANSWER:
+            </strong>
+           </label>
+           <textarea class="form-control" id="answer"></textarea>
+          </div>
+         </div>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <p>
+           <i>
+            NOTE: The solutions are expressed in RegEx pattern. Udacity uses these patterns to check the given answer
+           </i>
+          </p>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          To push these new changes from the Lam's repository, we don't want to run
+          <code>
+           git push origin upstream/master
+          </code>
+          because
+          <code>
+           upstream/master
+          </code>
+          is not a local branch. To get these changes into my forked version of her project, I could merge
+          <code>
+           upstream/master
+          </code>
+          into an existing branch (like the local
+          <code>
+           master
+          </code>
+          branch) and push that.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <pre><code class="bash language-bash"># to make sure I'm on the correct branch for merging
+$ git checkout master
+
+# merge in Lam's changes
+$ git merge upstream/master
+
+# send Lam's changes to *my* remote
+$ git push origin master</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="recap">
+          Recap
+         </h2>
+         <p>
+          When working with a project that you've forked. The original project's maintainer will continue adding changes to their project. You'll want to keep your fork of their project in sync with theirs so that you can include any changes they make.
+         </p>
+         <p>
+          To get commits from a source repository into your forked repository on GitHub you need to:
+         </p>
+         <ul>
+          <li>
+           get the cloneable URL of the source repository
+          </li>
+          <li>
+           create a new remote with the
+           <code>
+            git remote add
+           </code>
+           command
+           <ul>
+            <li>
+             use the shortname
+             <code>
+              upstream
+             </code>
+             to point to the source repository
+            </li>
+            <li>
+             provide the URL of the source repository
+            </li>
+           </ul>
+          </li>
+          <li>
+           fetch the new
+           <code>
+            upstream
+           </code>
+           remote
+          </li>
+          <li>
+           merge the
+           <code>
+            upstream
+           </code>
+           's branch into a local branch
+          </li>
+          <li>
+           push the newly updated local branch to your
+           <code>
+            origin
+           </code>
+           repo
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="04. Manage an active PR.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Stay in sync with source project')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

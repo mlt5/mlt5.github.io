@@ -1,0 +1,424 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Create a Pull Request
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Staying In Sync With A Remote Repository
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Create a Pull Request.html">
+       02. Create a Pull Request
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Stay in sync with source project.html">
+       03. Stay in sync with source project
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Manage an active PR.html">
+       04. Manage an active PR
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Squash Commits.html">
+       05. Squash Commits
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Course Wrap Up.html">
+       06. Course Wrap Up
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          02. Create a Pull Request
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          A
+          <strong>
+           pull request
+          </strong>
+          is a request to the
+          <em>
+           original
+          </em>
+          or
+          <em>
+           source repository's
+          </em>
+          maintainer to include changes in their project that you made in your fork of their project. You are requesting that they
+          <em>
+           pull
+          </em>
+          in changes you've made.
+         </p>
+         <p>
+          Let's get a high-level overview of what this entails and then we'll dig into the details.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L3 - Pull Request In Theory
+         </p>
+        </h3>
+        <video controls="">
+         <source src="02. L3 - Pull Request In Theory-twLr9ndsf90.mp4" type="video/mp4"/>
+         <track default="false" kind="subtitles" label="pt-BR" src="02. L3 - Pull Request In Theory-twLr9ndsf90.pt-BR.vtt" srclang="pt-BR"/>
+         <track default="true" kind="subtitles" label="en" src="02. L3 - Pull Request In Theory-twLr9ndsf90.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="ar" src="02. L3 - Pull Request In Theory-twLr9ndsf90.ar.vtt" srclang="ar"/>
+         <track default="false" kind="subtitles" label="zh-CN" src="02. L3 - Pull Request In Theory-twLr9ndsf90.zh-CN.vtt" srclang="zh-CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Let's walk through the steps to issue a pull request of our own! If you've been following along then you've forked Lam's
+          <a href="https://github.com/udacity/course-collaboration-travel-plans" rel="noopener noreferrer" target="_blank">
+           travel plans repository
+          </a>
+          to your own account, and you've made one or two additional commits to your forked version.
+         </p>
+         <p>
+          In the previous lesson, I created a topic branch called
+          <code>
+           include-richards-destinations
+          </code>
+          , added a few commits to it, and pushed that branch to GitHub. Remember that when you're creating a good pull request you want to have changes on a branch that's sole reason to exist is for these changes. Remember the name for these types of branches?…topic branches!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <div>
+          <h4>
+           Task Description:
+          </h4>
+          <p>
+           We're about to create a pull request (how exciting!), so let's make sure we've both got the same setup. Please answer the following:
+          </p>
+         </div>
+         <form>
+          <fieldset>
+           <legend>
+            Task List:
+           </legend>
+           <div>
+            <input id="0cb6d0f1-458f-4995-bc17-d79a83f9d201--0" type="checkbox"/>
+            <label for="0cb6d0f1-458f-4995-bc17-d79a83f9d201--0">
+             <p>
+              I have
+              <em>
+               forked
+              </em>
+              Lam's
+              <a href="https://github.com/udacity/course-collaboration-travel-plans" rel="noopener noreferrer" target="_blank">
+               project
+              </a>
+             </p>
+            </label>
+           </div>
+           <div>
+            <input id="0cb6d0f1-458f-4995-bc17-d79a83f9d201--1" type="checkbox"/>
+            <label for="0cb6d0f1-458f-4995-bc17-d79a83f9d201--1">
+             <p>
+              I have created a topic branch with a descriptive name
+             </p>
+            </label>
+           </div>
+           <div>
+            <input id="0cb6d0f1-458f-4995-bc17-d79a83f9d201--2" type="checkbox"/>
+            <label for="0cb6d0f1-458f-4995-bc17-d79a83f9d201--2">
+             <p>
+              I have made at least one commit on my branch
+             </p>
+            </label>
+           </div>
+           <div>
+            <input id="0cb6d0f1-458f-4995-bc17-d79a83f9d201--3" type="checkbox"/>
+            <label for="0cb6d0f1-458f-4995-bc17-d79a83f9d201--3">
+             <p>
+              I have pushed my changes back to
+              <em>
+               my
+              </em>
+              fork
+             </p>
+            </label>
+           </div>
+          </fieldset>
+         </form>
+         <div>
+          <h4>
+           Task Feedback:
+          </h4>
+          <p>
+           Perfect, let's continue!
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L3 - Pull Request In Action
+         </p>
+        </h3>
+        <video controls="">
+         <source src="02. L3 - Pull Request In Action-d3AGtKmHxUk.mp4" type="video/mp4"/>
+         <track default="false" kind="subtitles" label="pt-BR" src="02. L3 - Pull Request In Action-d3AGtKmHxUk.pt-BR.vtt" srclang="pt-BR"/>
+         <track default="false" kind="subtitles" label="zh-CN" src="02. L3 - Pull Request In Action-d3AGtKmHxUk.zh-CN.vtt" srclang="zh-CN"/>
+         <track default="true" kind="subtitles" label="en" src="02. L3 - Pull Request In Action-d3AGtKmHxUk.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="ar" src="02. L3 - Pull Request In Action-d3AGtKmHxUk.ar.vtt" srclang="ar"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          You just created a pull request! Congratulations! 🙌🏼
+         </p>
+         <p>
+          As you can see, it's actually not too difficult to create a pull request. When I was first learning Git, GitHub, and how to collaborate, I was extremely nervous about making commits, and working with remote repos, but
+          <em>
+           especially
+          </em>
+          submitting a pull request to another developer's project! As long as you following the steps we covered in the previous section on:
+         </p>
+         <ul>
+          <li>
+           reviewing the project's CONTRIBUTING.md file
+          </li>
+          <li>
+           checking out the project's existing issues
+          </li>
+          <li>
+           talking with the project maintainer
+          </li>
+         </ul>
+         <p>
+          …your pull request is sure to be included!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="recap">
+          Recap
+         </h2>
+         <p>
+          A pull request is a
+          <em>
+           request
+          </em>
+          for the source repository to pull in your commits and merge them with their project. To create a pull request, a couple of things need to happen:
+         </p>
+         <ul>
+          <li>
+           you must
+           <em>
+            fork
+           </em>
+           the source repository
+          </li>
+          <li>
+           clone your fork down to your machine
+          </li>
+          <li>
+           make some commits (ideally on a topic branch!)
+          </li>
+          <li>
+           push the commits back to
+           <em>
+            your fork
+           </em>
+          </li>
+          <li>
+           create a new pull request and choose the branch that has your new commits
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="03. Stay in sync with source project.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Create a Pull Request')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
