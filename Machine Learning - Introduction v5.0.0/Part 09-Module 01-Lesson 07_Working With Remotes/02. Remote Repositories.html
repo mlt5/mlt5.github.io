@@ -1,0 +1,459 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Remote Repositories
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Working With Remotes
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Remote Repositories.html">
+       02. Remote Repositories
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Add A Remote Repository.html">
+       03. Add A Remote Repository
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Push Changes To A Remote.html">
+       04. Push Changes To A Remote
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Pulling Changes From A Remote.html">
+       05. Pulling Changes From A Remote
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Pull vs Fetch.html">
+       06. Pull vs Fetch
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Lesson Wrap Up.html">
+       07. Lesson Wrap Up
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          02. Remote Repositories
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="collaboration-setup">
+          Collaboration Setup
+         </h2>
+         <p>
+          As a lone developer, you're probably comfortable working with a
+          <em>
+           local
+          </em>
+          repository. In this first lesson, we're going to talk about
+          <strong>
+           remote repositories
+          </strong>
+          and interacting with these remote repositories.
+         </p>
+         <p>
+          Let's say that you have a friend, we'll call her Farrin, and one day you two were together and you showed her what you've been working on. She had some ideas on features she could contribute to the project. But you don't want to give her
+          <em>
+           your
+          </em>
+          computer for her to make these changes, you want her to work on her computer. And, you don't want to have to
+          <em>
+           wait
+          </em>
+          for her to add these features, you want to keep working on the project and then just merge in her changes when she's finished. So how can we do that?
+         </p>
+         <p>
+          Well, let me tell you that emailing the project back and forth would be a maintenance nightmare after about two emails. You're already tracking your project with Git, so we'll use
+          <em>
+           it
+          </em>
+          to manage everything.
+         </p>
+         <p>
+          So Farrin will work on the project on a specific branch and any changes she makes she'll add to that branch. While she's working in her branch, you'll work on the project but on your own specific branch. And then you can merge these branches together when you get the branch from Farrin.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <blockquote>
+          <p>
+           ## 💡 Always Use Topic Branches
+          </p>
+         </blockquote>
+         <blockquote>
+          <p>
+           Remember that it's incredibly helpful to make all of your commits on descriptively named
+           <strong>
+            topic branches
+           </strong>
+           . Branches help isolate unrelated changes from each other.
+          </p>
+         </blockquote>
+         <blockquote>
+          <p>
+           So when you're collaborating with other developers make sure to create a new branch that has a descriptive name that describes what changes it contains.
+          </p>
+         </blockquote>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L1 - Remote Repos Intro
+         </p>
+        </h3>
+        <video controls="">
+         <source src="02. L1 - Remote Repos Intro-AnSlYftJnwA.mp4" type="video/mp4"/>
+         <track default="false" kind="subtitles" label="pt-BR" src="02. L1 - Remote Repos Intro-AnSlYftJnwA.pt-BR.vtt" srclang="pt-BR"/>
+         <track default="true" kind="subtitles" label="en" src="02. L1 - Remote Repos Intro-AnSlYftJnwA.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="ar" src="02. L1 - Remote Repos Intro-AnSlYftJnwA.ar.vtt" srclang="ar"/>
+         <track default="false" kind="subtitles" label="zh-CN" src="02. L1 - Remote Repos Intro-AnSlYftJnwA.zh-CN.vtt" srclang="zh-CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="what-is-a-remote-repository">
+          What is a Remote Repository?
+         </h2>
+         <p>
+          Git is a
+          <em>
+           distributed
+          </em>
+          version control system which means there is not
+          <em>
+           one
+          </em>
+          main repository of information. Each developer has a
+          <em>
+           copy
+          </em>
+          of the repository. So you can have a copy of the repository (which includes the published commits and version history) and your friend can also have a copy of the same repository. Each repository has the exact same information that the other ones have, there's no one repository that's the main one.
+         </p>
+         <p>
+          Up until this point, you have probably been only working locally on a
+          <em>
+           local
+          </em>
+          repository. A
+          <em>
+           remote
+          </em>
+          repository is the same Git repository like yours but it exists somewhere else.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="_A local repository is the one that you work on in your local machine. Remote repositories live elsewhere (e.g. a friend's computer, GitHub, etc.)_" class="img img-fluid" src="img/ud456-l1-02-local-and-remote-repos.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            <em>
+             A local repository is the one that you work on in your local machine. Remote repositories live elsewhere (e.g. a friend's computer, GitHub, etc.)
+            </em>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="ways-to-access-a-remote">
+          Ways to access a Remote
+         </h2>
+         <p>
+          Remotes can be accessed in a couple of ways:
+         </p>
+         <ul>
+          <li>
+           with a URL
+          </li>
+          <li>
+           path to a file system
+          </li>
+         </ul>
+         <p>
+          Even though it's possible to create a remote repository on your file system, it's very rarely used. By far the most common way to access a remote repository is through a URL to a repository that’s out on the web.
+         </p>
+         <p>
+          The way we can interact and control a remote repository is through the Git remote command:
+         </p>
+         <pre><code class="bash language-bash">$ git remote</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L1 - Sending Branches To Remote
+         </p>
+        </h3>
+        <video controls="">
+         <source src="02. L1 - Sending Branches To Remote-414f0ukhOTY.mp4" type="video/mp4"/>
+         <track default="false" kind="subtitles" label="pt-BR" src="02. L1 - Sending Branches To Remote-414f0ukhOTY.pt-BR.vtt" srclang="pt-BR"/>
+         <track default="false" kind="subtitles" label="zh-CN" src="02. L1 - Sending Branches To Remote-414f0ukhOTY.zh-CN.vtt" srclang="zh-CN"/>
+         <track default="true" kind="subtitles" label="en" src="02. L1 - Sending Branches To Remote-414f0ukhOTY.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="ar" src="02. L1 - Sending Branches To Remote-414f0ukhOTY.ar.vtt" srclang="ar"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          You're also not limited to just one remote. You can add as many remote repositories  as you want!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="_A local repository can be connected to more than one remote repository._" class="img img-fluid" src="img/ud456-l1-02-multiple-remote-repos.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            <em>
+             A local repository can be connected to more than one remote repository.
+            </em>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="why-multiple-remotes">
+          Why Multiple Remotes?
+         </h2>
+         <p>
+          Why would you want to have multiple remote repositories? We'll look at this later but briefly, if you are working with multiple developers then you might want to get changes
+          <em>
+           they're
+          </em>
+          working on in their branch(es) into
+          <em>
+           your
+          </em>
+          project before they merge them into the master branch. You might want to do this if you want to test out their change before you decide to implement your changes.
+         </p>
+         <p>
+          Another example is if you have a project whose code is hosted on Github but deploys via Git to Heroku. You would have one remote for the
+          <code>
+           master
+          </code>
+          and one for the
+          <code>
+           deployment
+          </code>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="make-a-remote">
+          Make a Remote
+         </h2>
+         <p>
+          Now that we've learned about the purpose of remote repositories, let's add a remote repository to our own local one.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="03. Add A Remote Repository.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Remote Repositories')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

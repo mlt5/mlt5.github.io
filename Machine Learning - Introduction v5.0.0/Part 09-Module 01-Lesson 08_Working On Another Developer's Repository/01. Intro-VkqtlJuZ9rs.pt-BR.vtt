@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.229 --> 00:00:01.864
+Na aula anterior,
+
+00:00:01.898 --> 00:00:04.724
+aprendemos a trabalhar
+com repositórios remotos.
+
+00:00:04.758 --> 00:00:07.009
+Agora, vamos usar
+essas habilidades nesta aula
+
+00:00:07.043 --> 00:00:09.249
+para copiar o repositório
+de um desenvolvedor
+
+00:00:09.283 --> 00:00:11.175
+e começar a trabalhar nele.
+
+00:00:11.209 --> 00:00:13.610
+As habilidades cobertas
+nesta aula serão:
+
+00:00:13.644 --> 00:00:15.941
+saber bifurcar um repositório,
+
+00:00:15.975 --> 00:00:17.930
+revisar as mudanças
+que foram feitas
+
+00:00:17.964 --> 00:00:20.443
+em um projeto
+por outros desenvolvedores,
+
+00:00:20.477 --> 00:00:24.735
+saber quais mudanças fazer, agora
+que você tem acesso ao repositório.
+
+00:00:24.769 --> 00:00:28.344
+Uma das ferramentas que vamos
+usar muito nesta lição é o git log.
+
+00:00:28.378 --> 00:00:31.137
+Espero que você saiba o básico
+sobre o git log,
+
+00:00:31.171 --> 00:00:33.550
+e vamos nos aprofundar
+em suas capacidades
+
+00:00:33.584 --> 00:00:36.489
+para reduzir
+as informações no repositório.
+
+00:00:36.523 --> 00:00:37.765
+Achou legal?
+
+00:00:37.799 --> 00:00:40.377
+Vamos ver o que é esse negócio
+de "bifurcação".
+
