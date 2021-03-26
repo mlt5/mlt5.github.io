@@ -1,0 +1,1178 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Implementing Gradient Descent
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Implementing Gradient Descent
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Mean Squared Error Function.html">
+       01. Mean Squared Error Function
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Gradient Descent.html">
+       02. Gradient Descent
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Gradient Descent The Math.html">
+       03. Gradient Descent: The Math
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Gradient Descent The Code.html">
+       04. Gradient Descent: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Implementing Gradient Descent.html">
+       05. Implementing Gradient Descent
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Multilayer Perceptrons.html">
+       06. Multilayer Perceptrons
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Backpropagation.html">
+       07. Backpropagation
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Implementing Backpropagation.html">
+       08. Implementing Backpropagation
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Further Reading.html">
+       09. Further Reading
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Implementing Gradient Descent
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="implementing-gradient-descent">
+          Implementing gradient descent
+         </h1>
+         <p>
+          Okay, now we know how to update our weights:
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \Delta w_{ij} = \eta * \delta_j * x_i
+          </span>
+          ,
+         </p>
+         <p>
+          You've seen how to implement that for a single update, but how do we translate that code to calculate many weight updates so our network will learn?
+         </p>
+         <p>
+          As an example, I'm going to have you use gradient descent to train a network on graduate school admissions data (found at
+          <a href="https://stats.idre.ucla.edu/stat/data/binary.csv" rel="noopener noreferrer" target="_blank">
+           http://www.ats.ucla.edu/stat/data/binary.csv
+          </a>
+          ). This dataset has three input features: GRE score, GPA, and the rank of the undergraduate school (numbered 1 through 4). Institutions with rank 1 have the highest prestige, those with rank 4 have the lowest.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/admissions-data.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The goal here is to predict if a student will be admitted to a graduate program based on these features. For this, we'll use a network with one output layer with one unit. We'll use a sigmoid function for the output unit activation.
+         </p>
+         <h2 id="data-cleanup">
+          Data cleanup
+         </h2>
+         <p>
+          You might think there will be three input units, but we actually need to transform the data first. The
+          <code>
+           rank
+          </code>
+          feature is categorical, the numbers don't encode any sort of relative values. Rank 2 is not twice as much as rank 1, rank 3 is not 1.5 more than rank 2.  Instead, we need to use
+          <a href="https://en.wikipedia.org/wiki/Dummy_variable_(statistics)" rel="noopener noreferrer" target="_blank">
+           dummy variables
+          </a>
+          to encode
+          <code>
+           rank
+          </code>
+          , splitting the data into four new columns encoded with ones or zeros. Rows with rank 1 have one in the rank 1 dummy column, and zeros in all other columns. Rows with rank 2 have one in the rank 2 dummy column, and zeros in all other columns. And so on.
+         </p>
+         <p>
+          We'll also need to standardize the GRE and GPA data, which means to scale the values such that they have zero mean and a standard deviation of 1. This is necessary because the sigmoid function squashes really small and really large inputs. The gradient of really small and large inputs is zero, which means that the gradient descent step will go to zero too. Since the GRE and GPA values are fairly large, we have to be really careful about how we initialize the weights or the gradient descent steps will die off and the network won't train. Instead, if we standardize the data, we can initialize the weights easily and everyone is happy.
+         </p>
+         <p>
+          This is just a brief run-through, you'll learn more about preparing data later. If you're interested in how I did this, check out the
+          <code>
+           data_prep.py
+          </code>
+          file in the programming exercise below.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Ten rows of the data after transformations." class="img img-fluid" src="img/example-data.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Ten rows of the data after transformations.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now that the data is ready, we see that there are six input features:
+          <code>
+           gre
+          </code>
+          ,
+          <code>
+           gpa
+          </code>
+          , and the four
+          <code>
+           rank
+          </code>
+          dummy variables.
+         </p>
+         <h3 id="mean-square-error">
+          Mean Square Error
+         </h3>
+         <p>
+          We're going to make a small change to how we calculate the error here. Instead of the SSE, we're going to use the
+          <strong>
+           mean
+          </strong>
+          of the square errors (MSE). Now that we're using a lot of data, summing up all the weight steps can lead to really large updates that make the gradient descent diverge. To compensate for this, you'd need to use a quite small learning rate. Instead, we can just divide by the number of records in our data,
+          <span class="mathquill ud-math">
+           m
+          </span>
+          to take the average. This way, no matter how much data we use, our learning rates will typically be in the range of 0.01 to 0.001. Then, we can use the MSE (shown below) to calculate the gradient and the result is the same as before, just averaged instead of summed.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/mse.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Here's the general algorithm for updating the weights with gradient descent:
+         </p>
+         <ul>
+          <li>
+           Set the weight step to zero:
+           <span class="mathquill ud-math">
+            \Delta w_i = 0
+           </span>
+          </li>
+          <li>
+           For each record in the training data:
+           <ul>
+            <li>
+             Make a forward pass through the network, calculating the output
+             <span class="mathquill ud-math">
+              \hat y = f(\sum_i w_i x_i)
+             </span>
+            </li>
+            <li>
+             Calculate the error term for the output unit,
+             <span class="mathquill ud-math">
+              \delta = (y - \hat y) * f'(\sum_i w_i x_i)
+             </span>
+            </li>
+            <li>
+             Update the weight step
+             <span class="mathquill ud-math">
+              \Delta w_i =  \Delta w_i + \delta x_i
+             </span>
+            </li>
+           </ul>
+          </li>
+          <li>
+           Update the weights
+           <span class="mathquill ud-math">
+            w_i = w_i + \eta \Delta w_i / m
+           </span>
+           where
+           <span class="mathquill ud-math">
+            \eta
+           </span>
+           is the learning rate and
+           <span class="mathquill ud-math">
+            m
+           </span>
+           is the number of records. Here we're averaging the weight steps to help reduce any large variations in the training data.
+          </li>
+          <li>
+           Repeat for
+           <span class="mathquill ud-math">
+            e
+           </span>
+           epochs.
+          </li>
+         </ul>
+         <p>
+          You can also update the weights on each record instead of averaging the weight steps after going through all the records.
+         </p>
+         <p>
+          Remember that we're using the sigmoid for the activation function,
+          <br/>
+          <span class="mathquill ud-math">
+           f(h) = 1/(1+e^{-h})
+          </span>
+         </p>
+         <p>
+          And the gradient of the sigmoid is
+          <br/>
+          <span class="mathquill ud-math">
+           f'(h) = f(h) (1 - f(h))
+          </span>
+         </p>
+         <p>
+          where
+          <span class="mathquill ud-math">
+           h
+          </span>
+          is the input to the output unit,
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           h = \sum_i w_i x_i
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="implementing-with-numpy">
+          Implementing with NumPy
+         </h2>
+         <p>
+          For the most part, this is pretty straightforward with NumPy.
+         </p>
+         <p>
+          First, you'll need to initialize the weights. We want these to be small such that the input to the sigmoid is in the linear region near 0 and not squashed at the high and low ends. It's also important to initialize them randomly so that they all have different starting values and diverge, breaking symmetry. So, we'll initialize the weights from a normal distribution centered at 0. A good value for the scale is
+          <span class="mathquill ud-math">
+           1/\sqrt{n}
+          </span>
+          where
+          <span class="mathquill ud-math">
+           n
+          </span>
+          is the number of input units. This keeps the input to the sigmoid low for increasing numbers of input units.
+         </p>
+         <pre><code class="python language-python">weights = np.random.normal(scale=1/n_features**.5, size=n_features)</code></pre>
+         <p>
+          NumPy provides a function
+          <code>
+           np.dot()
+          </code>
+          that calculates the dot product of two arrays, which conveniently calculates
+          <span class="mathquill ud-math">
+           h
+          </span>
+          for us. The dot product multiplies two arrays element-wise, the first element in array 1 is multiplied by the first element in array 2, and so on. Then, each product is summed.
+         </p>
+         <pre><code class="python language-python"># input to the output layer
+output_in = np.dot(weights, inputs)</code></pre>
+         <p>
+          And finally, we can update
+          <span class="mathquill ud-math">
+           \Delta w_i
+          </span>
+          and
+          <span class="mathquill ud-math">
+           w_i
+          </span>
+          by incrementing them with
+          <code>
+           weights += ...
+          </code>
+          which is shorthand for
+          <code>
+           weights = weights + ...
+          </code>
+          .
+         </p>
+         <h3 id="efficiency-tip">
+          Efficiency tip!
+         </h3>
+         <p>
+          You can save some calculations since we're using a sigmoid here. For the sigmoid function,
+          <span class="mathquill ud-math">
+           f'(h) = f(h) (1 - f(h))
+          </span>
+          . That means that once you calculate
+          <span class="mathquill ud-math">
+           f(h)
+          </span>
+          , the activation of the output unit, you can use it to calculate the gradient for the error gradient.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="programming-exercise">
+          Programming exercise
+         </h2>
+         <p>
+          Below, you'll implement gradient descent and train the network on the admissions data. Your goal here is to train the network until you reach a minimum in the mean square error (MSE) on the training set. You need to implement:
+         </p>
+         <ul>
+          <li>
+           The network output:
+           <code>
+            output
+           </code>
+           .
+          </li>
+          <li>
+           The output error:
+           <code>
+            error
+           </code>
+           .
+          </li>
+          <li>
+           The error term:
+           <code>
+            error_term
+           </code>
+           .
+          </li>
+          <li>
+           Update the weight step:
+           <code>
+            del_w +=
+           </code>
+           .
+          </li>
+          <li>
+           Update the weights:
+           <code>
+            weights +=
+           </code>
+           .
+          </li>
+         </ul>
+         <p>
+          After you've written these parts, run the training by pressing "Test Run". The MSE will print out, as well as the accuracy on a test set, the fraction of correctly predicted admissions.
+         </p>
+         <p>
+          Feel free to play with the hyperparameters and see how it changes the MSE.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="256157-gradient-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#256157-gradient-py" id="tab-256157-gradient-py" role="tab">
+            gradient.py
+           </a>
+           <a aria-controls="256157-data_prep-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#256157-data_prep-py" id="tab-256157-data_prep-py" role="tab">
+            data_prep.py
+           </a>
+           <a aria-controls="256157-binary-csv" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#256157-binary-csv" id="tab-256157-binary-csv" role="tab">
+            binary.csv
+           </a>
+           <a aria-controls="256157-solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#256157-solution-py" id="tab-256157-solution-py" role="tab">
+            solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-256157-gradient-py" class="tab-pane active show" id="256157-gradient-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+from data_prep import features, targets, features_test, targets_test
+
+
+def sigmoid(x):
+    """
+    Calculate sigmoid
+    """
+    return 1 / (1 + np.exp(-x))
+
+# TODO: We haven't provided the sigmoid_prime function like we did in
+#       the previous lesson to encourage you to come up with a more
+#       efficient solution. If you need a hint, check out the comments
+#       in solution.py from the previous lecture.
+
+# Use to same seed to make debugging easier
+np.random.seed(42)
+
+n_records, n_features = features.shape
+last_loss = None
+
+# Initialize weights
+weights = np.random.normal(scale=1 / n_features**.5, size=n_features)
+
+# Neural Network hyperparameters
+epochs = 1000
+learnrate = 0.5
+
+for e in range(epochs):
+    del_w = np.zeros(weights.shape)
+    for x, y in zip(features.values, targets):
+        # Loop through all records, x is the input, y is the target
+
+        # Note: We haven't included the h variable from the previous
+        #       lesson. You can add it if you want, or you can calculate
+        #       the h together with the output
+
+        # TODO: Calculate the output
+        output = None
+
+        # TODO: Calculate the error
+        error = None
+
+        # TODO: Calculate the error term
+        error_term = None
+
+        # TODO: Calculate the change in weights for this sample
+        #       and add it to the total weight change
+        del_w += 0
+
+    # TODO: Update weights using the learning rate and the average change in weights
+    weights += 0
+
+    # Printing out the mean square error on the training set
+    if e % (epochs / 10) == 0:
+        out = sigmoid(np.dot(features, weights))
+        loss = np.mean((out - targets) ** 2)
+        if last_loss and last_loss &lt; loss:
+            print("Train loss: ", loss, "  WARNING - Loss Increasing")
+        else:
+            print("Train loss: ", loss)
+        last_loss = loss
+
+
+# Calculate accuracy on test data
+tes_out = sigmoid(np.dot(features_test, weights))
+predictions = tes_out &gt; 0.5
+accuracy = np.mean(predictions == targets_test)
+print("Prediction accuracy: {:.3f}".format(accuracy))</pre>
+           </div>
+           <div aria-labelledby="tab-256157-data_prep-py" class="tab-pane" id="256157-data_prep-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+import pandas as pd
+
+admissions = pd.read_csv('binary.csv')
+
+# Make dummy variables for rank
+data = pd.concat([admissions, pd.get_dummies(admissions['rank'], prefix='rank')], axis=1)
+data = data.drop('rank', axis=1)
+
+# Standarize features
+for field in ['gre', 'gpa']:
+    mean, std = data[field].mean(), data[field].std()
+    data.loc[:,field] = (data[field]-mean)/std
+    
+# Split off random 10% of the data for testing
+np.random.seed(42)
+sample = np.random.choice(data.index, size=int(len(data)*0.9), replace=False)
+data, test_data = data.ix[sample], data.drop(sample)
+
+# Split into features and targets
+features, targets = data.drop('admit', axis=1), data['admit']
+features_test, targets_test = test_data.drop('admit', axis=1), test_data['admit']</pre>
+           </div>
+           <div aria-labelledby="tab-256157-binary-csv" class="tab-pane" id="256157-binary-csv" role="tabpanel">
+            <pre><code></code>admit,gre,gpa,rank
+0,380,3.61,3
+1,660,3.67,3
+1,800,4,1
+1,640,3.19,4
+0,520,2.93,4
+1,760,3,2
+1,560,2.98,1
+0,400,3.08,2
+1,540,3.39,3
+0,700,3.92,2
+0,800,4,4
+0,440,3.22,1
+1,760,4,1
+0,700,3.08,2
+1,700,4,1
+0,480,3.44,3
+0,780,3.87,4
+0,360,2.56,3
+0,800,3.75,2
+1,540,3.81,1
+0,500,3.17,3
+1,660,3.63,2
+0,600,2.82,4
+0,680,3.19,4
+1,760,3.35,2
+1,800,3.66,1
+1,620,3.61,1
+1,520,3.74,4
+1,780,3.22,2
+0,520,3.29,1
+0,540,3.78,4
+0,760,3.35,3
+0,600,3.4,3
+1,800,4,3
+0,360,3.14,1
+0,400,3.05,2
+0,580,3.25,1
+0,520,2.9,3
+1,500,3.13,2
+1,520,2.68,3
+0,560,2.42,2
+1,580,3.32,2
+1,600,3.15,2
+0,500,3.31,3
+0,700,2.94,2
+1,460,3.45,3
+1,580,3.46,2
+0,500,2.97,4
+0,440,2.48,4
+0,400,3.35,3
+0,640,3.86,3
+0,440,3.13,4
+0,740,3.37,4
+1,680,3.27,2
+0,660,3.34,3
+1,740,4,3
+0,560,3.19,3
+0,380,2.94,3
+0,400,3.65,2
+0,600,2.82,4
+1,620,3.18,2
+0,560,3.32,4
+0,640,3.67,3
+1,680,3.85,3
+0,580,4,3
+0,600,3.59,2
+0,740,3.62,4
+0,620,3.3,1
+0,580,3.69,1
+0,800,3.73,1
+0,640,4,3
+0,300,2.92,4
+0,480,3.39,4
+0,580,4,2
+0,720,3.45,4
+0,720,4,3
+0,560,3.36,3
+1,800,4,3
+0,540,3.12,1
+1,620,4,1
+0,700,2.9,4
+0,620,3.07,2
+0,500,2.71,2
+0,380,2.91,4
+1,500,3.6,3
+0,520,2.98,2
+0,600,3.32,2
+0,600,3.48,2
+0,700,3.28,1
+1,660,4,2
+0,700,3.83,2
+1,720,3.64,1
+0,800,3.9,2
+0,580,2.93,2
+1,660,3.44,2
+0,660,3.33,2
+0,640,3.52,4
+0,480,3.57,2
+0,700,2.88,2
+0,400,3.31,3
+0,340,3.15,3
+0,580,3.57,3
+0,380,3.33,4
+0,540,3.94,3
+1,660,3.95,2
+1,740,2.97,2
+1,700,3.56,1
+0,480,3.13,2
+0,400,2.93,3
+0,480,3.45,2
+0,680,3.08,4
+0,420,3.41,4
+0,360,3,3
+0,600,3.22,1
+0,720,3.84,3
+0,620,3.99,3
+1,440,3.45,2
+0,700,3.72,2
+1,800,3.7,1
+0,340,2.92,3
+1,520,3.74,2
+1,480,2.67,2
+0,520,2.85,3
+0,500,2.98,3
+0,720,3.88,3
+0,540,3.38,4
+1,600,3.54,1
+0,740,3.74,4
+0,540,3.19,2
+0,460,3.15,4
+1,620,3.17,2
+0,640,2.79,2
+0,580,3.4,2
+0,500,3.08,3
+0,560,2.95,2
+0,500,3.57,3
+0,560,3.33,4
+0,700,4,3
+0,620,3.4,2
+1,600,3.58,1
+0,640,3.93,2
+1,700,3.52,4
+0,620,3.94,4
+0,580,3.4,3
+0,580,3.4,4
+0,380,3.43,3
+0,480,3.4,2
+0,560,2.71,3
+1,480,2.91,1
+0,740,3.31,1
+1,800,3.74,1
+0,400,3.38,2
+1,640,3.94,2
+0,580,3.46,3
+0,620,3.69,3
+1,580,2.86,4
+0,560,2.52,2
+1,480,3.58,1
+0,660,3.49,2
+0,700,3.82,3
+0,600,3.13,2
+0,640,3.5,2
+1,700,3.56,2
+0,520,2.73,2
+0,580,3.3,2
+0,700,4,1
+0,440,3.24,4
+0,720,3.77,3
+0,500,4,3
+0,600,3.62,3
+0,400,3.51,3
+0,540,2.81,3
+0,680,3.48,3
+1,800,3.43,2
+0,500,3.53,4
+1,620,3.37,2
+0,520,2.62,2
+1,620,3.23,3
+0,620,3.33,3
+0,300,3.01,3
+0,620,3.78,3
+0,500,3.88,4
+0,700,4,2
+1,540,3.84,2
+0,500,2.79,4
+0,800,3.6,2
+0,560,3.61,3
+0,580,2.88,2
+0,560,3.07,2
+0,500,3.35,2
+1,640,2.94,2
+0,800,3.54,3
+0,640,3.76,3
+0,380,3.59,4
+1,600,3.47,2
+0,560,3.59,2
+0,660,3.07,3
+1,400,3.23,4
+0,600,3.63,3
+0,580,3.77,4
+0,800,3.31,3
+1,580,3.2,2
+1,700,4,1
+0,420,3.92,4
+1,600,3.89,1
+1,780,3.8,3
+0,740,3.54,1
+1,640,3.63,1
+0,540,3.16,3
+0,580,3.5,2
+0,740,3.34,4
+0,580,3.02,2
+0,460,2.87,2
+0,640,3.38,3
+1,600,3.56,2
+1,660,2.91,3
+0,340,2.9,1
+1,460,3.64,1
+0,460,2.98,1
+1,560,3.59,2
+0,540,3.28,3
+0,680,3.99,3
+1,480,3.02,1
+0,800,3.47,3
+0,800,2.9,2
+1,720,3.5,3
+0,620,3.58,2
+0,540,3.02,4
+0,480,3.43,2
+1,720,3.42,2
+0,580,3.29,4
+0,600,3.28,3
+0,380,3.38,2
+0,420,2.67,3
+1,800,3.53,1
+0,620,3.05,2
+1,660,3.49,2
+0,480,4,2
+0,500,2.86,4
+0,700,3.45,3
+0,440,2.76,2
+1,520,3.81,1
+1,680,2.96,3
+0,620,3.22,2
+0,540,3.04,1
+0,800,3.91,3
+0,680,3.34,2
+0,440,3.17,2
+0,680,3.64,3
+0,640,3.73,3
+0,660,3.31,4
+0,620,3.21,4
+1,520,4,2
+1,540,3.55,4
+1,740,3.52,4
+0,640,3.35,3
+1,520,3.3,2
+1,620,3.95,3
+0,520,3.51,2
+0,640,3.81,2
+0,680,3.11,2
+0,440,3.15,2
+1,520,3.19,3
+1,620,3.95,3
+1,520,3.9,3
+0,380,3.34,3
+0,560,3.24,4
+1,600,3.64,3
+1,680,3.46,2
+0,500,2.81,3
+1,640,3.95,2
+0,540,3.33,3
+1,680,3.67,2
+0,660,3.32,1
+0,520,3.12,2
+1,600,2.98,2
+0,460,3.77,3
+1,580,3.58,1
+1,680,3,4
+1,660,3.14,2
+0,660,3.94,2
+0,360,3.27,3
+0,660,3.45,4
+0,520,3.1,4
+1,440,3.39,2
+0,600,3.31,4
+1,800,3.22,1
+1,660,3.7,4
+0,800,3.15,4
+0,420,2.26,4
+1,620,3.45,2
+0,800,2.78,2
+0,680,3.7,2
+0,800,3.97,1
+0,480,2.55,1
+0,520,3.25,3
+0,560,3.16,1
+0,460,3.07,2
+0,540,3.5,2
+0,720,3.4,3
+0,640,3.3,2
+1,660,3.6,3
+1,400,3.15,2
+1,680,3.98,2
+0,220,2.83,3
+0,580,3.46,4
+1,540,3.17,1
+0,580,3.51,2
+0,540,3.13,2
+0,440,2.98,3
+0,560,4,3
+0,660,3.67,2
+0,660,3.77,3
+1,520,3.65,4
+0,540,3.46,4
+1,300,2.84,2
+1,340,3,2
+1,780,3.63,4
+1,480,3.71,4
+0,540,3.28,1
+0,460,3.14,3
+0,460,3.58,2
+0,500,3.01,4
+0,420,2.69,2
+0,520,2.7,3
+0,680,3.9,1
+0,680,3.31,2
+1,560,3.48,2
+0,580,3.34,2
+0,500,2.93,4
+0,740,4,3
+0,660,3.59,3
+0,420,2.96,1
+0,560,3.43,3
+1,460,3.64,3
+1,620,3.71,1
+0,520,3.15,3
+0,620,3.09,4
+0,540,3.2,1
+1,660,3.47,3
+0,500,3.23,4
+1,560,2.65,3
+0,500,3.95,4
+0,580,3.06,2
+0,520,3.35,3
+0,500,3.03,3
+0,600,3.35,2
+0,580,3.8,2
+0,400,3.36,2
+0,620,2.85,2
+1,780,4,2
+0,620,3.43,3
+1,580,3.12,3
+0,700,3.52,2
+1,540,3.78,2
+1,760,2.81,1
+0,700,3.27,2
+0,720,3.31,1
+1,560,3.69,3
+0,720,3.94,3
+1,520,4,1
+1,540,3.49,1
+0,680,3.14,2
+0,460,3.44,2
+1,560,3.36,1
+0,480,2.78,3
+0,460,2.93,3
+0,620,3.63,3
+0,580,4,1
+0,800,3.89,2
+1,540,3.77,2
+1,680,3.76,3
+1,680,2.42,1
+1,620,3.37,1
+0,560,3.78,2
+0,560,3.49,4
+0,620,3.63,2
+1,800,4,2
+0,640,3.12,3
+0,540,2.7,2
+0,700,3.65,2
+1,540,3.49,2
+0,540,3.51,2
+0,660,4,1
+1,480,2.62,2
+0,420,3.02,1
+1,740,3.86,2
+0,580,3.36,2
+0,640,3.17,2
+0,640,3.51,2
+1,800,3.05,2
+1,660,3.88,2
+1,600,3.38,3
+1,620,3.75,2
+1,460,3.99,3
+0,620,4,2
+0,560,3.04,3
+0,460,2.63,2
+0,700,3.65,2
+0,600,3.89,3
+</pre>
+           </div>
+           <div aria-labelledby="tab-256157-solution-py" class="tab-pane" id="256157-solution-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+from data_prep import features, targets, features_test, targets_test
+
+
+def sigmoid(x):
+    """
+    Calculate sigmoid
+    """
+    return 1 / (1 + np.exp(-x))
+
+# TODO: We haven't provided the sigmoid_prime function like we did in
+#       the previous lesson to encourage you to come up with a more
+#       efficient solution. If you need a hint, check out the comments
+#       in solution.py from the previous lecture.
+
+# Use to same seed to make debugging easier
+np.random.seed(42)
+
+n_records, n_features = features.shape
+last_loss = None
+
+# Initialize weights
+weights = np.random.normal(scale=1 / n_features**.5, size=n_features)
+
+# Neural Network hyperparameters
+epochs = 1000
+learnrate = 0.5
+
+for e in range(epochs):
+    del_w = np.zeros(weights.shape)
+    for x, y in zip(features.values, targets):
+        # Loop through all records, x is the input, y is the target
+
+        # Activation of the output unit
+        #   Notice we multiply the inputs and the weights here 
+        #   rather than storing h as a separate variable 
+        output = sigmoid(np.dot(x, weights))
+
+        # The error, the target minus the network output
+        error = y - output
+
+        # The error term
+        #   Notice we calulate f'(h) here instead of defining a separate
+        #   sigmoid_prime function. This just makes it faster because we
+        #   can re-use the result of the sigmoid function stored in
+        #   the output variable
+        error_term = error * output * (1 - output)
+
+        # The gradient descent step, the error times the gradient times the inputs
+        del_w += error_term * x
+
+    # Update the weights here. The learning rate times the 
+    # change in weights, divided by the number of records to average
+    weights += learnrate * del_w / n_records
+
+    # Printing out the mean square error on the training set
+    if e % (epochs / 10) == 0:
+        out = sigmoid(np.dot(features, weights))
+        loss = np.mean((out - targets) ** 2)
+        if last_loss and last_loss &lt; loss:
+            print("Train loss: ", loss, "  WARNING - Loss Increasing")
+        else:
+            print("Train loss: ", loss)
+        last_loss = loss
+
+
+# Calculate accuracy on test data
+tes_out = sigmoid(np.dot(features_test, weights))
+predictions = tes_out &gt; 0.5
+accuracy = np.mean(predictions == targets_test)
+print("Prediction accuracy: {:.3f}".format(accuracy))</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Multilayer Perceptrons.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Implementing Gradient Descent')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

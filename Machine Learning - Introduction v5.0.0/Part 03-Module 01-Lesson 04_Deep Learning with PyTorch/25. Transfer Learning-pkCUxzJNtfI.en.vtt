@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.104
+When you're tackling a new problem with a neural network,
+
+00:00:03.104 --> 00:00:06.419
+it might help to start with an existing network that was built for
+
+00:00:06.419 --> 00:00:11.035
+a similar task and then try to fine-tune it for your own problem.
+
+00:00:11.035 --> 00:00:13.695
+There are a couple of good reasons to do this.
+
+00:00:13.695 --> 00:00:17.219
+First, existing neural networks can be really useful.
+
+00:00:17.219 --> 00:00:20.954
+If somebody has taken days or weeks to train a network already,
+
+00:00:20.954 --> 00:00:24.104
+then a lot of intelligence is stored in that network.
+
+00:00:24.105 --> 00:00:28.140
+Taking advantage of that work can accelerate your own progress.
+
+00:00:28.140 --> 00:00:33.015
+Second, sometimes the data set for the problem you'll work on might be small.
+
+00:00:33.015 --> 00:00:35.039
+In those cases, look for
+
+00:00:35.039 --> 00:00:39.155
+an existing network that's designed for a problem similar to your own.
+
+00:00:39.155 --> 00:00:42.450
+If that network has already been trained on a larger data set,
+
+00:00:42.450 --> 00:00:46.785
+then you can use it as a starting point to help your own network generalize better.
+
+00:00:46.784 --> 00:00:48.409
+In order to do this,
+
+00:00:48.409 --> 00:00:50.339
+it makes sense to learn a little bit about
+
+00:00:50.340 --> 00:00:53.340
+the most prominent pre-trained networks that already exist.
+

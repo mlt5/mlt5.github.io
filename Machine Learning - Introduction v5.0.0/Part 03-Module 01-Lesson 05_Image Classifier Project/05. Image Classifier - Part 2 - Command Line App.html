@@ -1,0 +1,359 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Image Classifier - Part 2 - Command Line App
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Image Classifier Project
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Project Intro.html">
+       01. Project Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to GPU Workspaces.html">
+       02. Introduction to GPU Workspaces
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Image Classifier - Part 1 - Development.html">
+       03. Image Classifier - Part 1 - Development
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Image Classifier - Part 1 - Workspace.html">
+       04. Image Classifier - Part 1 - Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Image Classifier - Part 2 - Command Line App.html">
+       05. Image Classifier - Part 2 - Command Line App
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Image Classifier - Part 2 - Workspace.html">
+       06. Image Classifier - Part 2 - Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Rubric.html">
+       07. Rubric
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Create Your Own Image Classifier.html">
+       Project Description - Create Your Own Image Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Create Your Own Image Classifier.html">
+       Project Rubric - Create Your Own Image Classifier
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Image Classifier - Part 2 - Command Line App
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="part-2---building-the-command-line-application">
+          Part 2 - Building the command line application
+         </h1>
+         <p>
+          Now that you've built and trained a deep neural network on the flower data set, it's time to convert it into an application that others can use. Your application should be a pair of Python scripts that run from the command line. For testing, you should use the checkpoint you saved in the first part.
+         </p>
+         <h3 id="specifications">
+          Specifications
+         </h3>
+         <p>
+          The project submission must include at least two files
+          <code>
+           train.py
+          </code>
+          and
+          <code>
+           predict.py
+          </code>
+          . The first file,
+          <code>
+           train.py
+          </code>
+          , will train a new network on a dataset and save the model as a checkpoint. The second file,
+          <code>
+           predict.py
+          </code>
+          , uses a trained network to predict the class for an input image. Feel free to create as many other files as you need. Our suggestion is to create a file just for functions and classes relating to the model and another one for utility functions like loading data and preprocessing images.
+          <strong>
+           Make sure to include all files necessary to run
+           <code>
+            train.py
+           </code>
+           and
+           <code>
+            predict.py
+           </code>
+           in your submission.
+          </strong>
+         </p>
+         <ul>
+          <li>
+           <p>
+            Train a new network on a data set with
+            <code>
+             train.py
+            </code>
+           </p>
+           <ul>
+            <li>
+             Basic usage:
+             <code>
+              python train.py data_directory
+             </code>
+            </li>
+            <li>
+             Prints out training loss, validation loss, and validation accuracy as the network trains
+            </li>
+            <li>
+             Options:
+            </li>
+            <li>
+             Set directory to save checkpoints:
+             <code>
+              python train.py data_dir --save_dir save_directory
+             </code>
+            </li>
+            <li>
+             Choose architecture:
+             <code>
+              python train.py data_dir --arch "vgg13"
+             </code>
+            </li>
+            <li>
+             Set hyperparameters:
+             <code>
+              python train.py data_dir --learning_rate 0.01 --hidden_units 512 --epochs 20
+             </code>
+            </li>
+            <li>
+             Use GPU for training:
+             <code>
+              python train.py data_dir --gpu
+             </code>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <p>
+            Predict flower name from an image with
+            <code>
+             predict.py
+            </code>
+            along with the probability of that name. That is, you'll pass in a single image
+            <code>
+             /path/to/image
+            </code>
+            and return the flower name and class probability.
+           </p>
+           <ul>
+            <li>
+             Basic usage:
+             <code>
+              python predict.py /path/to/image checkpoint
+             </code>
+            </li>
+            <li>
+             Options:
+            </li>
+            <li>
+             Return top
+             <span class="mathquill ud-math">
+              K
+             </span>
+             most likely classes:
+             <code>
+              python predict.py input checkpoint --top_k 3
+             </code>
+            </li>
+            <li>
+             Use a mapping of categories to real names:
+             <code>
+              python predict.py input checkpoint --category_names cat_to_name.json
+             </code>
+            </li>
+            <li>
+             Use GPU for inference:
+             <code>
+              python predict.py input checkpoint --gpu
+             </code>
+            </li>
+           </ul>
+          </li>
+         </ul>
+         <p>
+          The best way to get the command line input into the scripts is with the
+          <a href="https://docs.python.org/3/library/argparse.html" rel="noopener noreferrer" target="_blank">
+           argparse module
+          </a>
+          in the standard library. You can also find
+          <a href="https://pymotw.com/3/argparse/" rel="noopener noreferrer" target="_blank">
+           a nice tutorial for argparse here
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Image Classifier - Part 2 - Workspace.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Image Classifier - Part 2 - Command Line App')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

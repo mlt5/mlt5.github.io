@@ -1,0 +1,570 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Create Your Own Image Classifier
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Image Classifier Project
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Project Intro.html">
+       01. Project Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to GPU Workspaces.html">
+       02. Introduction to GPU Workspaces
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Image Classifier - Part 1 - Development.html">
+       03. Image Classifier - Part 1 - Development
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Image Classifier - Part 1 - Workspace.html">
+       04. Image Classifier - Part 1 - Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Image Classifier - Part 2 - Command Line App.html">
+       05. Image Classifier - Part 2 - Command Line App
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Image Classifier - Part 2 - Workspace.html">
+       06. Image Classifier - Part 2 - Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Rubric.html">
+       07. Rubric
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Create Your Own Image Classifier.html">
+       Project Description - Create Your Own Image Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Create Your Own Image Classifier.html">
+       Project Rubric - Create Your Own Image Classifier
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          Create Your Own Image Classifier
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div>
+        <h2>
+         <p>
+          Files Submitted
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             Submission Files
+            </p>
+           </td>
+           <td>
+            <p>
+             The submission includes all required files. (Model checkpoints not required.)
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div>
+        <h2>
+         <p>
+          Part 1 - Development Notebook
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             Package Imports
+            </p>
+           </td>
+           <td>
+            <p>
+             All the necessary packages and modules are imported in the first cell of the notebook
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Training data augmentation
+            </p>
+           </td>
+           <td>
+            <p>
+             <code>
+              torchvision
+             </code>
+             transforms are used to augment the training data with random scaling, rotations, mirroring, and/or cropping
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Data normalization
+            </p>
+           </td>
+           <td>
+            <p>
+             The training, validation, and testing data is appropriately cropped and normalized
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Data batching
+            </p>
+           </td>
+           <td>
+            <p>
+             The data for each set is loaded with torchvision's DataLoader
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Data loading
+            </p>
+           </td>
+           <td>
+            <p>
+             The data for each set (train, validation, test) is loaded with torchvision's ImageFolder
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Pre-trained Network
+            </p>
+           </td>
+           <td>
+            <p>
+             A pretrained network such as VGG16 is loaded from torchvision.models and the parameters are frozen
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Feedforward Classifier
+            </p>
+           </td>
+           <td>
+            <p>
+             A new feedforward network is defined for use as a classifier using the features as input
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Training the network
+            </p>
+           </td>
+           <td>
+            <p>
+             The parameters of the feedforward classifier are appropriately trained, while the parameters of the feature network are left static
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Testing Accuracy
+            </p>
+           </td>
+           <td>
+            <p>
+             The network's accuracy is measured on the test data
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Validation Loss and Accuracy
+            </p>
+           </td>
+           <td>
+            <p>
+             During training, the validation loss and accuracy are displayed
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Saving the model
+            </p>
+           </td>
+           <td>
+            <p>
+             The trained model is saved as a checkpoint along with associated hyperparameters and the class_to_idx dictionary
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Loading checkpoints
+            </p>
+           </td>
+           <td>
+            <p>
+             There is a function that successfully loads a checkpoint and rebuilds the model
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Image Processing
+            </p>
+           </td>
+           <td>
+            <p>
+             The process_image function successfully converts a PIL image into an object that can be used as input to a trained model
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Class Prediction
+            </p>
+           </td>
+           <td>
+            <p>
+             The predict function successfully takes the path to an image and a checkpoint, then returns the top K most probably classes for that image
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Sanity Checking with matplotlib
+            </p>
+           </td>
+           <td>
+            <p>
+             A matplotlib figure is created displaying an image and its associated top 5 most probable classes with actual flower names
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div>
+        <h2>
+         <p>
+          Part 2 - Command Line Application
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             Training a network
+            </p>
+           </td>
+           <td>
+            <p>
+             train.py successfully trains a new network on a dataset of images and saves the model to a checkpoint
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Training validation log
+            </p>
+           </td>
+           <td>
+            <p>
+             The training loss, validation loss, and validation accuracy are printed out as a network trains
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Model architecture
+            </p>
+           </td>
+           <td>
+            <p>
+             The training script allows users to choose from at least two different architectures available from torchvision.models
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Model hyperparameters
+            </p>
+           </td>
+           <td>
+            <p>
+             The training script allows users to set hyperparameters for learning rate, number of hidden units, and training epochs
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Training with GPU
+            </p>
+           </td>
+           <td>
+            <p>
+             The training script allows users to choose training the model on a GPU
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Predicting classes
+            </p>
+           </td>
+           <td>
+            <p>
+             The predict.py script successfully reads in an image and a checkpoint then prints the most likely image class and it's associated probability
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Top K classes
+            </p>
+           </td>
+           <td>
+            <p>
+             The predict.py script allows users to print out the top K classes along with associated probabilities
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Displaying class names
+            </p>
+           </td>
+           <td>
+            <p>
+             The predict.py script allows users to load a JSON file that maps the class values to other category names
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Predicting with GPU
+            </p>
+           </td>
+           <td>
+            <p>
+             The predict.py script allows users to use the GPU to calculate the predictions
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Create Your Own Image Classifier')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
