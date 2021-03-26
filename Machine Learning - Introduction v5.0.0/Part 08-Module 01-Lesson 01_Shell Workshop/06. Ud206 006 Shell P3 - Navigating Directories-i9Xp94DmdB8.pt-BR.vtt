@@ -1,0 +1,110 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.370 --> 00:00:03.401
+Quando vemos os arquivos
+em uma interface gráfica,
+
+00:00:03.443 --> 00:00:07.162
+como no Finder, da Macintosh,
+ou no Explorador, do Windows,
+
+00:00:07.204 --> 00:00:10.256
+uma janela de pasta
+exibe os arquivos e subdiretórios
+
+00:00:10.298 --> 00:00:12.687
+de uma pasta ou diretório.
+
+00:00:12.729 --> 00:00:16.272
+Aqui vemos o diretório Downloads
+do computador
+
+00:00:16.314 --> 00:00:17.696
+ou a pasta Downloads.
+
+00:00:17.738 --> 00:00:20.249
+Diretório e pasta
+são basicamente a mesma coisa,
+
+00:00:20.291 --> 00:00:23.305
+mas, no shell,
+usamos a palavra "diretório".
+
+00:00:23.347 --> 00:00:26.153
+Para listar o conteúdo
+do diretório no shell,
+
+00:00:26.195 --> 00:00:28.890
+podemos usar o comando ls,
+
+00:00:28.932 --> 00:00:32.851
+que é a versão resumida
+da palavra "lista".
+
+00:00:32.893 --> 00:00:37.090
+Ao iniciarmos o shell,
+ele observa o diretório principal.
+
+00:00:37.132 --> 00:00:39.456
+Se executarmos ls,
+
+00:00:39.498 --> 00:00:42.459
+ele imprimirá o conteúdo
+do diretório atual.
+
+00:00:43.186 --> 00:00:46.521
+Para listar outro diretório -
+como o de Downloads -,
+
+00:00:46.563 --> 00:00:49.882
+digitamos ls seguido
+pelo nome do diretório.
+
+00:00:50.641 --> 00:00:54.242
+Também podemos alterar
+o diretório que será buscado.
+
+00:00:54.284 --> 00:00:56.081
+O comando para isso é cd,
+
+00:00:56.123 --> 00:00:58.514
+que significa "mudar diretório"
+em inglês.
+
+00:00:58.556 --> 00:01:01.457
+Após executar cd
+em um diretório,
+
+00:01:01.499 --> 00:01:04.746
+o ls exibirá o conteúdo dele.
+
+00:01:04.788 --> 00:01:06.353
+Isso é algo
+que veremos muito.
+
+00:01:06.395 --> 00:01:10.960
+Muitos comandos shell interagirão
+com o diretório atual.
+
+00:01:11.002 --> 00:01:13.331
+Se quisermos retornar
+para o outro diretório,
+
+00:01:13.373 --> 00:01:16.435
+podemos fazer isso com o nome
+do diretório e ponto e ponto,
+
+00:01:16.477 --> 00:01:18.924
+que também é chamado
+de "diretório pai".
+
+00:01:18.966 --> 00:01:22.378
+O ponto e vírgula permite escrever
+dois comandos na mesma linha,
+
+00:01:22.420 --> 00:01:24.796
+e o shell os executará
+em ordem.
+

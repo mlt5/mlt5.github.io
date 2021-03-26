@@ -1,0 +1,150 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.291 --> 00:00:02.536
+Vamos falar sobre o Windows.
+
+00:00:02.578 --> 00:00:06.417
+Se estiver usando um sistema
+Mac ou um Linux,
+
+00:00:06.459 --> 00:00:10.410
+pule esta página,
+vá para a próxima.
+
+00:00:11.683 --> 00:00:15.201
+Se você está assistindo,
+é porque usa o Windows. Legal.
+
+00:00:15.243 --> 00:00:19.496
+Nós vamos obter
+um shell do estilo Unix.
+
+00:00:19.538 --> 00:00:21.906
+O que eu quero dizer com isso?
+
+00:00:21.948 --> 00:00:25.264
+Que ele é compatível
+com os shells usados no Linux
+
+00:00:25.306 --> 00:00:26.596
+e em sistemas parecidos,
+
+00:00:26.638 --> 00:00:29.766
+no qual a maioria
+dos servidores são executados.
+
+00:00:29.808 --> 00:00:33.620
+O Windows vem de outra
+linhagem dos sistemas operacionais,
+
+00:00:33.662 --> 00:00:35.479
+então é necessário
+um esforço extra
+
+00:00:35.521 --> 00:00:38.334
+para tornar o Windows
+compatível com o resto do mundo,
+
+00:00:38.376 --> 00:00:40.105
+mas tudo bem.
+
+00:00:40.147 --> 00:00:42.657
+O shell do estilo Unix
+para o Windows
+
+00:00:42.699 --> 00:00:46.325
+é o que vem com o software
+de controle de versão Git.
+
+00:00:46.367 --> 00:00:48.021
+Ele se chama Git Bash.
+
+00:00:48.063 --> 00:00:50.918
+Para instalá-lo,
+instalaremos o Git.
+
+00:00:50.960 --> 00:00:55.541
+Vá para git-scm.com
+
+00:00:55.583 --> 00:00:57.358
+e faça o download do Git.
+
+00:00:57.400 --> 00:01:00.455
+Eu clicarei no instalador.
+
+00:01:00.497 --> 00:01:02.535
+Próximo. Claro.
+
+00:01:03.815 --> 00:01:05.350
+Está tudo bem.
+
+00:01:06.367 --> 00:01:07.861
+Eu farei isto.
+
+00:01:07.903 --> 00:01:11.093
+Chegamos na página de ajuste
+do ambiente PATH,
+
+00:01:11.135 --> 00:01:12.967
+e eu aceitarei o padrão.
+
+00:01:14.047 --> 00:01:16.005
+O padrão funcionará bem.
+
+00:01:16.047 --> 00:01:18.367
+Ele está perguntando
+qual emulador Terminal
+
+00:01:18.409 --> 00:01:20.788
+desejarei usar com Git Bash.
+
+00:01:20.830 --> 00:01:24.063
+Também optarei pelo padrão,
+que é MinTTY.
+
+00:01:25.175 --> 00:01:27.350
+Também podemos
+usar o padrão aqui.
+
+00:01:27.392 --> 00:01:29.590
+Vamos aguardar a instalação.
+
+00:01:29.632 --> 00:01:31.670
+Isso poderá levar
+alguns minutos,
+
+00:01:31.712 --> 00:01:35.087
+mas nós aceleraremos o vídeo
+para não precisarmos ver isto,
+
+00:01:35.129 --> 00:01:37.749
+já que você verá
+no seu computador.
+
+00:01:37.791 --> 00:01:39.087
+Terminamos.
+
+00:01:39.927 --> 00:01:42.903
+Agora temos o programa
+chamado Git Bash,
+
+00:01:42.945 --> 00:01:45.951
+vamos executá-lo.
+Pronto, uma janela do Terminal.
+
+00:01:46.704 --> 00:01:50.022
+Está um pouco difícil de ler,
+a fonte está pequena demais.
+
+00:01:50.064 --> 00:01:52.200
+Vamos alterar isso.
+
+00:02:02.337 --> 00:02:04.174
+Bem melhor.
+
+00:02:04.216 --> 00:02:07.827
+Ótimo. Agora que está configurado,
+vejamos o que acontece aqui.
+

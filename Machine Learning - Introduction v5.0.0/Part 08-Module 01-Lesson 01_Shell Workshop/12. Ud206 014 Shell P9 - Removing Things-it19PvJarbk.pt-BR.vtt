@@ -1,0 +1,71 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.186 --> 00:00:04.495
+Nós criamos vários arquivos
+e diretórios
+
+00:00:04.537 --> 00:00:07.494
+e queremos limpá-los,
+deletar algumas coisas.
+
+00:00:07.536 --> 00:00:10.918
+O comando shell
+para deletar arquivos é o rm,
+
+00:00:10.960 --> 00:00:12.990
+que significa "remover".
+
+00:00:13.032 --> 00:00:16.943
+O rm funciona como
+os outros comandos shell,
+
+00:00:16.985 --> 00:00:20.319
+basta fornecer o nome do arquivo
+ou os nomes dos arquivos
+
+00:00:20.361 --> 00:00:21.958
+que desejar remover.
+
+00:00:22.000 --> 00:00:24.976
+Vou dar um aviso de segurança.
+
+00:00:25.018 --> 00:00:29.921
+No seu GUI, você deve ter
+uma lixeira
+
+00:00:29.963 --> 00:00:34.654
+para a qual você envia arquivos
+e pode reaver caso mude de ideia.
+
+00:00:34.696 --> 00:00:37.238
+O comando rm
+não funciona dessa forma,
+
+00:00:37.280 --> 00:00:39.335
+ele apenas remove os arquivos.
+
+00:00:39.377 --> 00:00:42.224
+Se quiser mais um aviso -
+
+00:00:42.266 --> 00:00:47.248
+talvez você tenha receio de remover
+um arquivo valioso por engano -
+
+00:00:47.290 --> 00:00:52.269
+então poderá usar a opção -i,
+que significa "interativo",
+
+00:00:52.311 --> 00:00:55.437
+que mostrará os arquivos
+que serão removidos.
+
+00:00:56.436 --> 00:00:58.884
+Para os diretórios,
+existe outro comando,
+
+00:00:58.926 --> 00:01:02.797
+que é rmdir,
+de "remover diretório".
+

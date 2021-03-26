@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.963 --> 00:00:03.514
+Com todos estes cds...
+
+00:00:05.267 --> 00:00:07.746
+é possível que a gente
+se perca.
+
+00:00:07.788 --> 00:00:09.458
+Dependendo do seu sistema,
+
+00:00:09.500 --> 00:00:13.313
+o prompt poderá ou não informar
+em qual diretório você está,
+
+00:00:13.355 --> 00:00:16.079
+mas existe um comando
+que sempre informará isso,
+
+00:00:16.121 --> 00:00:18.394
+o comando pwd,
+
+00:00:18.436 --> 00:00:21.769
+que significa "diretório atual
+de impressão" em inglês.
+
+00:00:21.811 --> 00:00:24.884
+O diretório atual quer dizer
+em qual diretório
+
+00:00:24.926 --> 00:00:26.987
+o shell está procurando.
+
+00:00:27.029 --> 00:00:30.083
+Ele é o diretório padrão
+para comandos como o ls,
+
+00:00:30.125 --> 00:00:34.035
+e o local onde os comandos shell
+buscarão por arquivos de dados.
+
+00:00:34.077 --> 00:00:35.876
+Perceba que os nomes
+dos diretórios
+
+00:00:35.918 --> 00:00:38.237
+são separados por barras.
+
+00:00:38.279 --> 00:00:41.505
+O sistema Unix usa a barra normal
+e não a barra invertida,
+
+00:00:41.547 --> 00:00:43.591
+para separar os nomes
+dos diretórios.
+
+00:00:43.633 --> 00:00:47.195
+As barras simples são as que vimos
+nos URLs da internet.
+
+00:00:47.237 --> 00:00:50.870
+Esta string, composta
+por vários nomes de diretórios
+
+00:00:50.912 --> 00:00:54.079
+separados por barras,
+é chamada de "path".
+
+00:00:54.727 --> 00:00:57.455
+Existem alguns nomes
+de diretórios especiais.
+
+00:00:57.497 --> 00:01:01.434
+Já vimos o ponto e ponto antes,
+que significa o diretório pai,
+
+00:01:01.476 --> 00:01:04.058
+o diretório no qual este
+está dentro.
+
+00:01:04.100 --> 00:01:08.291
+Também há o ponto,
+que significa o diretório atual.
+
+00:01:08.333 --> 00:01:11.841
+E "ls ." é o mesmo que "ls".
+
+00:01:11.883 --> 00:01:15.027
+O shell também possui um atalho,
+o til,
+
+00:01:15.069 --> 00:01:17.722
+que significa
+o diretório principal.
+
+00:01:17.764 --> 00:01:21.034
+Independente para qual diretório
+você tenha ido com cd,
+
+00:01:21.076 --> 00:01:23.908
+o ls ~ listará
+o diretório principal.
+

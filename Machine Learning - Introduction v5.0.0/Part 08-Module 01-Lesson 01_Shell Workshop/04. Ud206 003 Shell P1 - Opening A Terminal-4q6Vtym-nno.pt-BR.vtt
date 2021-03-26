@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.184 --> 00:00:02.871
+Independentemente do sistema
+que você esteja usando,
+
+00:00:02.913 --> 00:00:05.830
+abra a janela do Terminal.
+
+00:00:05.872 --> 00:00:09.494
+No Windows, abra o Git Bash
+que acabamos de baixar.
+
+00:00:09.536 --> 00:00:15.223
+No Mac, o programa Terminal
+estará na pasta de utilidades.
+
+00:00:15.968 --> 00:00:19.198
+No sistema Linux,
+é bem fácil encontrar o programa,
+
+00:00:19.240 --> 00:00:21.367
+mas pode estar
+em lugares diferentes.
+
+00:00:21.409 --> 00:00:24.422
+Não importa qual Terminal
+você esteja usando,
+
+00:00:24.464 --> 00:00:26.717
+ele é só uma interface
+do shell,
+
+00:00:26.759 --> 00:00:29.661
+e outros programas de linhas
+de comando executarão nele.
+
+00:00:29.703 --> 00:00:33.807
+Ele é como o navegador, que
+é a interface de sites e serviços.
+
+00:00:33.849 --> 00:00:36.153
+Quase todo Terminal
+
+00:00:36.195 --> 00:00:39.412
+tem configurações com as quais
+podemos mexer
+
+00:00:39.454 --> 00:00:42.331
+para alterar as fontes,
+as cores e tudo mais.
+
+00:00:42.373 --> 00:00:44.452
+Não faremos muito disso
+neste curso,
+
+00:00:44.494 --> 00:00:48.491
+mas sinta-se à vontade
+para ajustar como desejar.
+
+00:00:48.533 --> 00:00:50.867
+Lembre-se de uma coisa:
+
+00:00:50.909 --> 00:00:53.731
+podemos abrir vários Terminais
+ao mesmo tempo,
+
+00:00:53.773 --> 00:00:57.124
+na verdade, podemos abrir
+quantos desejarmos,
+
+00:00:57.166 --> 00:00:59.827
+e cada um terá
+a própria instância do shell,
+
+00:00:59.869 --> 00:01:02.604
+um processo distinto
+no seu computador.
+
+00:01:02.646 --> 00:01:07.155
+Se fizermos algo em um Terminal
+que congela ou quebra,
+
+00:01:07.197 --> 00:01:09.653
+podemos usar o outro.
+
+00:01:09.695 --> 00:01:11.499
+Conforme seguimos
+com o curso,
+
+00:01:11.541 --> 00:01:14.740
+outra coisa que ajudará
+são as buscas na internet.
+
+00:01:14.782 --> 00:01:18.092
+Existem muitas informações
+sobre o shell Unix na internet.
+
+00:01:18.134 --> 00:01:20.115
+Se quiser saber
+como realizar algo
+
+00:01:20.157 --> 00:01:23.081
+ou estiver procurando um comando
+que nunca tenha visto,
+
+00:01:23.123 --> 00:01:24.848
+use seu motor de busca
+favorito.
+

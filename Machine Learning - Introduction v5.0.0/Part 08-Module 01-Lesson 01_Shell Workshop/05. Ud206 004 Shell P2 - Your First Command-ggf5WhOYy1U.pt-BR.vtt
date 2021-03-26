@@ -1,0 +1,105 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.253 --> 00:00:02.075
+Nós estamos no Terminal.
+
+00:00:02.117 --> 00:00:05.612
+Na janela do Terminal,
+vemos uma mensagem aqui,
+
+00:00:06.253 --> 00:00:10.131
+outra aqui e um cursor.
+
+00:00:10.173 --> 00:00:13.258
+Esta mensagem
+é o prompt do shell,
+
+00:00:13.300 --> 00:00:17.020
+ela geralmente exibe informações
+sobre o computador.
+
+00:00:17.062 --> 00:00:20.530
+A mensagem que vemos aqui
+dependerá do seu sistema.
+
+00:00:20.572 --> 00:00:23.378
+Posteriormente,
+veremos como alterá-la.
+
+00:00:23.420 --> 00:00:26.675
+Se digitarmos algo no prompt
+do shell e pressionarmos enter,
+
+00:00:26.717 --> 00:00:29.932
+o shell tentará executar
+o que foi digitado como comando.
+
+00:00:29.974 --> 00:00:32.902
+Durante o curso,
+aprenderemos muitos comandos shell.
+
+00:00:32.944 --> 00:00:34.526
+Eis o primeiro.
+
+00:00:35.985 --> 00:00:40.400
+O comando echo é como o shell
+imprime mensagens para nós.
+
+00:00:40.442 --> 00:00:43.093
+Ele é como o console.log,
+no JavaScript,
+
+00:00:43.135 --> 00:00:44.774
+ou o print, no Python.
+
+00:00:44.816 --> 00:00:46.207
+Experimente.
+
+00:00:46.249 --> 00:00:50.134
+E se quisermos que isso seja
+um pouco mais animado?
+
+00:00:50.176 --> 00:00:53.759
+"Hello, shello" seguido
+de dois pontos de exclamação.
+
+00:00:53.801 --> 00:00:55.359
+Que estranho!
+
+00:00:55.401 --> 00:01:00.078
+"Hello, shelloecho Hello, shello!
+Hello, shelloecho Hello, shello!"
+
+00:01:00.120 --> 00:01:03.802
+Se eu repetir várias vezes,
+isso pode se tornar um sucesso.
+
+00:01:05.720 --> 00:01:10.207
+"Hello, shelloecho Hello, shello!
+Hello, shelloecho Hello, shello!"
+
+00:01:10.249 --> 00:01:14.871
+Alguns caracteres têm significado
+especial no shell,
+
+00:01:14.913 --> 00:01:17.040
+o ponto de exclamação
+é um deles.
+
+00:01:17.082 --> 00:01:19.207
+Ao digitar algo no shell
+
+00:01:19.249 --> 00:01:22.608
+e ele tratar isso
+de forma esquisita,
+
+00:01:23.280 --> 00:01:26.752
+basta adicionar
+aspas simples em volta.
+
+00:01:27.449 --> 00:01:30.196
+Prontinho.
+Ficou menos repetitivo.
+

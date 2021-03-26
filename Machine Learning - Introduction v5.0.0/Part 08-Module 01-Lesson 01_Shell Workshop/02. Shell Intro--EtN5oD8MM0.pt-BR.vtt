@@ -1,0 +1,184 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.325 --> 00:00:02.571
+Olá. Vamos falar sobre shell,
+
+00:00:02.613 --> 00:00:06.454
+uma interface de linha de comando
+que executa programas no computador.
+
+00:00:06.496 --> 00:00:08.029
+Digitamos o comando
+no prompt
+
+00:00:08.071 --> 00:00:11.108
+e o shell executa os programas
+e mostra o output.
+
+00:00:11.150 --> 00:00:14.405
+Desenvolvedores usam muito isso,
+por ser rápido e flexível.
+
+00:00:14.447 --> 00:00:18.203
+Além disso, a maioria dos servidores
+da internet executam no Linux,
+
+00:00:18.245 --> 00:00:19.894
+e o shell
+é uma ferramenta vital
+
+00:00:19.936 --> 00:00:23.200
+para lançamento e administração
+nos servidores Linux.
+
+00:00:23.242 --> 00:00:26.392
+Comparando com a utilização
+do ambiente gráfico, ou GUI,
+
+00:00:26.434 --> 00:00:27.684
+quando usamos o shell,
+
+00:00:27.726 --> 00:00:30.986
+precisamos nos lembrar
+de palavras mágicas e encantamentos.
+
+00:00:31.028 --> 00:00:33.401
+Mas, após um pouco de prática,
+
+00:00:33.443 --> 00:00:35.185
+você realizará coisas rápidas
+
+00:00:35.227 --> 00:00:37.016
+sem precisar clicar muito.
+
+00:00:37.058 --> 00:00:39.320
+Será como programar.
+
+00:00:39.362 --> 00:00:41.984
+Se você já usou o console JavaScript
+no navegador
+
+00:00:42.026 --> 00:00:44.353
+ou qualquer
+interpretador de linguagem,
+
+00:00:44.395 --> 00:00:47.761
+a ideia da linha de comando shell
+é quase a mesma.
+
+00:00:47.803 --> 00:00:50.226
+Digitamos instruções
+em uma linguagem especial,
+
+00:00:50.268 --> 00:00:51.552
+o sistema as executa
+
+00:00:51.594 --> 00:00:53.493
+e exibe o output abaixo.
+
+00:00:53.535 --> 00:00:56.007
+Depois disso,
+obtemos outro prompt.
+
+00:00:56.049 --> 00:00:58.868
+O console JavaScript
+é a linha de comando do navegador
+
+00:00:58.910 --> 00:01:01.542
+e o shell é a linha de comando
+do computador,
+
+00:01:01.584 --> 00:01:03.553
+que trabalha com arquivos
+e diretórios,
+
+00:01:03.595 --> 00:01:06.648
+executando programas e interagindo
+com outros computadores.
+
+00:01:06.690 --> 00:01:09.358
+O programa que usamos
+para interagir com o shell
+
+00:01:09.400 --> 00:01:11.239
+é chamado de "Terminal".
+
+00:01:11.281 --> 00:01:14.401
+Se estiver no Mac ou no Linux,
+você já tem um,
+
+00:01:14.443 --> 00:01:16.448
+ele tem este ícone.
+
+00:01:16.490 --> 00:01:17.815
+Se estiver no Windows,
+
+00:01:17.857 --> 00:01:20.654
+veremos como instalar o shell
+e o programa Terminal,
+
+00:01:20.696 --> 00:01:23.223
+que funcionam iguais
+aos do Mac e do Linux.
+
+00:01:23.265 --> 00:01:25.463
+O Windows possui
+um shell de comando,
+
+00:01:25.505 --> 00:01:27.936
+que se baseia
+na linha de comando do MS-DOS,
+
+00:01:27.978 --> 00:01:29.657
+mas não há herança Unix.
+
+00:01:29.699 --> 00:01:31.982
+Para os desenvolvedores Web,
+um shell Unix
+
+00:01:32.024 --> 00:01:33.741
+segue mais o padrão
+profissional,
+
+00:01:33.783 --> 00:01:36.446
+porque a internet
+é executada nos servidores Linux,
+
+00:01:36.488 --> 00:01:38.470
+então é isso que veremos
+neste curso.
+
+00:01:38.512 --> 00:01:41.238
+Especificamente,
+usaremos o shell bash,
+
+00:01:41.280 --> 00:01:44.167
+que é o shell do estilo Unix
+mais popular.
+
+00:01:44.209 --> 00:01:47.800
+A primeira coisa que faremos será
+mostrar como o Terminal funciona,
+
+00:01:47.842 --> 00:01:49.766
+depois conheceremos
+os comandos shell
+
+00:01:49.808 --> 00:01:51.817
+para navegar
+nos arquivos e diretórios.
+
+00:01:51.859 --> 00:01:54.500
+Veremos comandos
+para baixar arquivos da internet,
+
+00:01:54.542 --> 00:01:57.193
+visualizar arquivos de texto
+e personalizar o shell
+
+00:01:57.235 --> 00:01:59.552
+para deixá-lo mais amigável.
+Vamos começar.
+

@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.244 --> 00:00:03.949
+O comando que estamos procurando
+começa com curl...
+
+00:00:04.771 --> 00:00:09.772
+e termina com o URL tinyurl.com
+do qual falamos.
+
+00:00:11.748 --> 00:00:13.570
+Antes disso,
+
+00:00:13.612 --> 00:00:15.802
+queremos seguir
+os redirecionamentos
+
+00:00:15.844 --> 00:00:19.674
+e salvá-los
+como dictionary.txt.
+
+00:00:19.716 --> 00:00:22.010
+Temos um medidor de progresso.
+
+00:00:22.052 --> 00:00:23.777
+Prontinho.
+
+00:00:23.819 --> 00:00:27.634
+A propósito, eu usei aspas simples
+em volta dos URLs.
+
+00:00:27.676 --> 00:00:30.915
+Isso porque muitos URLs
+possuem caracteres especiais,
+
+00:00:30.957 --> 00:00:35.687
+como o E comercial,
+então é melhor criar esse hábito
+
+00:00:35.729 --> 00:00:39.666
+mesmo que não haja problema
+se não fizermos isso aqui.
+
