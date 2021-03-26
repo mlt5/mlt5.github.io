@@ -1,0 +1,430 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Recap &amp; Additional Resources
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Support Vector Machines
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Which line is better.html">
+       02. Which line is better?
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Minimizing Distances.html">
+       03. Minimizing Distances
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Error Function Intuition.html">
+       04. Error Function Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Perceptron Algorithm.html">
+       05. Perceptron Algorithm
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Classification Error.html">
+       06. Classification Error
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Margin Error.html">
+       07. Margin Error
+      </a>
+     </li>
+     <li class="">
+      <a href="08. (Optional) Margin Error Calculation.html">
+       08. (Optional) Margin Error Calculation
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Error Function.html">
+       09. Error Function
+      </a>
+     </li>
+     <li class="">
+      <a href="10. The C Parameter.html">
+       10. The C Parameter
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Polynomial Kernel 1.html">
+       11. Polynomial Kernel 1
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Polynomial Kernel 2.html">
+       12. Polynomial Kernel 2
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Polynomial Kernel 3.html">
+       13. Polynomial Kernel 3
+      </a>
+     </li>
+     <li class="">
+      <a href="14. RBF Kernel 1.html">
+       14. RBF Kernel 1
+      </a>
+     </li>
+     <li class="">
+      <a href="15. RBF Kernel 2.html">
+       15. RBF Kernel 2
+      </a>
+     </li>
+     <li class="">
+      <a href="16. RBF Kernel 3.html">
+       16. RBF Kernel 3
+      </a>
+     </li>
+     <li class="">
+      <a href="17. SVMs in sklearn.html">
+       17. SVMs in sklearn
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Recap &amp; Additional Resources.html">
+       18. Recap &amp; Additional Resources
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          18. Recap &amp; Additional Resources
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="recap">
+          Recap
+         </h3>
+         <p>
+          In this lesson, you learned about Support Vector Machines (or SVMs).  SVMs are a popular algorithm used for classification problems.  You saw three different ways that SVMs can be implemented:
+         </p>
+         <ol>
+          <li>
+           Maximum Margin Classifier
+          </li>
+          <li>
+           Classification with Inseparable Classes
+          </li>
+          <li>
+           Kernel Methods
+          </li>
+         </ol>
+         <h5 id="maximum-margin-classifier">
+          Maximum Margin Classifier
+         </h5>
+         <p>
+          When your data can be completely separated, the linear version of SVMs attempts to maximize the distance from the linear boundary to the closest points (called the support vectors).  For this reason, we saw that in the picture below, the boundary on the left is better than the one on the right.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2018-06-02-at-5.34.36-pm.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h5 id="classification-with-inseparable-classes">
+          Classification with Inseparable Classes
+         </h5>
+         <p>
+          Unfortunately, data in the real world is rarely completely separable as shown in the above images.  For this reason, we introduced a new hyper-parameter called
+          <strong>
+           C
+          </strong>
+          . The
+          <strong>
+           C
+          </strong>
+          hyper-parameter determines how flexible we are willing to be with the points that fall on the wrong side of our dividing boundary.  The value of
+          <strong>
+           C
+          </strong>
+          ranges between 0 and infinity.  When
+          <strong>
+           C
+          </strong>
+          is large, you are forcing your boundary to have fewer errors  than when it is a small value.
+         </p>
+         <p>
+          <strong>
+           Note: when C is too large for a particular set of data, you might not get convergence at all because your data cannot be separated with the small number of errors allotted with such a large value of C
+          </strong>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2018-06-02-at-5.52.44-pm.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h5 id="kernels">
+          Kernels
+         </h5>
+         <p>
+          Finally, we looked at what makes SVMs truly powerful, kernels.  Kernels in SVMs allow us the ability to separate data when the boundary between them is nonlinear.  Specifically, you saw two types of kernels:
+         </p>
+         <ul>
+          <li>
+           <p>
+            polynomial
+           </p>
+          </li>
+          <li>
+           <p>
+            rbf
+           </p>
+           <p>
+            By far the most popular kernel is the
+            <strong>
+             rbf
+            </strong>
+            kernel (which stands for radial basis function).  The rbf kernel allows you the opportunity to classify points that seem hard to separate in any space.  This is a density based approach that looks at the closeness of points to one another.  This introduces another hyper-parameter
+            <strong>
+             gamma
+            </strong>
+            .  When
+            <strong>
+             gamma
+            </strong>
+            is large, the outcome is similar to having a large value of
+            <strong>
+             C
+            </strong>
+            , that is your algorithm will attempt to classify every point correctly.  Alternatively, small values of
+            <strong>
+             gamma
+            </strong>
+            will try to cluster in a more general way that will make more mistakes, but may perform better when it sees new data.
+           </p>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2018-06-02-at-6.07.54-pm.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="resources">
+          Resources
+         </h3>
+         <p>
+          <a href="http://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf" rel="noopener noreferrer" target="_blank">
+           Support Vector Machines are described in Introduction to Statistical Learning starting on page 337.
+          </a>
+         </p>
+         <p>
+          <a href="https://en.wikipedia.org/wiki/Support_vector_machine" rel="noopener noreferrer" target="_blank">
+           The wikipedia page related to SVMs
+          </a>
+         </p>
+         <p>
+          <a href="http://cs229.stanford.edu/notes/cs229-notes3.pdf" rel="noopener noreferrer" target="_blank">
+           The derivation of SVMs from Stanford's CS229 notes.
+          </a>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('18. Recap &amp; Additional Resources')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
