@@ -1,0 +1,355 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Creating Customer Segments with Arvato</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Project: Identify Customer Segments</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Project Introduction.html">01. Project Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Project Overview.html">02. Project Overview</a>
+    </li>
+    <li class="">
+      <a href="03. Project Details.html">03. Project Details</a>
+    </li>
+    <li class="">
+      <a href="04. Arvato Terms and Conditions.html">04. Arvato: Terms and Conditions</a>
+    </li>
+    <li class="">
+      <a href="05. Project Workspace.html">05. Project Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Creating Customer Segments with Arvato.html">Project Description - Creating Customer Segments with Arvato</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Creating Customer Segments with Arvato.html">Project Rubric - Creating Customer Segments with Arvato</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">Creating Customer Segments with Arvato</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>Preprocessing</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Have data values representing missing values been encoded consistently?</p>
+        </td>
+        <td>
+          <p>All missing values have been re-encoded in a consistent way as NaNs.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Has the quality of the data been assessed by looking at missing values by columns?</p>
+        </td>
+        <td>
+          <p>Columns with a large amount of missing values have been removed from the analysis. Patterns in missing values have been identified between other columns.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Has the quality of the data been assessed by looking at missing values by rows?</p>
+        </td>
+        <td>
+          <p>The data has been split into two parts based on how much data is missing from each row. The subsets have been compared to see if they are qualitatively different from one another.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Have categorical features been properly processed?</p>
+        </td>
+        <td>
+          <p>Categorical features have been explored and handled based on if they are binary or multi-level.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Have mixed-type features been properly processed?</p>
+        </td>
+        <td>
+          <p>Mixed-type features have been explored, resulting in re-engineered features.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Has the dataset been cleaned to include only relevant columns?</p>
+        </td>
+        <td>
+          <p>Dataset includes all original features with appropriate data types and re-engineered features. Features that are not formatted for further analysis have been excluded.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Has a function performing cleaning operations been created?</p>
+        </td>
+        <td>
+          <p>A function applying pre-processing operations has been created, so that the same steps can be applied to the general and customer demographics alike.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Feature Transformation</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Has feature scaling been applied to the data?</p>
+        </td>
+        <td>
+          <p>Feature scaling has been properly applied to the demographics data. Imputation has been performed to remove remaining missing values.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Have relationships between original features been investigated for the data?</p>
+        </td>
+        <td>
+          <p>Weights on at least three principal components are used to make inferences on correlations between original features of the data. General meanings are ascribed to principal components where applicable.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Have an appropriate number of features been selected following dimensionality reduction?</p>
+        </td>
+        <td>
+          <p>Principal component analysis has been applied to the data to create transformed features. A variability analysis has been performed to justify a decision on the number of features to retain.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Clustering</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Have an appropriate number of clusters been set?</p>
+        </td>
+        <td>
+          <p>Multiple cluster counts have been tested on the general demographics data, and the average point-centroid distances have been reported. A decision on the number of clusters to use is made and justified.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Have the customer demographics data been handled in a fashion consistent with the general demographics data?</p>
+        </td>
+        <td>
+          <p>Cleaning, feature transformation, dimensionality reduction, and clustering models are applied properly to the customer demographics data.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>What customer segments are popular or unpopular with the mail-order sales company?</p>
+        </td>
+        <td>
+          <p>A comparison is made between the general population and customers to identify segments of the population that are central to the sales company's base as well as those that are not.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div class="jumbotron">
+        <h3>Tips to make your project standout:</h3>
+        <p><ul>
+<li>Use the data dictionary to understand the meaning of variables in the dataset.</li>
+<li>Use plotting packages like matplotlib and seaborn as necessary to visualize trends in the data.</li>
+<li>Add additional cells to your notebook to organize your code in manageable pieces and make notes on your observations.</li>
+</ul></p>
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Creating Customer Segments with Arvato')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

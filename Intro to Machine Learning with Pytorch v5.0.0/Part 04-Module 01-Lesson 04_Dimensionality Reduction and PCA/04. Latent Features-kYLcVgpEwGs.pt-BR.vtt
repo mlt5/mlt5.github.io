@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:01.001 --> 00:00:04.471
+RECURSOS LATENTES
+
+00:00:04.845 --> 00:00:08.082
+Para apresentar a PCA,
+vamos considerar um exemplo:
+
+00:00:08.115 --> 00:00:11.657
+aqui temos um número
+de fatores relacionados a casas.
+
+00:00:11.690 --> 00:00:15.844
+Na verdade, há 2 características
+nas quais esses fatores se encaixam.
+
+00:00:15.877 --> 00:00:19.310
+O tamanho da casa
+e o bairro onde ela se encontra.
+
+00:00:19.707 --> 00:00:22.719
+Esses dois fatores são conhecidos
+como "recursos latentes".
+
+00:00:23.246 --> 00:00:26.547
+São recursos que não estão
+no conjunto de dados diretamente,
+
+00:00:26.580 --> 00:00:30.045
+mas englobam grupos de recursos
+que estão no conjunto de dados.
+
+00:00:30.386 --> 00:00:34.085
+Pesquisas geralmente têm perguntas
+relacionadas a recursos latentes.
+
+00:00:34.118 --> 00:00:36.535
+Dê uma olhada
+nessas perguntas de pesquisas.
+
+00:00:36.568 --> 00:00:40.425
+Pode identificar recursos latentes
+relacionados a elas?
+
+00:00:40.459 --> 00:00:42.680
+MEU GERENTE APOIA
+MEU CRESCIMENTO NA EMPRESA.
+
+00:00:42.713 --> 00:00:45.020
+CONSIGO CONTRIBUIR
+COM OS OBJETIVOS DA EMPRESA.
+
+00:00:45.053 --> 00:00:47.525
+MEU TRABALHO CONTRIBUI
+POSITIVAMENTE PARA O MUNDO.
+
+00:00:47.558 --> 00:00:50.327
+MINHAS OPINIÕES SÃO OUVIDAS
+EM DECISÕES SOBRE A EMPRESA.
+
+00:00:50.360 --> 00:00:55.142
+MEUS COLEGAS APOIAM
+MINHAS CONTRIBUIÇÕES.
+
