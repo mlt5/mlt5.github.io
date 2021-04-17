@@ -1,0 +1,324 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manipulate a DataFrame</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Pandas</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Instructors.html">01. Instructors</a>
+    </li>
+    <li class="">
+      <a href="02. Introduction to pandas.html">02. Introduction to pandas</a>
+    </li>
+    <li class="">
+      <a href="03. Why Use pandas.html">03. Why Use pandas?</a>
+    </li>
+    <li class="">
+      <a href="04. Creating pandas Series.html">04. Creating pandas Series</a>
+    </li>
+    <li class="">
+      <a href="05. Accessing and Deleting Elements in pandas Series.html">05. Accessing and Deleting Elements in pandas Series</a>
+    </li>
+    <li class="">
+      <a href="06. Arithmetic Operations on pandas Series.html">06. Arithmetic Operations on pandas Series</a>
+    </li>
+    <li class="">
+      <a href="07. Manipulate a Series.html">07. Manipulate a Series</a>
+    </li>
+    <li class="">
+      <a href="08. Creating pandas DataFrames.html">08. Creating pandas DataFrames</a>
+    </li>
+    <li class="">
+      <a href="09. Accessing Elements in pandas DataFrames.html">09. Accessing Elements in pandas DataFrames</a>
+    </li>
+    <li class="">
+      <a href="10. Dealing with NaN.html">10. Dealing with NaN</a>
+    </li>
+    <li class="">
+      <a href="11. Manipulate a DataFrame.html">11. Manipulate a DataFrame</a>
+    </li>
+    <li class="">
+      <a href="12. Loading Data into a pandas DataFrame.html">12. Loading Data into a pandas DataFrame</a>
+    </li>
+    <li class="">
+      <a href="13. Glossary.html">13. Glossary</a>
+    </li>
+    <li class="">
+      <a href="14. Getting Set Up for the Mini-Project.html">14. Getting Set Up for the Mini-Project</a>
+    </li>
+    <li class="">
+      <a href="15. Mini-Project Statistics From Stock Data.html">15. Mini-Project: Statistics From Stock Data</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">11. Manipulate a DataFrame</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div class="nav nav-tabs nav-fill" role="tablist" id="question-tabs">
+    <a href="#556115-book_r-py" class="nav-item nav-link  active show" id="tab-556115-book_r-py" data-toggle="tab" role="tab"
+      aria-controls="556115-book_r-py" aria-selected="true">book_r.py</a>
+    <a href="#556115-solution-py" class="nav-item nav-link " id="tab-556115-solution-py" data-toggle="tab" role="tab"
+      aria-controls="556115-solution-py" aria-selected="false">solution.py</a>
+  </div>
+
+  <div class="tab-content" style="padding: 20px 0;" id="question-tab-contents">
+    <div class="tab-pane  active show" id="556115-book_r-py" aria-labelledby="tab-556115-book_r-py" role="tabpanel">
+      <pre><code></code>import pandas as pd
+import numpy as np
+
+# DO NOT CHANGE THE VARIABLE NAMES
+
+# Set the precision of our dataframes to one decimal place.
+pd.set_option(&#x27;precision&#x27;, 1)
+
+# Create a Pandas DataFrame that contains the ratings some users have given to a series of books. 
+# The ratings given are in the range from 1 to 5, with 5 being the best score. 
+# The names of the books, the corresponding authors, and the ratings of each user are given below:
+
+books &#x3D; pd.Series(data &#x3D; [&#x27;Great Expectations&#x27;, &#x27;Of Mice and Men&#x27;, &#x27;Romeo and Juliet&#x27;, &#x27;The Time Machine&#x27;, &#x27;Alice in Wonderland&#x27; ])
+authors &#x3D; pd.Series(data &#x3D; [&#x27;Charles Dickens&#x27;, &#x27;John Steinbeck&#x27;, &#x27;William Shakespeare&#x27;, &#x27; H. G. Wells&#x27;, &#x27;Lewis Carroll&#x27; ])
+
+# User ratings are in the order of the book titles mentioned above
+# If a user has not rated all books, Pandas will automatically consider the missing values as NaN.
+# If a user has mentioned &#x60;np.nan&#x60; value, then also it means that the user has not yet rated that book.
+user_1 &#x3D; pd.Series(data &#x3D; [3.2, np.nan ,2.5])
+user_2 &#x3D; pd.Series(data &#x3D; [5., 1.3, 4.0, 3.8])
+user_3 &#x3D; pd.Series(data &#x3D; [2.0, 2.3, np.nan, 4])
+user_4 &#x3D; pd.Series(data &#x3D; [4, 3.5, 4, 5, 4.2])
+
+
+# Use the data above to create a Pandas DataFrame that has the following column
+# labels: &#x27;Author&#x27;, &#x27;Book Title&#x27;, &#x27;User 1&#x27;, &#x27;User 2&#x27;, &#x27;User 3&#x27;, &#x27;User 4&#x27;. 
+# Let Pandas automatically assign numerical row indices to the DataFrame. 
+
+# TO DO: Create a dictionary with the data given above
+dat &#x3D; 
+
+# TO DO: Create a Pandas DataFrame using the dictionary created above
+book_ratings &#x3D; 
+
+# TO DO:
+# If you created the dictionary correctly you should have a Pandas DataFrame
+# that has column labels: 
+# &#x27;Author&#x27;, &#x27;Book Title&#x27;, &#x27;User 1&#x27;, &#x27;User 2&#x27;, &#x27;User 3&#x27;, &#x27;User 4&#x27; 
+# and row indices 0 through 4.
+
+# Now replace all the NaN values in your DataFrame with the average rating in
+# each column. Replace the NaN values in place. 
+# HINT: Use the &#x60;pandas.DataFrame.fillna(value, inplace &#x3D; True)&#x60; function for substituting the NaN values. 
+# Write your code below:
+
+
+
+</code></pre>
+    </div>
+    <div class="tab-pane " id="556115-solution-py" aria-labelledby="tab-556115-solution-py" role="tabpanel">
+      <pre><code></code>import pandas as pd
+import numpy as np
+
+pd.set_option(&#x27;precision&#x27;, 1)
+
+books &#x3D; pd.Series(data &#x3D; [&#x27;Great Expectations&#x27;, &#x27;Of Mice and Men&#x27;, &#x27;Romeo and Juliet&#x27;, &#x27;The Time Machine&#x27;, &#x27;Alice in Wonderland&#x27; ])
+authors &#x3D; pd.Series(data &#x3D; [&#x27;Charles Dickens&#x27;, &#x27;John Steinbeck&#x27;, &#x27;William Shakespeare&#x27;, &#x27; H. G. Wells&#x27;, &#x27;Lewis Carroll&#x27; ])
+user_1 &#x3D; pd.Series(data &#x3D; [3.2, np.nan ,2.5])
+user_2 &#x3D; pd.Series(data &#x3D; [5., 1.3, 4.0, 3.8])
+user_3 &#x3D; pd.Series(data &#x3D; [2.0, 2.3, np.nan, 4])
+user_4 &#x3D; pd.Series(data &#x3D; [4, 3.5, 4, 5, 4.2])
+
+dat &#x3D; {&#x27;Book Title&#x27; : books,
+       &#x27;Author&#x27; : authors,
+       &#x27;User 1&#x27; : user_1,
+       &#x27;User 2&#x27; : user_2,
+       &#x27;User 3&#x27; : user_3,
+       &#x27;User 4&#x27; : user_4}
+
+book_ratings &#x3D; pd.DataFrame(dat)
+
+book_ratings.fillna(book_ratings.mean(), inplace &#x3D; True)
+</code></pre>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="level-up">Level Up</h3>
+<p>From the DataFrame above can you now pick all the books that had a rating of 5?  <br><br />
+Hint - You can do this in just one line of code, by using <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.any.html" rel="noopener noreferrer" target="_blank">pandas.DataFrame.any</a>. Try to do it yourself first, you'll find the answer below:</p>
+<div id="spoiler_1" style="display:none">
+#### <font color="green">Here is one of the possible solutions:</font>
+<pre><code class="python language-python">best_rated = book_ratings[(book_ratings == 5).any(axis = 1)]['Book Title'].values</code></pre>
+#### Explanation<pre><code class="python language-python"># Step 1 - Highlight the rows containing a value = 5. 
+# This step will replace all values != 5 with NaN in the entire DataFrame. 
+best_rated = book_ratings[(book_ratings == 5)]
+
+# Step 2 - Extract the DataFrame containing only those rows that have a value = 5. 
+best_rated = book_ratings[(book_ratings == 5).any(axis = 1)]
+
+# Step 3 - Find the corresponding Book Title of the rows identified above. 
+# Returns a numpy.ndarray containing only the Book Titles
+best_rated = book_ratings[(book_ratings == 5).any(axis = 1)]['Book Title'].values</code></pre>
+
+The code above returns a NumPy ndarray that only contains the names of the books that had a rating of 5. 
+</div>
+<p><button type="button" id="myButton1" onclick="if(document.getElementById('spoiler_1') .style.display=='none') {document.getElementById('spoiler_1') .style.display=''}else{document.getElementById('spoiler_1') .style.display='none'}if (document.getElementById('myButton1').innerHTML=='Show Solution') {document.getElementById('myButton1').innerHTML='Hide Solution';}else{document.getElementById('myButton1').innerHTML = 'Show Solution';}">Show Solution</button></p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="12. Loading Data into a pandas DataFrame.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. Manipulate a DataFrame')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
