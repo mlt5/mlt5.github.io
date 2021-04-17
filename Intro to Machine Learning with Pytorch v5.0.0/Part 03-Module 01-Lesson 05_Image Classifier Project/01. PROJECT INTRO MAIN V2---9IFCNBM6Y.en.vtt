@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.210
+In the next few years, software developers will need to know how to
+
+00:00:03.210 --> 00:00:06.590
+incorporate deep learning models into everyday applications.
+
+00:00:06.590 --> 00:00:09.960
+Anything with a camera will be using an image classification,
+
+00:00:09.960 --> 00:00:11.910
+object detection, and face recognition,
+
+00:00:11.910 --> 00:00:15.165
+and so on, all based on deep learning models.
+
+00:00:15.165 --> 00:00:18.550
+For is user interfaces like Alexa, Cortana,
+
+00:00:18.550 --> 00:00:20.390
+and Google Assistant all powered by
+
+00:00:20.390 --> 00:00:23.950
+speech recognition models will become more and more common.
+
+00:00:23.950 --> 00:00:25.830
+So, in this project,
+
+00:00:25.830 --> 00:00:28.870
+you'll be implementing an image classification application.
+
+00:00:28.870 --> 00:00:33.040
+This app will train a deep learning model on a data set of images,
+
+00:00:33.040 --> 00:00:36.175
+then use the trained model to classify images.
+
+00:00:36.175 --> 00:00:38.400
+First, you'll develop your code in
+
+00:00:38.400 --> 00:00:41.510
+a Jupiter notebook to make sure your training implementation works.
+
+00:00:41.510 --> 00:00:43.110
+Then, you'll convert the code to
+
+00:00:43.110 --> 00:00:47.580
+a Python application that runs from the command line. Good luck.
+
