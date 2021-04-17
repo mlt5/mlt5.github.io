@@ -1,0 +1,182 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.469 --> 00:00:04.761
+Podemos fazer muito mais coisas
+com os arquivos.
+
+00:00:04.803 --> 00:00:08.308
+Por exemplo, vamos pegar o arquivo
+dictionary que baixamos
+
+00:00:08.350 --> 00:00:11.353
+e usar para ver se uma palavra
+está no dicionário.
+
+00:00:11.395 --> 00:00:13.410
+Existe um comando shell
+chamado "grep",
+
+00:00:13.452 --> 00:00:15.113
+que busca
+em um arquivo de texto
+
+00:00:15.155 --> 00:00:17.320
+linhas
+com conteúdos específicos.
+
+00:00:17.362 --> 00:00:19.719
+Se você passar uma palavra,
+como shell,
+
+00:00:19.761 --> 00:00:22.831
+e o nome do arquivo,
+como dictionary.txt,
+
+00:00:22.873 --> 00:00:26.072
+ele lerá o arquivo
+e mostrará todas as linhas
+
+00:00:26.114 --> 00:00:27.953
+que contêm a palavra.
+
+00:00:27.995 --> 00:00:30.456
+Mas e se - como neste caso -
+houver mais linhas
+
+00:00:30.498 --> 00:00:32.376
+do que podemos ver
+de uma vez?
+
+00:00:32.418 --> 00:00:34.257
+Algo que podemos fazer
+
+00:00:34.299 --> 00:00:37.359
+é pedir ao shell para enviar
+o output de grep
+
+00:00:37.401 --> 00:00:39.417
+para o comando less.
+
+00:00:39.459 --> 00:00:42.906
+Podemos fazer um direcionamento
+com a barra vertical.
+
+00:00:44.649 --> 00:00:45.957
+O que está acontecendo?
+
+00:00:45.999 --> 00:00:49.484
+O programa grep
+lê o arquivo de input
+
+00:00:49.526 --> 00:00:52.005
+e imprime as linhas
+que combinam com o padrão,
+
+00:00:52.047 --> 00:00:53.676
+mas o shell
+organizou as coisas
+
+00:00:53.718 --> 00:00:56.693
+de forma que o output
+não vá diretamente para o Terminal.
+
+00:00:56.735 --> 00:00:59.909
+Em vez disso, ele será enviado
+para o programa less,
+
+00:00:59.951 --> 00:01:03.188
+que exibe as linhas do Terminal
+uma página por vez.
+
+00:01:03.230 --> 00:01:04.916
+Para ler este comando,
+
+00:01:04.958 --> 00:01:09.276
+diríamos: "grep o shell
+no dictionary.txt
+
+00:01:09.318 --> 00:01:11.520
+e o direcione para less".
+
+00:01:11.562 --> 00:01:15.250
+O grep também pode operar no input
+a partir de outro programa.
+
+00:01:18.433 --> 00:01:22.312
+Por exemplo, obtemos um arquivo
+da internet usando curl
+
+00:01:22.354 --> 00:01:25.514
+e aplicamos o grep
+para um padrão específico
+
+00:01:26.171 --> 00:01:28.986
+sem precisarmos salvá-lo
+em um arquivo antes.
+
+00:01:30.833 --> 00:01:33.528
+O output deste comando curl
+
+00:01:33.570 --> 00:01:36.799
+será atribuído ao comando grep
+como input,
+
+00:01:36.841 --> 00:01:38.969
+em vez de grep ler
+de um arquivo.
+
+00:01:40.296 --> 00:01:44.688
+Como vemos, às vezes,
+uma parte do output do curl -
+
+00:01:44.730 --> 00:01:49.072
+como este medidor de progresso -,
+se mistura com o output do grep,
+
+00:01:49.114 --> 00:01:53.111
+e isso pode ser confuso.
+Eles não se misturam no shell,
+
+00:01:53.153 --> 00:01:54.613
+mas no Terminal.
+
+00:01:54.655 --> 00:01:58.080
+Se enviarmos isto para um arquivo,
+não haveria problema.
+
+00:01:58.122 --> 00:02:00.787
+Se você quiser saber
+quantas combinações existem -
+
+00:02:00.829 --> 00:02:04.123
+como a quantidade de palavras
+com a string "fish" -,
+
+00:02:04.165 --> 00:02:06.596
+existem algumas maneiras
+de fazer isso.
+
+00:02:06.638 --> 00:02:09.161
+Uma delas é direcionando
+o output do grep
+
+00:02:09.203 --> 00:02:13.041
+para o programa
+de contagem de palavras, o wc,
+
+00:02:13.083 --> 00:02:16.681
+e pedir que ele conte as linhas
+com a opção -l.
+
+00:02:16.723 --> 00:02:18.827
+Obtemos o número 105.
+
+00:02:19.706 --> 00:02:24.442
+Outra forma é dar ao grep
+a opção -c, de contagem.
+
+00:02:25.867 --> 00:02:27.433
+Obtemos os mesmos 105.
+

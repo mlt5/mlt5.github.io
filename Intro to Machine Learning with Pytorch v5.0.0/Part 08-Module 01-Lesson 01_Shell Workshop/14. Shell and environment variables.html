@@ -1,0 +1,307 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shell and environment variables</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Shell Workshop</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. The Command Line.html">01. The Command Line</a>
+    </li>
+    <li class="">
+      <a href="02. Intro to the Shell.html">02. Intro to the Shell</a>
+    </li>
+    <li class="">
+      <a href="03. Windows Installing Git Bash.html">03. Windows: Installing Git Bash</a>
+    </li>
+    <li class="">
+      <a href="04. Opening a terminal.html">04. Opening a terminal</a>
+    </li>
+    <li class="">
+      <a href="05. Your first command (echo).html">05. Your first command (echo)</a>
+    </li>
+    <li class="">
+      <a href="06. Navigating directories (ls, cd, ..).html">06. Navigating directories (ls, cd, ..)</a>
+    </li>
+    <li class="">
+      <a href="07. Current working directory (pwd).html">07. Current working directory (pwd)</a>
+    </li>
+    <li class="">
+      <a href="08. Parameters and options (ls -l).html">08. Parameters and options (ls -l)</a>
+    </li>
+    <li class="">
+      <a href="09. Organizing your files (mkdir, mv).html">09. Organizing your files (mkdir, mv)</a>
+    </li>
+    <li class="">
+      <a href="10. Downloading (curl).html">10. Downloading (curl)</a>
+    </li>
+    <li class="">
+      <a href="11. Viewing files (cat, less).html">11. Viewing files (cat, less)</a>
+    </li>
+    <li class="">
+      <a href="12. Removing things (rm, rmdir).html">12. Removing things (rm, rmdir)</a>
+    </li>
+    <li class="">
+      <a href="13. Searching and pipes (grep, wc).html">13. Searching and pipes (grep, wc)</a>
+    </li>
+    <li class="">
+      <a href="14. Shell and environment variables.html">14. Shell and environment variables</a>
+    </li>
+    <li class="">
+      <a href="15. Startup files (.bash_profile).html">15. Startup files (.bash_profile)</a>
+    </li>
+    <li class="">
+      <a href="16. Controlling the shell prompt ($PS1).html">16. Controlling the shell prompt ($PS1)</a>
+    </li>
+    <li class="">
+      <a href="17. Aliases.html">17. Aliases</a>
+    </li>
+    <li class="">
+      <a href="18. Keep learning!.html">18. Keep learning!</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">14. Shell and environment variables</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="shell-and-environment-variables">Shell and environment variables</h1>
+<p>Let see what more we can do with the Shell.</p>
+<p>Use the <em>workspace</em> below the video to practice the commands and remember to practice locally in your computer too.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Ud206 017 Shell P11 - Variables</p></h3>
+  <video controls>
+  <source src="14. Ud206 017 Shell P11 - Variables-Dx3WlMZk8iA.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="14. Ud206 017 Shell P11 - Variables-Dx3WlMZk8iA.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="pt-BR" src="14. Ud206 017 Shell P11 - Variables-Dx3WlMZk8iA.pt-BR.vtt" label="pt-BR">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="-workspace">## Workspace</h2>
+<p>You can use this workspace to test your commands.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div class="jumbotron">
+  <h3>Code</h3>
+
+  <p class="lead">If you need a code on the <a href="https://github.com/udacity"
+    target="_blank">https://github.com/udacity</a>. </p>
+
+  </ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Shell or environment?</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Do you think the <code>PWD</code> variable is a shell variable or an environment variable?</p>
+<p>(Don't know what it is? Try <code>echo $PWD</code>.)</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1489706549683" name="283091" id="a1489706549683">
+        <label for="a1489706549683"><p>Shell variable</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1489706572500" name="283091" id="a1489706572500">
+        <label for="a1489706572500"><p>Environment variable</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Environment variable
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Display two variables</p></h3>
+  <div>
+  <div>
+    <p><strong>QUESTION:</strong> <p>Write a shell command using echo that displays the contents of the variables <code>LOGNAME</code> and <code>PWD</code> with a space between them.<br />
+<em>Note</em>: In Git bash in Windows you won't get the result from <code>LOGNAME</code> variable because it doesn't exist, try using the command <code>whoami</code> instead.</p></p>
+    <div class="" form-group">
+      <label for="answer"><strong>ANSWER:</strong></label>
+      <textarea class="form-control" id="answer"></textarea>
+    </div>
+  </div>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <p><i>These answers need to be solved by yourself, I believe you can do it</i></p>
+
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="recomendation">Recomendation</h2>
+<p>The Shell commands can be installed or not on your computer if you are using Linux or Mac and you have issues running the commands check the documentation specifically for the Operating System.</p>
+<ul>
+<li><a href="https://ss64.com/bash/" rel="noopener noreferrer" target="_blank">Linux</a></li>
+<li><a href="https://github.com/0nn0/terminal-mac-cheatsheet" rel="noopener noreferrer" target="_blank">MACOS</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="15. Startup files (.bash_profile).html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('14. Shell and environment variables')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

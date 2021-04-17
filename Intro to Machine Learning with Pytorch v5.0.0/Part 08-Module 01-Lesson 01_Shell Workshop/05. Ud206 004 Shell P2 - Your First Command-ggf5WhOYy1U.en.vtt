@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:02.250
+So here we are in a terminal.
+
+00:00:02.250 --> 00:00:06.540
+Inside the terminal window,
+we see a little message here,
+
+00:00:06.540 --> 00:00:10.419
+and another message
+here, and a cursor.
+
+00:00:10.419 --> 00:00:13.390
+Now, this message
+is the Shell prompt.
+
+00:00:13.390 --> 00:00:15.730
+It usually displays some
+information about the computer
+
+00:00:15.730 --> 00:00:17.289
+you're logged into.
+
+00:00:17.289 --> 00:00:18.910
+Exactly what
+message you see here
+
+00:00:18.910 --> 00:00:20.559
+will depend on your system.
+
+00:00:20.559 --> 00:00:23.479
+Later on, we'll see
+how to change it.
+
+00:00:23.480 --> 00:00:26.719
+If you type something in at the
+Shell prompt and press Enter,
+
+00:00:26.719 --> 00:00:28.189
+the Shell will try
+to run whatever
+
+00:00:28.190 --> 00:00:29.770
+you typed as a command.
+
+00:00:29.769 --> 00:00:31.519
+Throughout this course,
+you'll be learning
+
+00:00:31.519 --> 00:00:33.259
+a bunch of Shell commands.
+
+00:00:33.259 --> 00:00:36.129
+Here's the first one.
+
+00:00:36.130 --> 00:00:39.280
+The echo command is how we get
+the Shell to print messages
+
+00:00:39.280 --> 00:00:40.600
+back to us.
+
+00:00:40.600 --> 00:00:44.890
+It's like console.log in
+JavaScript or Print in Python.
+
+00:00:44.890 --> 00:00:46.340
+Try it out.
+
+00:00:46.340 --> 00:00:48.220
+OK, what happens if I
+want the greeting to be
+
+00:00:48.219 --> 00:00:50.350
+a little bit more enthusiastic?
+
+00:00:50.350 --> 00:00:53.929
+Hello, shello followed
+by two exclamation marks.
+
+00:00:53.929 --> 00:00:55.630
+Huh, that's weird.
+
+00:00:55.630 --> 00:00:56.920
+Hello, shello echo.
+
+00:00:56.920 --> 00:00:58.216
+Hello, shello.
+
+00:00:58.216 --> 00:00:59.512
+Hello, shello echo.
+
+00:00:59.512 --> 00:01:00.280
+Hello, shello.
+
+00:01:00.280 --> 00:01:02.350
+Hey, if I said that a
+bunch of times in a row
+
+00:01:02.350 --> 00:01:05.950
+that could be a number one jam.
+
+00:01:05.950 --> 00:01:07.120
+Hello, shello echo.
+
+00:01:07.120 --> 00:01:07.980
+Hello, shello.
+
+00:01:07.980 --> 00:01:09.189
+Hello, shello echo.
+
+00:01:09.189 --> 00:01:10.509
+Hello, shello.
+
+00:01:10.510 --> 00:01:12.700
+The point being, there
+are some characters
+
+00:01:12.700 --> 00:01:15.100
+that have a special
+meaning to the Shell.
+
+00:01:15.099 --> 00:01:17.353
+The exclamation
+mark is one of them.
+
+00:01:17.353 --> 00:01:19.269
+If you're ever typing
+something into the Shell
+
+00:01:19.269 --> 00:01:23.310
+and it seems to be treating what
+you're saying in a weird way,
+
+00:01:23.310 --> 00:01:27.620
+all you usually need to do is
+to put single quotes around it.
+
+00:01:27.620 --> 00:01:28.540
+Huh, there we go.
+
+00:01:28.540 --> 00:01:31.300
+That's a little bit
+less repetitive.
+

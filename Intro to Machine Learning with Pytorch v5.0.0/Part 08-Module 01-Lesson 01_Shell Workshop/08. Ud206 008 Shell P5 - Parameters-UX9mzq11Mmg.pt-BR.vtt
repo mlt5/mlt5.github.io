@@ -1,0 +1,81 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.249 --> 00:00:04.889
+Vimos quantos comandos shell
+fornecem um arquivo ou um diretório,
+
+00:00:04.931 --> 00:00:07.242
+como o ls e o cd,
+
+00:00:07.284 --> 00:00:10.053
+mas esta não é a única coisa
+que podemos dizer a eles,
+
+00:00:10.086 --> 00:00:13.165
+pois eles também suportam opcionais,
+flags ou parâmetros,
+
+00:00:13.207 --> 00:00:16.161
+que ativam comportamentos extras
+ou recursos especiais.
+
+00:00:16.203 --> 00:00:19.273
+Eis um exemplo: ls -l.
+
+00:00:19.315 --> 00:00:22.561
+O -l é uma opção do ls.
+
+00:00:23.194 --> 00:00:25.983
+Também podemos usá-lo
+com o nome de um diretório,
+
+00:00:26.025 --> 00:00:27.441
+desta forma.
+
+00:00:27.483 --> 00:00:32.617
+Isso imprimirá uma listagem
+mais longa e detalhada dos arquivos.
+
+00:00:32.659 --> 00:00:34.377
+O l significa "longa".
+
+00:00:34.419 --> 00:00:37.721
+Experimente para ver
+o que você encontrará.
+
+00:00:37.763 --> 00:00:40.330
+Eis outra coisa
+que podemos experimentar.
+
+00:00:41.041 --> 00:00:44.187
+O shell permite combinar
+nomes de arquivo com um padrão.
+
+00:00:44.229 --> 00:00:47.524
+Imagine que você deseja listar
+todos os arquivos em PDF
+
+00:00:47.566 --> 00:00:49.571
+do diretório Documents.
+
+00:00:49.613 --> 00:00:53.244
+Para isso, usamos o asterisco
+desta forma:
+
+00:00:53.286 --> 00:00:57.332
+ls/ -l Documents/*.pdf.
+
+00:00:57.374 --> 00:01:02.773
+O shell transforma o asterisco
+em uma lista com todos os arquivos
+
+00:01:02.815 --> 00:01:05.019
+cujos nomes combinam
+com esse padrão.
+
+00:01:05.061 --> 00:01:10.845
+Nesse caso, serão os arquivos
+cujos nomes terminam com .pdf.
+

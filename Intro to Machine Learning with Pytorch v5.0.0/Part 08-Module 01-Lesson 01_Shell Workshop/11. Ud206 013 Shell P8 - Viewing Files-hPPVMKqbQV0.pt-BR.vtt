@@ -1,0 +1,89 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.490 --> 00:00:02.617
+Agora que obtemos
+arquivos da internet,
+
+00:00:02.659 --> 00:00:05.153
+o que podemos fazer
+com eles?
+
+00:00:05.195 --> 00:00:07.164
+Existe um comando shell
+chamado "cat",
+
+00:00:07.206 --> 00:00:10.158
+que lê o arquivo
+e cria o output com o conteúdo.
+
+00:00:10.200 --> 00:00:12.218
+Ele lê qualquer quantidade
+de arquivos.
+
+00:00:12.260 --> 00:00:14.659
+O nome cat significa
+"encadear"
+
+00:00:14.701 --> 00:00:17.194
+ou "concatenar",
+
+00:00:17.236 --> 00:00:19.727
+que significa executar várias coisas
+de uma vez.
+
+00:00:19.769 --> 00:00:23.611
+Vamos experimentar
+em cat dictionary.txt.
+
+00:00:24.835 --> 00:00:27.794
+Vemos "zuchinnis", "zwieback"
+e "zygote".
+
+00:00:27.836 --> 00:00:30.706
+Isso não é útil se quisermos ver
+o começo do arquivo.
+
+00:00:30.748 --> 00:00:34.708
+Ele abriu o arquivo tão rápido
+que foi direto para o final.
+
+00:00:34.750 --> 00:00:40.573
+Felizmente, existe outro programa -
+less -, que exibe menos do arquivo.
+
+00:00:40.615 --> 00:00:44.175
+Ele exibirá uma tela
+do arquivo por vez.
+
+00:00:44.217 --> 00:00:46.520
+Pressionamos espaço
+para rolar para baixo...
+
+00:00:47.519 --> 00:00:49.407
+ou podemos usar as setas.
+
+00:00:50.767 --> 00:00:56.056
+Existem outros comandos, como o B
+para retornar ou "/" para buscar.
+
+00:00:57.847 --> 00:01:01.279
+Quando terminamos com o less,
+pressionamos Q para sair.
+
+00:01:01.321 --> 00:01:02.700
+O less é muito útil,
+
+00:01:02.742 --> 00:01:05.312
+ele é utilizado internamente
+por outros programas
+
+00:01:05.354 --> 00:01:07.712
+que precisam exibir
+muito output
+
+00:01:07.754 --> 00:01:09.600
+e dar a chance
+de você ver tudo.
+

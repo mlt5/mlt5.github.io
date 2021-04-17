@@ -1,0 +1,170 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.357 --> 00:00:02.756
+O shell não é apenas
+uma interface de usuário,
+
+00:00:02.798 --> 00:00:04.917
+é também uma linguagem
+de programação.
+
+00:00:04.959 --> 00:00:08.772
+Arquivos contendo comandos do shell
+se chamam "script shell".
+
+00:00:08.814 --> 00:00:11.060
+Eles podem conter
+um ou dois comandos -
+
+00:00:11.102 --> 00:00:12.976
+assim como vimos
+no prompt do shell -,
+
+00:00:13.018 --> 00:00:16.456
+ou podem ser complexos
+e conter muitas funções,
+
+00:00:16.498 --> 00:00:20.223
+mas não veremos muito
+a programação shell aqui.
+
+00:00:20.265 --> 00:00:24.751
+Porém, existe um lugar muito útil
+para quem usa o shell,
+
+00:00:24.793 --> 00:00:27.709
+e isso fica na personalização
+do shell.
+
+00:00:27.751 --> 00:00:29.212
+Eis um exemplo:
+
+00:00:29.254 --> 00:00:32.302
+é muito comum os usuários
+do shell instalarem programas
+
+00:00:32.344 --> 00:00:36.375
+no subdiretório do diretório chamado
+de "bin", que significa binário,
+
+00:00:36.417 --> 00:00:40.239
+mas o shell não vem pré-configurado
+para saber que existem comandos ali.
+
+00:00:40.281 --> 00:00:43.407
+Se você instalar um programa
+em bin/magic
+
+00:00:43.449 --> 00:00:46.815
+e quiser executá-lo do shell,
+é preciso digitar o diretório
+
+00:00:46.857 --> 00:00:48.513
+e o nome do comando.
+
+00:00:48.555 --> 00:00:52.416
+Podemos fazer isso adicionando
+o diretório à variável PATH,
+
+00:00:54.944 --> 00:00:58.249
+mas isso será reiniciado
+sempre que iniciarmos um novo shell.
+
+00:00:58.985 --> 00:01:00.927
+Para que a alteração continue,
+
+00:01:00.969 --> 00:01:04.071
+ela deve estar no arquivo
+de configuração do shell.
+
+00:01:04.113 --> 00:01:08.509
+O shell bash pode executar
+alguns arquivos ao iniciar
+
+00:01:08.551 --> 00:01:10.210
+para obter configurações.
+
+00:01:10.252 --> 00:01:13.649
+No Mac ou no sistema Windows,
+com Git Bash,
+
+00:01:13.691 --> 00:01:16.594
+o shell em todo Terminal aberto
+executará os comandos
+
+00:01:16.636 --> 00:01:20.106
+em um arquivo
+chamado ".bash_profile".
+
+00:01:20.148 --> 00:01:24.662
+No sistema Linux, .bash_profile só
+executa para algumas sessões shell,
+
+00:01:24.704 --> 00:01:26.689
+especificamente nas de login.
+
+00:01:26.731 --> 00:01:30.767
+Shells non-login executam
+um arquivo chamado ".bashrc".
+
+00:01:30.809 --> 00:01:32.879
+Essa inconsistência
+pode ser um problema
+
+00:01:32.921 --> 00:01:34.986
+quando usamos a mesma
+configuração shell
+
+00:01:35.028 --> 00:01:37.246
+em diferentes sistemas
+operacionais.
+
+00:01:37.288 --> 00:01:41.459
+Para resolver isso, adicionamos
+uma instrução ao .bash_profile
+
+00:01:41.501 --> 00:01:46.035
+dizendo que, se houver o arquivo
+.bashrc, ele executará o arquivo.
+
+00:01:46.077 --> 00:01:48.560
+Se estiver no Mac
+ou no Windows,
+
+00:01:48.602 --> 00:01:52.175
+use o .bash_profile
+sem preocupação.
+
+00:01:52.217 --> 00:01:54.659
+O comando adicionado
+ao arquivo de configuração
+
+00:01:54.701 --> 00:01:56.841
+será executado
+ao iniciarmos o shell,
+
+00:01:56.883 --> 00:02:00.747
+isso inclui atribuições de variáveis
+como a alteração de $PATH.
+
+00:02:00.789 --> 00:02:04.547
+Podemos incluir o que desejarmos ver
+no início da sessão shell.
+
+00:02:04.589 --> 00:02:07.391
+Talvez você queira ver a data
+e uma mensagem amigável.
+
+00:02:07.433 --> 00:02:09.621
+Sem problema,
+basta colocar o comando date
+
+00:02:09.663 --> 00:02:14.497
+e algo como echo "Hey there!".
+
+00:02:14.539 --> 00:02:18.738
+Ao iniciar um novo shell,
+os comandos serão executados.
+

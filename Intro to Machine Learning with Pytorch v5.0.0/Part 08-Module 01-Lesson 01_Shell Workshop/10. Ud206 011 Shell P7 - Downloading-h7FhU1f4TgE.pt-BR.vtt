@@ -1,0 +1,153 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.334 --> 00:00:03.508
+Até agora fizemos várias coisas
+com arquivos e diretórios,
+
+00:00:03.550 --> 00:00:06.172
+mas de onde vêm os arquivos?
+
+00:00:06.214 --> 00:00:07.560
+Eles vêm da internet.
+
+00:00:07.602 --> 00:00:10.655
+Existe um comando shell
+para baixar um arquivo da internet,
+
+00:00:10.697 --> 00:00:12.485
+e esse é o comando curl,
+
+00:00:12.527 --> 00:00:15.069
+que significa "buscar um URL"
+
+00:00:15.111 --> 00:00:17.404
+ou uma página na internet.
+
+00:00:17.446 --> 00:00:20.323
+Quem teve a ideia desse nome
+tentou ser engraçado.
+
+00:00:20.365 --> 00:00:23.124
+Podemos usar curl
+para obter qualquer página,
+
+00:00:23.166 --> 00:00:26.362
+mas ele exibe o código-fonte
+da página,
+
+00:00:26.404 --> 00:00:29.277
+algo que é legal,
+mas nem sempre será útil.
+
+00:00:29.319 --> 00:00:32.638
+Se tentarmos obter
+http://google.com,
+
+00:00:32.680 --> 00:00:36.861
+ele exibirá um HTML
+que manda para outro lugar.
+
+00:00:36.903 --> 00:00:38.797
+É preciso adicionar
+opções ao curl,
+
+00:00:38.839 --> 00:00:40.552
+curl -L,
+
+00:00:40.594 --> 00:00:42.753
+que pede para seguir
+os redirecionamentos,
+
+00:00:42.795 --> 00:00:46.274
+então veremos o código-fonte
+da página do google.com.
+
+00:00:46.961 --> 00:00:51.328
+Prontinho. Este é o código-fonte
+em JavaScript da página google.com.
+
+00:00:51.370 --> 00:00:56.184
+Há coisas como "Estou com sorte"
+e "Pesquisa Google".
+
+00:00:56.226 --> 00:00:59.337
+Isto é como abrir
+a exibição da fonte
+
+00:00:59.379 --> 00:01:01.184
+nas ferramentas
+do desenvolvedor.
+
+00:01:01.226 --> 00:01:03.344
+Isso é útil
+para verificar sites,
+
+00:01:03.386 --> 00:01:07.539
+mas o curl é muito útil
+para baixar arquivos ou páginas
+
+00:01:07.581 --> 00:01:08.914
+pelo URL.
+
+00:01:08.956 --> 00:01:12.658
+Para ele escrever em um arquivo
+em vez de exibir no Terminal,
+
+00:01:12.700 --> 00:01:15.244
+usamos a opção -o.
+
+00:01:15.286 --> 00:01:17.794
+Digitamos curl -o
+
+00:01:17.836 --> 00:01:20.589
+seguido pelo nome escolhido
+para salvar o arquivo,
+
+00:01:20.631 --> 00:01:22.357
+como google.html.
+
+00:01:22.399 --> 00:01:26.203
+Isto é um padrão comum
+para comandos shell.
+
+00:01:26.245 --> 00:01:28.715
+Comece com o nome do comando
+
+00:01:28.757 --> 00:01:34.553
+seguido por algumas opções,
+como -o google.html -L,
+
+00:01:34.892 --> 00:01:37.968
+e do objeto
+que desejamos trabalhar,
+
+00:01:38.010 --> 00:01:39.466
+como o URL.
+
+00:01:40.266 --> 00:01:41.657
+Ao executarmos,
+
+00:01:41.699 --> 00:01:45.033
+o curl exibirá uma mensagem
+de progresso enquanto baixa.
+
+00:01:45.075 --> 00:01:47.880
+Ao terminar,
+o prompt retornará.
+
+00:01:47.922 --> 00:01:52.400
+É bem comum que os programas Unix
+não exibam mensagens
+
+00:01:52.442 --> 00:01:54.072
+depois do sucesso da execução,
+
+00:01:54.114 --> 00:01:55.746
+mas deu tudo certo
+
+00:01:55.788 --> 00:01:58.713
+e vemos o arquivo que criamos,
+o google.html.
+

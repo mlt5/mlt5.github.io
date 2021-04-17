@@ -1,0 +1,114 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.401 --> 00:00:03.151
+Já chega
+de listar os arquivos.
+
+00:00:03.193 --> 00:00:05.155
+Que tal trocá-los de posição?
+
+00:00:05.197 --> 00:00:09.493
+Temos este diretório Documents
+com vários arquivos dentro,
+
+00:00:09.535 --> 00:00:11.349
+e está um pouco bagunçado.
+
+00:00:11.391 --> 00:00:14.773
+Eu quero criar subdiretórios
+e organizar as coisas.
+
+00:00:14.815 --> 00:00:18.476
+No GUI, eu precisaria
+arrastar muitas coisas
+
+00:00:18.518 --> 00:00:20.500
+e criar novas pastas,
+
+00:00:20.542 --> 00:00:23.852
+mas, no shell,
+posso usar alguns comandos.
+
+00:00:23.894 --> 00:00:29.420
+O primeiro será mkdir,
+que cria um novo diretório.
+
+00:00:29.462 --> 00:00:33.397
+Eu baixei um monte de livros
+como arquivos epub.
+
+00:00:33.439 --> 00:00:38.460
+Eu criarei um diretório
+chamado "Documents/Books"
+
+00:00:38.502 --> 00:00:40.301
+para colocar os livros.
+
+00:00:40.343 --> 00:00:43.555
+Eu poderia usar o cd
+no diretório primeiro,
+
+00:00:43.597 --> 00:00:47.165
+mas não é necessário,
+posso criar o diretório daqui.
+
+00:00:47.207 --> 00:00:49.731
+Quando faço isso do shell,
+
+00:00:49.773 --> 00:00:52.861
+ele também aparece
+na interface gráfica.
+
+00:00:52.903 --> 00:00:56.331
+Agora eu moverei os arquivos epub
+para o diretório.
+
+00:00:56.373 --> 00:00:58.963
+O comando para mover
+as coisas é o mv,
+
+00:00:59.005 --> 00:01:00.303
+que solicita a mudança.
+
+00:01:00.345 --> 00:01:02.279
+Eu preciso informar
+duas coisas:
+
+00:01:02.321 --> 00:01:06.585
+de onde quero mover
+e para onde quero mover.
+
+00:01:09.354 --> 00:01:11.065
+Posso fazer isso
+individualmente,
+
+00:01:11.107 --> 00:01:14.167
+mas vimos que podemos usar
+o asterisco.
+
+00:01:14.209 --> 00:01:17.425
+Eu usarei mv, para mover,
+
+00:01:17.467 --> 00:01:21.273
+Documents/*.epub
+
+00:01:21.315 --> 00:01:23.530
+Documents/Books.
+
+00:01:23.572 --> 00:01:27.240
+O que são as coisas
+que desejo mover?
+
+00:01:27.282 --> 00:01:29.223
+Para onde quero movê-las?
+
+00:01:29.265 --> 00:01:32.458
+Se eu usar
+ls Documents/Books/
+
+00:01:34.001 --> 00:01:36.361
+ou abrir o diretório,
+lá estarão eles.
+
