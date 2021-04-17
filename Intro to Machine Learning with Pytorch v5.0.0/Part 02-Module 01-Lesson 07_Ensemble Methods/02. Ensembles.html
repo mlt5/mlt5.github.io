@@ -1,0 +1,254 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ensembles</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Ensemble Methods</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Ensembles.html">02. Ensembles</a>
+    </li>
+    <li class="">
+      <a href="03. Random Forests.html">03. Random Forests</a>
+    </li>
+    <li class="">
+      <a href="04. Bagging.html">04. Bagging</a>
+    </li>
+    <li class="">
+      <a href="05. AdaBoost.html">05. AdaBoost</a>
+    </li>
+    <li class="">
+      <a href="06. Weighting the Data.html">06. Weighting the Data</a>
+    </li>
+    <li class="">
+      <a href="07. Weighting the Models 1.html">07. Weighting the Models 1</a>
+    </li>
+    <li class="">
+      <a href="08. Weighting the Models 2.html">08. Weighting the Models 2</a>
+    </li>
+    <li class="">
+      <a href="09. Weighting the Models 3.html">09. Weighting the Models 3</a>
+    </li>
+    <li class="">
+      <a href="10. Combining the Models.html">10. Combining the Models</a>
+    </li>
+    <li class="">
+      <a href="11. AdaBoost in sklearn.html">11. AdaBoost in sklearn</a>
+    </li>
+    <li class="">
+      <a href="12. More Spam Classifying.html">12. More Spam Classifying</a>
+    </li>
+    <li class="">
+      <a href="13. Recap &amp; Additional Resources.html">13. Recap &amp; Additional Resources</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Ensembles</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="ensembles">Ensembles</h3>
+<p>This whole lesson (on ensembles) is about how we can combine (or ensemble) the models you have already seen in a way that makes the combination of these models better at predicting than the individual models.  </p>
+<p>Commonly the "weak" learners you use are decision trees.  In fact the default for most ensemble methods is a decision tree in sklearn.  However, you can change this value to any of the models you have seen so far.</p>
+<hr />
+<h3 id="why-would-we-want-to-ensemble-learners-together">Why Would We Want to Ensemble Learners Together?</h3>
+<p>There are two competing variables in finding a well fitting machine learning model: <strong>Bias</strong> and <strong>Variance</strong>.  It is common in interviews for you to be asked about this topic and how it pertains to different modeling techniques.  As a first pass, <a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff" rel="noopener noreferrer" target="_blank">the wikipedia is quite useful</a>.  However, I will give you my perspective and examples:</p>
+<p><strong>Bias</strong>: When a model has high bias, this means that means it doesn't do a good job of bending to the data.  An example of an algorithm that usually has high bias is linear regression.  Even with completely different datasets, we end up with the same line fit to the data.  When models have high bias, this is bad.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/anscombes-quartet-3.svg" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p><strong>Variance</strong>: When a model has high variance, this means that it changes drastically to meet the needs of every point in our dataset.  Linear models like the one above has low variance, but high bias.  An example of an algorithm that tends to have high variance and low bias is a decision tree (especially decision trees with no early stopping parameters).  A decision tree, as a high variance algorithm, will attempt to split every point into its own branch if possible.  This is a trait of high variance, low bias algorithms - they are extremely flexible to fit exactly whatever data they see.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/decision-tree-sketch.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>By combining algorithms, we can often build models that perform better by meeting in the middle in terms of bias and variance.  There are some other tactics that are used to combine algorithms in ways that help them perform better as well.  These ideas are based on minimizing bias and variance based on mathematical theories, like the central limit theorem.</p>
+<h4 id="introducing-randomness-into-ensembles">Introducing Randomness Into Ensembles</h4>
+<p>Another method that is used to improve ensemble methods is to introduce randomness into high variance algorithms before they are ensembled together.  The introduction of randomness combats the tendency of these algorithms to overfit (or fit directly to the data available).  There are two main ways that randomness is introduced:</p>
+<ol>
+<li><p><strong>Bootstrap the data</strong> - that is, sampling the data with replacement and fitting your algorithm to the sampled data.</p></li>
+<li><p><strong>Subset the features</strong> - in each split of a decision tree or with each algorithm used in an ensemble, only a subset of the total possible features are used.  </p></li>
+</ol>
+<p>In fact, these are the two random components used in the next algorithm you are going to see called <strong>random forests</strong>.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Random Forests.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Ensembles')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
