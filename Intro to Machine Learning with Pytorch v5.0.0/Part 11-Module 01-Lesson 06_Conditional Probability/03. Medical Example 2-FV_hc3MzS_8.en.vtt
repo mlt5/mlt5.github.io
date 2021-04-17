@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.380
+Of course, in reality,
+
+00:00:01.380 --> 00:00:04.195
+we don't know whether a person suffers cancer,
+
+00:00:04.195 --> 00:00:07.400
+but we can run a test, like a blood test.
+
+00:00:07.400 --> 00:00:11.805
+And the outcome of the blood test may be positive or negative.
+
+00:00:11.805 --> 00:00:13.500
+But like any good test,
+
+00:00:13.500 --> 00:00:16.815
+it tells me something about the thing I really care about,
+
+00:00:16.815 --> 00:00:18.820
+whether the person is cancerous or not.
+
+00:00:18.820 --> 00:00:23.040
+So, let's say, if the person has the cancer,
+
+00:00:23.040 --> 00:00:26.301
+the test comes up positive with a probability of 0.9.
+
+00:00:26.301 --> 00:00:30.870
+And that implies, if the person has cancer,
+
+00:00:30.870 --> 00:00:33.900
+the negative outcome would have a 0.1 probability.
+
+00:00:33.900 --> 00:00:36.720
+And that's because these two things have to add up to one.
+
+00:00:36.720 --> 00:00:42.780
+I've just given you a fairly complicated notation that says,
+
+00:00:42.780 --> 00:00:48.780
+the outcome of the test depends on whether the person has cancer or not.
+
+00:00:48.780 --> 00:00:53.220
+That is more complicated than everything else we talked about so far.
+
+00:00:53.220 --> 00:00:57.600
+We call this thing over here a conditional probability.
+
+00:00:57.600 --> 00:01:01.805
+And the way to understand this is very funny notation.
+
+00:01:01.805 --> 00:01:03.700
+There's a bar in the middle.
+
+00:01:03.700 --> 00:01:04.905
+And the bar says,
+
+00:01:04.905 --> 00:01:07.855
+what's the probability of the stuff on the left,
+
+00:01:07.855 --> 00:01:11.960
+given that we assume the stuff in the right is actually the case?
+
+00:01:11.960 --> 00:01:15.775
+Now, in reality, we don't know whether the person has cancer or not.
+
+00:01:15.775 --> 00:01:17.475
+And in a later unit,
+
+00:01:17.475 --> 00:01:23.000
+we're going to reason about whether the person has cancer given a certain dataset.
+
+00:01:23.000 --> 00:01:27.690
+But for now, we assume we have got like capabilities,
+
+00:01:27.690 --> 00:01:30.930
+that can tell with absolute certainty whether the person has cancer,
+
+00:01:30.930 --> 00:01:34.770
+and we can determine what the outcome of the test is.
+
+00:01:34.770 --> 00:01:38.095
+This is a test that isn't exactly deterministic.
+
+00:01:38.095 --> 00:01:39.525
+It makes mistakes.
+
+00:01:39.525 --> 00:01:43.035
+But it only makes a mistake in 10% of the cases,
+
+00:01:43.035 --> 00:01:45.668
+as illustrated by 0.1 down here.
+
+00:01:45.668 --> 00:01:46.875
+Now it turns out,
+
+00:01:46.875 --> 00:01:51.150
+I haven't fully specified the test.
+
+00:01:51.150 --> 00:01:57.345
+The same test might also be applied to a situation where the person does not have cancer.
+
+00:01:57.345 --> 00:02:02.424
+So, this little thing over here is my shortcut of not having cancer.
+
+00:02:02.424 --> 00:02:05.190
+And now, let me say the probability of the test,
+
+00:02:05.190 --> 00:02:07.265
+giving me a positive results,
+
+00:02:07.265 --> 00:02:09.575
+a false positive result,
+
+00:02:09.575 --> 00:02:13.015
+when there's no cancer is 0.2.
+
+00:02:13.015 --> 00:02:14.640
+You can now tell me,
+
+00:02:14.640 --> 00:02:17.070
+what's the probability of a negative outcome,
+
+00:02:17.070 --> 00:02:21.755
+in case we know for a fact the person doesn't have cancer.
+
+00:02:21.755 --> 00:02:24.000
+So please tell me.
+
