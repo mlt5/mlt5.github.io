@@ -1,0 +1,375 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gradient Descent: The Code</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Implementing Gradient Descent</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Mean Squared Error Function.html">01. Mean Squared Error Function</a>
+    </li>
+    <li class="">
+      <a href="02. Gradient Descent.html">02. Gradient Descent</a>
+    </li>
+    <li class="">
+      <a href="03. Gradient Descent The Math.html">03. Gradient Descent: The Math</a>
+    </li>
+    <li class="">
+      <a href="04. Gradient Descent The Code.html">04. Gradient Descent: The Code</a>
+    </li>
+    <li class="">
+      <a href="05. Implementing Gradient Descent.html">05. Implementing Gradient Descent</a>
+    </li>
+    <li class="">
+      <a href="06. Multilayer Perceptrons.html">06. Multilayer Perceptrons</a>
+    </li>
+    <li class="">
+      <a href="07. Backpropagation.html">07. Backpropagation</a>
+    </li>
+    <li class="">
+      <a href="08. Implementing Backpropagation.html">08. Implementing Backpropagation</a>
+    </li>
+    <li class="">
+      <a href="09. Further Reading.html">09. Further Reading</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Gradient Descent: The Code</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="gradient-descent-the-code">Gradient Descent: The Code</h1>
+<p>From before we saw that one weight update can be calculated as:</p>
+<p><span class="mathquill ud-math">\Delta w_i = \eta \, \delta x_i</span></p>
+<p>with the error term <span class="mathquill ud-math">\delta</span> as</p>
+<p><span class="mathquill ud-math"> \delta = (y - \hat y) f'(h) =  (y - \hat y) f'(\sum w_i x_i)</span></p>
+<p>Remember, in the above equation <span class="mathquill ud-math">(y - \hat y)</span> is the output error, and <span class="mathquill ud-math">f'(h)</span> refers to the derivative of the activation function, <span class="mathquill ud-math">f(h)</span>. We'll call that derivative the output gradient.</p>
+<p>Now I'll write this out in code for the case of only one output unit. We'll also be using the sigmoid as the activation function <span class="mathquill ud-math">f(h)</span>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <pre><code class="python language-python"># Defining the sigmoid function for activations
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+
+# Derivative of the sigmoid function
+def sigmoid_prime(x):
+    return sigmoid(x) * (1 - sigmoid(x))
+
+# Input data
+x = np.array([0.1, 0.3])
+# Target
+y = 0.2
+# Input to output weights
+weights = np.array([-0.8, 0.5])
+
+# The learning rate, eta in the weight step equation
+learnrate = 0.5
+
+# the linear combination performed by the node (h in f(h) and f'(h))
+h = x[0]*weights[0] + x[1]*weights[1]
+# or h = np.dot(x, weights)
+
+# The neural network output (y-hat)
+nn_output = sigmoid(h)
+
+# output error (y - y-hat)
+error = y - nn_output
+
+# output gradient (f'(h))
+output_grad = sigmoid_prime(h)
+
+# error term (lowercase delta)
+error_term = error * output_grad
+
+# Gradient descent step 
+del_w = [ learnrate * error_term * x[0],
+          learnrate * error_term * x[1]]
+# or del_w = learnrate * error_term * x</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p><em>Note</em>: If you are wondering where the derivative of the <code>sigmoid</code> function comes from (<code>sigmoid_prime</code> above), check out the derivation in <a href="https://math.stackexchange.com/questions/78575/derivative-of-sigmoid-function-sigma-x-frac11e-x" rel="noopener noreferrer" target="_blank">this post</a>.</p>
+<p>In the quiz below, you'll implement gradient descent in code yourself, although with a few differences (which we'll leave to you to figure out!) from the above example.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div class="nav nav-tabs nav-fill" role="tablist" id="question-tabs">
+    <a href="#263206-gradient-py" class="nav-item nav-link  active show" id="tab-263206-gradient-py" data-toggle="tab" role="tab"
+      aria-controls="263206-gradient-py" aria-selected="true">gradient.py</a>
+    <a href="#263206-solution-py" class="nav-item nav-link " id="tab-263206-solution-py" data-toggle="tab" role="tab"
+      aria-controls="263206-solution-py" aria-selected="false">solution.py</a>
+  </div>
+
+  <div class="tab-content" style="padding: 20px 0;" id="question-tab-contents">
+    <div class="tab-pane  active show" id="263206-gradient-py" aria-labelledby="tab-263206-gradient-py" role="tabpanel">
+      <pre><code></code>import numpy as np
+
+def sigmoid(x):
+    &quot;&quot;&quot;
+    Calculate sigmoid
+    &quot;&quot;&quot;
+    return 1/(1+np.exp(-x))
+
+def sigmoid_prime(x):
+    &quot;&quot;&quot;
+    # Derivative of the sigmoid function
+    &quot;&quot;&quot;
+    return sigmoid(x) * (1 - sigmoid(x))
+
+learnrate &#x3D; 0.5
+x &#x3D; np.array([1, 2, 3, 4])
+y &#x3D; np.array(0.5)
+
+# Initial weights
+w &#x3D; np.array([0.5, -0.5, 0.3, 0.1])
+
+### Calculate one gradient descent step for each weight
+### Note: Some steps have been consolidated, so there are
+###       fewer variable names than in the above sample code
+
+# TODO: Calculate the node&#x27;s linear combination of inputs and weights
+h &#x3D; None
+
+# TODO: Calculate output of neural network
+nn_output &#x3D; None
+
+# TODO: Calculate error of neural network
+error &#x3D; None
+
+# TODO: Calculate the error term
+#       Remember, this requires the output gradient, which we haven&#x27;t
+#       specifically added a variable for.
+error_term &#x3D; None
+
+# TODO: Calculate change in weights
+del_w &#x3D; None
+
+print(&#x27;Neural Network output:&#x27;)
+print(nn_output)
+print(&#x27;Amount of Error:&#x27;)
+print(error)
+print(&#x27;Change in Weights:&#x27;)
+print(del_w)</code></pre>
+    </div>
+    <div class="tab-pane " id="263206-solution-py" aria-labelledby="tab-263206-solution-py" role="tabpanel">
+      <pre><code></code>import numpy as np
+
+def sigmoid(x):
+    &quot;&quot;&quot;
+    Calculate sigmoid
+    &quot;&quot;&quot;
+    return 1/(1+np.exp(-x))
+
+def sigmoid_prime(x):
+    &quot;&quot;&quot;
+    # Derivative of the sigmoid function
+    &quot;&quot;&quot;
+    return sigmoid(x) * (1 - sigmoid(x))
+
+learnrate &#x3D; 0.5
+x &#x3D; np.array([1, 2, 3, 4])
+y &#x3D; np.array(0.5)
+
+# Initial weights
+w &#x3D; np.array([0.5, -0.5, 0.3, 0.1])
+
+### Calculate one gradient descent step for each weight
+### Note: Some steps have been consolidated, so there are
+###       fewer variable names than in the above sample code
+
+# TODO: Calculate the node&#x27;s linear combination of inputs and weights
+h &#x3D; np.dot(x, w)
+
+# TODO: Calculate output of neural network
+nn_output &#x3D; sigmoid(h)
+
+# TODO: Calculate error of neural network
+error &#x3D; y - nn_output
+
+# TODO: Calculate the error term
+#       Remember, this requires the output gradient, which we haven&#x27;t
+#       specifically added a variable for.
+error_term &#x3D; error * sigmoid_prime(h)
+# Note: The sigmoid_prime function calculates sigmoid(h) twice,
+#       but you&#x27;ve already calculated it once. You can make this
+#       code more efficient by calculating the derivative directly
+#       rather than calling sigmoid_prime, like this:
+# error_term &#x3D; error * nn_output * (1 - nn_output)
+
+# TODO: Calculate change in weights
+del_w &#x3D; learnrate * error_term * x
+
+print(&#x27;Neural Network output:&#x27;)
+print(nn_output)
+print(&#x27;Amount of Error:&#x27;)
+print(error)
+print(&#x27;Change in Weights:&#x27;)
+print(del_w)</code></pre>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Implementing Gradient Descent.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Gradient Descent: The Code')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

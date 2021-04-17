@@ -1,0 +1,485 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Backpropagation</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Implementing Gradient Descent</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Mean Squared Error Function.html">01. Mean Squared Error Function</a>
+    </li>
+    <li class="">
+      <a href="02. Gradient Descent.html">02. Gradient Descent</a>
+    </li>
+    <li class="">
+      <a href="03. Gradient Descent The Math.html">03. Gradient Descent: The Math</a>
+    </li>
+    <li class="">
+      <a href="04. Gradient Descent The Code.html">04. Gradient Descent: The Code</a>
+    </li>
+    <li class="">
+      <a href="05. Implementing Gradient Descent.html">05. Implementing Gradient Descent</a>
+    </li>
+    <li class="">
+      <a href="06. Multilayer Perceptrons.html">06. Multilayer Perceptrons</a>
+    </li>
+    <li class="">
+      <a href="07. Backpropagation.html">07. Backpropagation</a>
+    </li>
+    <li class="">
+      <a href="08. Implementing Backpropagation.html">08. Implementing Backpropagation</a>
+    </li>
+    <li class="">
+      <a href="09. Further Reading.html">09. Further Reading</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. Backpropagation</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Backpropagation</p></h3>
+  <video controls>
+  <source src="07. Backpropagation-MZL97-2joxQ.mp4" type="video/mp4">
+
+  <track default="false" kind="subtitles" srclang="zh-CN" src="07. Backpropagation-MZL97-2joxQ.zh-CN.vtt" label="zh-CN">
+  <track default="true" kind="subtitles" srclang="en-US" src="07. Backpropagation-MZL97-2joxQ.en-US.vtt" label="en-US">
+  <track default="false" kind="subtitles" srclang="ja-JP" src="07. Backpropagation-MZL97-2joxQ.ja-JP.vtt" label="ja-JP">
+  <track default="false" kind="subtitles" srclang="pt-BR" src="07. Backpropagation-MZL97-2joxQ.pt-BR.vtt" label="pt-BR">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="backpropagation">Backpropagation</h1>
+<p>Now we've come to the problem of how to make a multilayer neural network <em>learn</em>. Before, we saw how to update weights with gradient descent. The backpropagation algorithm is just an extension of that, using the chain rule to find the error with the respect to the weights connecting the input layer to the hidden layer (for a two layer network).</p>
+<p>To update the weights to hidden layers using gradient descent, you need to know how much error each of the hidden units contributed to the final output. Since the output of a layer is determined by the weights between layers, the error resulting from units is scaled by the weights going forward through the network. Since we know the error at the output, we can use the weights to work backwards to hidden layers.</p>
+<p>For example, in the output layer, you have errors <span class="mathquill ud-math">\delta^o_k</span> attributed to each output unit <span class="mathquill ud-math">k</span>. Then, the error attributed to hidden unit <span class="mathquill ud-math">j</span> is the output errors, scaled by the weights between the output and hidden layers (and the gradient):</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/backprop-error.gif" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Then, the gradient descent step is the same as before, just with the new errors:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/backprop-weight-update.gif" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>where <span class="mathquill ud-math">w_{ij}</span> are the weights between the inputs and hidden layer and <span class="mathquill ud-math">x_i</span> are input unit values. This form holds for however many layers there are. The weight steps are equal to the step size times the output error of the layer times the values of the inputs to that layer</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/backprop-general.gif" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Here, you get the output error, <span class="mathquill ud-math">\delta_{output}</span>, by propagating the errors backwards from higher layers. And the input values, <span class="mathquill ud-math">V_{in}</span> are the inputs to the layer, the hidden layer activations to the output unit for example.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="working-through-an-example">Working through an example</h3>
+<p>Let's walk through the steps of calculating the weight updates for a simple two layer network.  Suppose there are two input values, one hidden unit, and one output unit, with sigmoid activations on the hidden and output units. The following image depicts this network. (<strong>Note:</strong> the input values are shown as nodes at the bottom of the image, while the network's output value is shown as <span class="mathquill ud-math">\hat y</span> at the top. The inputs themselves do not count as a layer, which is why this is considered a two layer network.)</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/backprop-network.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Assume we're trying to fit some binary data and the target is <span class="mathquill ud-math">y = 1</span>. We'll start with the forward pass, first calculating the input to the hidden unit </p>
+<p><span class="mathquill ud-math">h = \sum_i w_i x_i = 0.1 \times 0.4 - 0.2 \times 0.3 = -0.02</span></p>
+<p>and the output of the hidden unit</p>
+<p><span class="mathquill ud-math">a = f(h) = \mathrm{sigmoid}(-0.02) = 0.495</span>.</p>
+<p>Using this as the input to the output unit, the output of the network is </p>
+<p><span class="mathquill ud-math">\hat y = f(W \cdot a) = \mathrm{sigmoid}(0.1 \times 0.495) = 0.512</span>.</p>
+<p>With the network output, we can start the backwards pass to calculate the weight updates for both layers. Using the fact that for the sigmoid function <span class="mathquill ud-math">f'(W \cdot a) = f(W \cdot a) (1 - f(W \cdot a))</span>, the error term for the output unit is </p>
+<p><span class="mathquill ud-math"> \delta^o = (y - \hat y) f'(W \cdot a) = (1 - 0.512) \times 0.512 \times(1 - 0.512) = 0.122</span>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Now we need to calculate the error term for the hidden unit with backpropagation. Here we'll scale the error term from the output unit by the weight <span class="mathquill ud-math">W</span> connecting it to the hidden unit. For the hidden unit error term, <span class="mathquill ud-math">\delta^h_j = \sum_k W_{jk} \delta^o_k f'(h_j)</span>, but since we have one hidden unit and one output unit, this is much simpler.</p>
+<p><span class="mathquill ud-math">\delta^h = W \delta^o f'(h) = 0.1 \times 0.122 \times 0.495 \times (1 - 0.495) = 0.003</span></p>
+<p>Now that we have the errors, we can calculate the gradient descent steps. The hidden to output weight step is the learning rate, times the output unit error, times the hidden unit activation value.</p>
+<p><span class="mathquill ud-math">\Delta W = \eta  \delta^o a = 0.5 \times 0.122 \times 0.495 = 0.0302</span></p>
+<p>Then, for the input to hidden weights <span class="mathquill ud-math">w_i</span>, it's the learning rate times the hidden unit error, times the input values.</p>
+<p><span class="mathquill ud-math">\Delta w_i = \eta \delta^h x_i = (0.5 \times 0.003 \times 0.1, 0.5 \times 0.003 \times 0.3) = (0.00015, 0.00045)</span></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>From this example, you can see one of the effects of using the sigmoid function for the activations. The maximum derivative of the sigmoid function is 0.25, so the errors in the output layer get reduced by at least 75%, and errors in the hidden layer are scaled down by at least 93.75%! You can see that if you have a lot of layers, using a sigmoid activation function will quickly reduce the weight steps to tiny values in layers near the input. This is known as the <strong>vanishing gradient</strong> problem. Later in the course you'll learn about other activation functions that perform better in this regard and are more commonly used in modern network architectures.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="implementing-in-numpy">Implementing in NumPy</h2>
+<p>For the most part you have everything you need to implement backpropagation with NumPy.</p>
+<p>However, previously we were only dealing with error terms from one unit. Now, in the weight update, we have to consider the error for <em>each unit</em> in the hidden layer, <span class="mathquill ud-math">\delta_j</span>:</p>
+<p><span class="mathquill ud-math"> \Delta w_{ij} = \eta \delta_j x_i </span></p>
+<p>Firstly, there will likely be a different number of input and hidden units, so trying to multiply the errors and the inputs as row vectors will throw an error:</p>
+<pre><code class="python language-python">hidden_error*inputs
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+&lt;ipython-input-22-3b59121cb809&gt; in &lt;module&gt;()
+----&gt; 1 hidden_error*x
+
+ValueError: operands could not be broadcast together with shapes (3,) (6,) </code></pre>
+<p>Also, <span class="mathquill ud-math">w_{ij}</span> is a matrix now, so the right side of the assignment must have the same shape as the left side. Luckily, NumPy takes care of this for us. If you multiply a row vector array with a column vector array, it will multiply the first element in the column by each element in the row vector and set that as the first row in a new 2D array. This continues for each element in the column vector, so you get a 2D array that has shape <code>(len(column_vector), len(row_vector))</code>.</p>
+<pre><code class="python language-python">hidden_error*inputs[:,None]
+array([[ -8.24195994e-04,  -2.71771975e-04,   1.29713395e-03],
+       [ -2.87777394e-04,  -9.48922722e-05,   4.52909055e-04],
+       [  6.44605731e-04,   2.12553536e-04,  -1.01449168e-03],
+       [  0.00000000e+00,   0.00000000e+00,  -0.00000000e+00],
+       [  0.00000000e+00,   0.00000000e+00,  -0.00000000e+00],
+       [  0.00000000e+00,   0.00000000e+00,  -0.00000000e+00]])</code></pre>
+<p>It turns out this is exactly how we want to calculate the weight update step. As before, if you have your inputs as a 2D array with one row, you can also do <code>hidden_error*inputs.T</code>, but that won't work if <code>inputs</code> is a 1D array.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="backpropagation-exercise">Backpropagation exercise</h2>
+<p>Below, you'll implement the code to calculate one backpropagation update step for two sets of weights. I wrote the forward pass - your goal is to code the backward pass.</p>
+<p>Things to do</p>
+<ul>
+<li>Calculate the network's output error.</li>
+<li>Calculate the output layer's error term.</li>
+<li>Use backpropagation to calculate the hidden layer's error term.</li>
+<li>Calculate the change in weights (the delta weights) that result from propagating the errors back through the network.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div class="nav nav-tabs nav-fill" role="tablist" id="question-tabs">
+    <a href="#260128-backprop-py" class="nav-item nav-link  active show" id="tab-260128-backprop-py" data-toggle="tab" role="tab"
+      aria-controls="260128-backprop-py" aria-selected="true">backprop.py</a>
+    <a href="#260128-solution-py" class="nav-item nav-link " id="tab-260128-solution-py" data-toggle="tab" role="tab"
+      aria-controls="260128-solution-py" aria-selected="false">solution.py</a>
+  </div>
+
+  <div class="tab-content" style="padding: 20px 0;" id="question-tab-contents">
+    <div class="tab-pane  active show" id="260128-backprop-py" aria-labelledby="tab-260128-backprop-py" role="tabpanel">
+      <pre><code></code>import numpy as np
+
+
+def sigmoid(x):
+    &quot;&quot;&quot;
+    Calculate sigmoid
+    &quot;&quot;&quot;
+    return 1 / (1 + np.exp(-x))
+
+
+x &#x3D; np.array([0.5, 0.1, -0.2])
+target &#x3D; 0.6
+learnrate &#x3D; 0.5
+
+weights_input_hidden &#x3D; np.array([[0.5, -0.6],
+                                 [0.1, -0.2],
+                                 [0.1, 0.7]])
+
+weights_hidden_output &#x3D; np.array([0.1, -0.3])
+
+## Forward pass
+hidden_layer_input &#x3D; np.dot(x, weights_input_hidden)
+hidden_layer_output &#x3D; sigmoid(hidden_layer_input)
+
+output_layer_in &#x3D; np.dot(hidden_layer_output, weights_hidden_output)
+output &#x3D; sigmoid(output_layer_in)
+
+## Backwards pass
+## TODO: Calculate output error
+error &#x3D; None
+
+# TODO: Calculate error term for output layer
+output_error_term &#x3D; None
+
+# TODO: Calculate error term for hidden layer
+hidden_error_term &#x3D; None
+
+# TODO: Calculate change in weights for hidden layer to output layer
+delta_w_h_o &#x3D; None
+
+# TODO: Calculate change in weights for input layer to hidden layer
+delta_w_i_h &#x3D; None
+
+print(&#x27;Change in weights for hidden layer to output layer:&#x27;)
+print(delta_w_h_o)
+print(&#x27;Change in weights for input layer to hidden layer:&#x27;)
+print(delta_w_i_h)
+</code></pre>
+    </div>
+    <div class="tab-pane " id="260128-solution-py" aria-labelledby="tab-260128-solution-py" role="tabpanel">
+      <pre><code></code>import numpy as np
+
+
+def sigmoid(x):
+    &quot;&quot;&quot;
+    Calculate sigmoid
+    &quot;&quot;&quot;
+    return 1 / (1 + np.exp(-x))
+
+
+x &#x3D; np.array([0.5, 0.1, -0.2])
+target &#x3D; 0.6
+learnrate &#x3D; 0.5
+
+weights_input_hidden &#x3D; np.array([[0.5, -0.6],
+                                 [0.1, -0.2],
+                                 [0.1, 0.7]])
+
+weights_hidden_output &#x3D; np.array([0.1, -0.3])
+
+## Forward pass
+hidden_layer_input &#x3D; np.dot(x, weights_input_hidden)
+hidden_layer_output &#x3D; sigmoid(hidden_layer_input)
+
+output_layer_in &#x3D; np.dot(hidden_layer_output, weights_hidden_output)
+output &#x3D; sigmoid(output_layer_in)
+
+## Backwards pass
+## TODO: Calculate output error
+error &#x3D; target - output
+
+# TODO: Calculate error term for output layer
+output_error_term &#x3D; error * output * (1 - output)
+
+# TODO: Calculate error term for hidden layer
+hidden_error_term &#x3D; np.dot(output_error_term, weights_hidden_output) * \
+                    hidden_layer_output * (1 - hidden_layer_output)
+
+# TODO: Calculate change in weights for hidden layer to output layer
+delta_w_h_o &#x3D; learnrate * output_error_term * hidden_layer_output
+
+# TODO: Calculate change in weights for input layer to hidden layer
+delta_w_i_h &#x3D; learnrate * hidden_error_term * x[:, None]
+
+print(&#x27;Change in weights for hidden layer to output layer:&#x27;)
+print(delta_w_h_o)
+print(&#x27;Change in weights for input layer to hidden layer:&#x27;)
+print(delta_w_i_h)
+</code></pre>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. Implementing Backpropagation.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Backpropagation')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
