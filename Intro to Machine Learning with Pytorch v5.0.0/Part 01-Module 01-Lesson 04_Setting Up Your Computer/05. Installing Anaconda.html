@@ -1,0 +1,289 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Installing Anaconda</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Setting Up Your Computer</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Python Installation.html">02. Python Installation</a>
+    </li>
+    <li class="">
+      <a href="03. [For Windows] Configuring Git Bash to Run Python.html">03. [For Windows] Configuring Git Bash to Run Python</a>
+    </li>
+    <li class="">
+      <a href="04. What is Anaconda.html">04. What is Anaconda?</a>
+    </li>
+    <li class="">
+      <a href="05. Installing Anaconda.html">05. Installing Anaconda</a>
+    </li>
+    <li class="">
+      <a href="06. Managing Packages.html">06. Managing Packages</a>
+    </li>
+    <li class="">
+      <a href="07. Python versions at Udacity.html">07. Python versions at Udacity</a>
+    </li>
+    <li class="">
+      <a href="08. Running a Python Script.html">08. Running a Python Script</a>
+    </li>
+    <li class="">
+      <a href="09. Programming Environment Setup.html">09. Programming Environment Setup</a>
+    </li>
+    <li class="">
+      <a href="10. What are Jupyter notebooks.html">10. What are Jupyter notebooks?</a>
+    </li>
+    <li class="">
+      <a href="11. Installing Jupyter Notebook.html">11. Installing Jupyter Notebook</a>
+    </li>
+    <li class="">
+      <a href="12. Launching the Notebook Server.html">12. Launching the Notebook Server</a>
+    </li>
+    <li class="">
+      <a href="13. Notebook Interface.html">13. Notebook Interface</a>
+    </li>
+    <li class="">
+      <a href="14. Markdown Cells.html">14. Markdown Cells</a>
+    </li>
+    <li class="">
+      <a href="15. Code Cells.html">15. Code Cells</a>
+    </li>
+    <li class="">
+      <a href="16. Keyboard Shortcuts.html">16. Keyboard Shortcuts</a>
+    </li>
+    <li class="">
+      <a href="17. Magic Keywords.html">17. Magic Keywords</a>
+    </li>
+    <li class="">
+      <a href="18. Converting Notebooks.html">18. Converting Notebooks</a>
+    </li>
+    <li class="">
+      <a href="19. Creating a Slideshow.html">19. Creating a Slideshow</a>
+    </li>
+    <li class="">
+      <a href="20. Outro.html">20. Outro</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. Installing Anaconda</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="installing-anaconda">Installing Anaconda</h1>
+<p>Anaconda is available for Windows, Mac OS X, and Linux. Follow the links below to get started:</p>
+<ol>
+<li><p>Download the installer from  <a href="https://www.anaconda.com/download/" rel="noopener noreferrer" target="_blank">https://www.anaconda.com/download/</a>. Choose the Python 3.7 or higher version, and the appropriate 64/32-bit installer. If you already have Python installed on your computer, this won't break anything. Instead, the default Python used by your scripts and programs will be the one that comes with Anaconda.</p></li>
+<li><p>Refer the installation instructions <a href="https://docs.anaconda.com/anaconda/install/" rel="noopener noreferrer" target="_blank">here</a></p></li>
+<li><p>Verify the installation <a href="https://docs.anaconda.com/anaconda/install/verify-install/" rel="noopener noreferrer" target="_blank">here</a> for your respective OS</p></li>
+</ol>
+<p>After installation, you’re automatically in the default conda environment with all packages installed which you can see below. You can check out your own install by entering the following command into your terminal.</p>
+<pre><code>conda list</code></pre>
+<video loop autoplay>
+  <source src="media/unnamed-1082005-0.mp4" type="video/mp4">
+</video>
+<h2 id="list-of-applications-installed-with-anaconda">List of Applications Installed with Anaconda</h2>
+<p>As we read on the previous page, the following packages will get installed with Anaconda:</p>
+<ul>
+<li><strong>Anaconda Navigator</strong> - a GUI for managing your environments and packages</li>
+<li><strong><code>conda</code></strong> - a command-line utility</li>
+<li><strong>Python</strong> - The latest version of Python gets installed as an individual package. </li>
+<li><strong>Anaconda Prompt</strong> - [Only for Windows] a terminal where you can use the command-line interface to manage your environments and packages</li>
+<li>A bunch of applications, such as <strong>Spyder</strong>. It is an IDE geared toward scientific development. In total, over 160 scientific packages and their dependencies are also installed. </li>
+</ul>
+<p>To avoid errors later, it's best to update all the packages in the default environment. Open the Terminal/ Anaconda Prompt application. In the prompt, run the following commands:</p>
+<pre><code>conda upgrade conda
+conda upgrade --all</code></pre>
+<p>and answer yes when asked if you want to install the packages. The packages that come with the initial install tend to be out of date, so updating them now will prevent future errors from out of date software.</p>
+<blockquote>
+  <p><strong>Note:</strong> In the previous step, running <code>conda upgrade conda</code> should not be necessary because <code>--all</code> includes the conda package itself, but some users have encountered errors without it.</p>
+</blockquote>
+<hr />
+<p>In the rest of this lesson, you'll learn to use commands in your Terminal/Anaconda Prompt. I highly suggest you start working with command-line utility first, then later use the GUI if you'd like. Once you get acquainted with the command-line utility, refer to the <a href="https://docs.anaconda.com/_downloads/9ee215ff15fde24bf01791d719084950/Anaconda-Starter-Guide.pdf" rel="noopener noreferrer" target="_blank">Starter Guide for Anaconda distribution (GUI)</a>.</p>
+<h2 id="troubleshooting-resources">Troubleshooting Resources</h2>
+<p>If you are facing difficulty in installing and running conda, refer to the FAQ - <a href="https://docs.anaconda.com/anaconda/user-guide/faq/" rel="noopener noreferrer" target="_blank">Should I add Anaconda to the macOS/Linux/Windows PATH?</a>. Additionally, the following links might be useful:</p>
+<ol>
+<li>Linux/macOS - </li>
+</ol>
+<ul>
+<li>If you are seeing the "conda command not found" and are using ZShell, you have to add <code>export PATH="/Users/USERNAME/opt/anaconda/bin:$PATH"</code> to your .zsh_config file.</li>
+</ul>
+<ol>
+<li>Windows users - </li>
+</ol>
+<ul>
+<li><a href="https://stackoverflow.com/questions/26368306/export-is-not-recognized-as-an-internal-or-external-command" rel="noopener noreferrer" target="_blank">'export' is not recognized as an internal or external command</a></li>
+<li><a href="https://stackoverflow.com/questions/44515769/conda-is-not-recognized-as-internal-or-external-command" rel="noopener noreferrer" target="_blank">'Conda' is not recognized as internal or external command</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="how-to-install-pip-package-manager">How to Install <code>pip</code> Package Manager</h2>
+<p>If you have successfully installed Anaconda/Miniconda, possibly you will have conda (and pip) automatically installed on your system. If pip is not there, we recommend you install the <code>pip</code> as well because you will be able to run <code>pip</code> commands only after installing it. </p>
+<pre><code class="bash language-bash"># Check if pip is already installed, by running this command on Terminal/Anaconda Prompt
+pip --version
+
+# Once you have conda installed, run the command below on Terminal/Anaconda Prompt
+conda install pip</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <p><strong>Update Note</strong> <br><br />
+  In newer version of Anaconda/Miniconda, both <code>pip</code> and <code>conda</code> package managers are included by default, so you do not need to install them separately.</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Managing Packages.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Installing Anaconda')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

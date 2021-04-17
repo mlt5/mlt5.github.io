@@ -1,0 +1,127 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.867 --> 00:00:05.200
+APRENDIZADO PROFUNDO
+E REDES NEURAIS
+
+00:00:05.867 --> 00:00:07.700
+Caso acompanhe as notícias
+
+00:00:07.733 --> 00:00:10.567
+sobre inteligência artificial
+e aprendizado de máquina,
+
+00:00:10.600 --> 00:00:13.500
+você já deve ter ouvido falar
+em aprendizado profundo.
+
+00:00:13.533 --> 00:00:15.767
+O aprendizado profundo
+superou essencialmente
+
+00:00:15.800 --> 00:00:18.000
+todos os algoritmos
+de aprendizado de máquina
+
+00:00:18.067 --> 00:00:21.267
+em sua capacidade de predizer
+e pode ser usado
+
+00:00:21.300 --> 00:00:25.933
+para aprendizado supervisionado,
+não supervisionado e por reforço.
+
+00:00:25.967 --> 00:00:27.733
+De uma perspectiva histórica,
+
+00:00:27.767 --> 00:00:30.700
+o crescimento dessa técnica
+faz muito sentido.
+
+00:00:30.733 --> 00:00:35.267
+Com o tempo, deixamos de nos
+importar com como fazemos predições
+
+00:00:35.300 --> 00:00:38.800
+e passamos a nos importar mais
+com a precisão de nossas predições.
+
+00:00:38.833 --> 00:00:41.933
+Isso está alinhado
+ao avanço do aprendizado profundo,
+
+00:00:41.967 --> 00:00:44.267
+em que raramente
+entendemos tudo
+
+00:00:44.300 --> 00:00:48.500
+sobre como ou por que nosso modelo
+faz certas predições.
+
+00:00:48.533 --> 00:00:50.700
+Infelizmente,
+o aprendizado profundo
+
+00:00:50.733 --> 00:00:53.333
+não é a solução
+para todos os problemas.
+
+00:00:53.367 --> 00:00:56.600
+Ele tem 3 grandes barreiras.
+
+00:00:56.633 --> 00:00:59.667
+Primeiro, é preciso ter
+dados suficientes.
+
+00:00:59.700 --> 00:01:03.033
+Aprendizado profundo exige
+muitos dados.
+
+00:01:03.067 --> 00:01:06.200
+Segundo, é preciso ter
+poder de computação.
+
+00:01:06.233 --> 00:01:10.367
+Para ter desempenho
+super-humano no jogo Go,
+
+00:01:10.400 --> 00:01:13.167
+o AlphaGo
+do Google DeepMind exigia
+
+00:01:13.200 --> 00:01:18.900
+1.202 CPUs e 176 GPUs.
+
+00:01:18.933 --> 00:01:21.800
+Terceiro, você provavelmente
+não vai entender
+
+00:01:21.833 --> 00:01:24.300
+por que certas decisões
+foram tomadas,
+
+00:01:24.333 --> 00:01:28.033
+dada a complexidade
+e a flexibilidade desses algoritmos.
+
+00:01:28.067 --> 00:01:31.800
+Por essas razões, nem toda aplicação
+do aprendizado de máquina
+
+00:01:31.833 --> 00:01:34.167
+exige aprendizado profundo.
+
+00:01:34.200 --> 00:01:37.767
+Você vai praticar
+aprendizado profundo neste programa.
+
+00:01:37.800 --> 00:01:42.867
+Contudo, temos todo um Nanodegree
+de aprendizado profundo disponível.
+
+00:01:42.900 --> 00:01:45.600
+Logo, esse não é o foco
+deste curso.
+

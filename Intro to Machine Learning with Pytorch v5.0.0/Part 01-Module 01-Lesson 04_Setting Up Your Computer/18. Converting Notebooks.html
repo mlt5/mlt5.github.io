@@ -1,0 +1,319 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Converting Notebooks</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Setting Up Your Computer</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Python Installation.html">02. Python Installation</a>
+    </li>
+    <li class="">
+      <a href="03. [For Windows] Configuring Git Bash to Run Python.html">03. [For Windows] Configuring Git Bash to Run Python</a>
+    </li>
+    <li class="">
+      <a href="04. What is Anaconda.html">04. What is Anaconda?</a>
+    </li>
+    <li class="">
+      <a href="05. Installing Anaconda.html">05. Installing Anaconda</a>
+    </li>
+    <li class="">
+      <a href="06. Managing Packages.html">06. Managing Packages</a>
+    </li>
+    <li class="">
+      <a href="07. Python versions at Udacity.html">07. Python versions at Udacity</a>
+    </li>
+    <li class="">
+      <a href="08. Running a Python Script.html">08. Running a Python Script</a>
+    </li>
+    <li class="">
+      <a href="09. Programming Environment Setup.html">09. Programming Environment Setup</a>
+    </li>
+    <li class="">
+      <a href="10. What are Jupyter notebooks.html">10. What are Jupyter notebooks?</a>
+    </li>
+    <li class="">
+      <a href="11. Installing Jupyter Notebook.html">11. Installing Jupyter Notebook</a>
+    </li>
+    <li class="">
+      <a href="12. Launching the Notebook Server.html">12. Launching the Notebook Server</a>
+    </li>
+    <li class="">
+      <a href="13. Notebook Interface.html">13. Notebook Interface</a>
+    </li>
+    <li class="">
+      <a href="14. Markdown Cells.html">14. Markdown Cells</a>
+    </li>
+    <li class="">
+      <a href="15. Code Cells.html">15. Code Cells</a>
+    </li>
+    <li class="">
+      <a href="16. Keyboard Shortcuts.html">16. Keyboard Shortcuts</a>
+    </li>
+    <li class="">
+      <a href="17. Magic Keywords.html">17. Magic Keywords</a>
+    </li>
+    <li class="">
+      <a href="18. Converting Notebooks.html">18. Converting Notebooks</a>
+    </li>
+    <li class="">
+      <a href="19. Creating a Slideshow.html">19. Creating a Slideshow</a>
+    </li>
+    <li class="">
+      <a href="20. Outro.html">20. Outro</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">18. Converting Notebooks</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="converting-notebooks">Converting Notebooks</h1>
+<p>Notebooks are just big <a href="http://www.json.org/" rel="noopener noreferrer" target="_blank">JSON</a> files with the extension <code>.ipynb</code>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/notebook-json.png" alt="Notebook file opened in a text editor shows JSON data" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Notebook file opened in a text editor shows JSON data</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Since notebooks are JSON, it is simple to convert them to other formats. Jupyter comes with a utility called <code>nbconvert</code> for converting to HTML, Markdown, slideshows, etc. The general syntax to convert a given <code>mynotebook.ipynb</code> file to another FORMAT is:</p>
+<pre><code class="bash language-bash">jupyter nbconvert --to FORMAT mynotebook.ipynb</code></pre>
+<p>The currently supported output <code>FORMAT</code> could be either of the following (ignore case):</p>
+<ol>
+<li>HTML,</li>
+<li>LaTeX,</li>
+<li>PDF,</li>
+<li>WebPDF,</li>
+<li>Reveal.js HTML slideshow,</li>
+<li>Markdown,</li>
+<li>Ascii,</li>
+<li>reStructuredText,</li>
+<li>executable script,</li>
+<li>notebook.</li>
+</ol>
+<p>For example, to convert a notebook to an HTML file, in your terminal use</p>
+<pre><code class="bash language-bash"># Install the package below, if not already
+pip install nbconvert
+jupyter nbconvert --to html mynotebook.ipynb</code></pre>
+<blockquote>
+  <p><strong>Note</strong> - If you wish to install any package in conda that is <strong>not</strong> available in Anaconda distribution, such as the Airbase package, use <code>pip install airbase</code>, instead of <code>conda install airbase</code>. </p>
+</blockquote>
+<p>Converting to HTML is useful for sharing your notebooks with others who aren't using notebooks. Markdown is great for including a notebook in blogs and other text editors that accept Markdown formatting.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/nbconvert-example.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="recommended-read">Recommended Read</h2>
+<p>As always, learn more about <code>nbconvert</code> from the <a href="https://nbconvert.readthedocs.io/en/latest/usage.html" rel="noopener noreferrer" target="_blank">documentation</a>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Notebook Supported File Formats</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of the following is <strong>not</strong> a supported output file format to which you can convert a given Notebook file? </p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1601396710341" name="1080706" id="a1601396710341">
+        <label for="a1601396710341"><p>.pdf</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1601396769146" name="1080706" id="a1601396769146">
+        <label for="a1601396769146"><p>.tex</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1601396779232" name="1080706" id="a1601396779232">
+        <label for="a1601396779232"><p>.docx</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1601396789702" name="1080706" id="a1601396789702">
+        <label for="a1601396789702"><p>.html</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    .docx
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="19. Creating a Slideshow.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('18. Converting Notebooks')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

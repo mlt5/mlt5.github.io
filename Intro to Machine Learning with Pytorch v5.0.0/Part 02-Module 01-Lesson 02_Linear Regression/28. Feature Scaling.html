@@ -1,0 +1,533 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Feature Scaling</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Linear Regression</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Quiz Housing Prices.html">02. Quiz: Housing Prices</a>
+    </li>
+    <li class="">
+      <a href="03. Solution Housing Prices.html">03. Solution: Housing Prices</a>
+    </li>
+    <li class="">
+      <a href="04. Fitting a Line Through Data.html">04. Fitting a Line Through Data</a>
+    </li>
+    <li class="">
+      <a href="05. Moving a Line.html">05. Moving a Line</a>
+    </li>
+    <li class="">
+      <a href="06. Absolute Trick.html">06. Absolute Trick</a>
+    </li>
+    <li class="">
+      <a href="07. Square Trick.html">07. Square Trick</a>
+    </li>
+    <li class="">
+      <a href="08. Quiz Absolute and Square Trick.html">08. Quiz: Absolute and Square Trick</a>
+    </li>
+    <li class="">
+      <a href="09. Gradient Descent.html">09. Gradient Descent</a>
+    </li>
+    <li class="">
+      <a href="10. Mean Absolute Error.html">10. Mean Absolute Error</a>
+    </li>
+    <li class="">
+      <a href="11. Mean Squared Error.html">11. Mean Squared Error</a>
+    </li>
+    <li class="">
+      <a href="12. Quiz Mean Absolute &amp; Squared Errors.html">12. Quiz: Mean Absolute &amp; Squared Errors</a>
+    </li>
+    <li class="">
+      <a href="13. Minimizing Error Functions.html">13. Minimizing Error Functions</a>
+    </li>
+    <li class="">
+      <a href="14. Mean vs Total Error.html">14. Mean vs Total Error</a>
+    </li>
+    <li class="">
+      <a href="15. Mini-batch Gradient Descent.html">15. Mini-batch Gradient Descent</a>
+    </li>
+    <li class="">
+      <a href="16. Quiz Mini-Batch Gradient Descent.html">16. Quiz: Mini-Batch Gradient Descent</a>
+    </li>
+    <li class="">
+      <a href="17. Absolute Error vs Squared Error.html">17. Absolute Error vs Squared Error</a>
+    </li>
+    <li class="">
+      <a href="18. Linear Regression in scikit-learn.html">18. Linear Regression in scikit-learn</a>
+    </li>
+    <li class="">
+      <a href="19. Higher Dimensions.html">19. Higher Dimensions</a>
+    </li>
+    <li class="">
+      <a href="20. Multiple Linear Regression.html">20. Multiple Linear Regression</a>
+    </li>
+    <li class="">
+      <a href="21. Closed Form Solution.html">21. Closed Form Solution</a>
+    </li>
+    <li class="">
+      <a href="22. (Optional) Closed form Solution Math.html">22. (Optional) Closed form Solution Math</a>
+    </li>
+    <li class="">
+      <a href="23. Linear Regression Warnings.html">23. Linear Regression Warnings</a>
+    </li>
+    <li class="">
+      <a href="24. Polynomial Regression.html">24. Polynomial Regression</a>
+    </li>
+    <li class="">
+      <a href="25. Quiz Polynomial Regression.html">25. Quiz: Polynomial Regression</a>
+    </li>
+    <li class="">
+      <a href="26. Regularization.html">26. Regularization</a>
+    </li>
+    <li class="">
+      <a href="27. Quiz Regularization.html">27. Quiz: Regularization</a>
+    </li>
+    <li class="">
+      <a href="28. Feature Scaling.html">28. Feature Scaling</a>
+    </li>
+    <li class="">
+      <a href="29. Outro.html">29. Outro</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">28. Feature Scaling</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="feature-scaling">Feature Scaling</h3>
+<p>What is feature scaling?  Feature scaling is a way of transforming your data into a common range of values.  There are two common scalings:</p>
+<ol>
+<li>Standardizing</li>
+<li>Normalizing</li>
+</ol>
+<h4 id="standardizing">Standardizing</h4>
+<p><strong>Standardizing</strong> is completed by taking each value of your column, subtracting the mean of the column, and then dividing by the standard deviation of the column.  In Python, let's say you have a column in <code>df</code> called <code>height</code>.  You could create a standardized height as:</p>
+<pre><code class="python language-python">df["height_standard"] = (df["height"] - df["height"].mean()) / df["height"].std()</code></pre>
+<p>This will create a new "standardized" column where each value is a comparison to the mean of the column, and a new, standardized value can be interpreted as the number of standard deviations the original height was from the mean. This type of feature scaling is by far the most common of all techniques (for the reasons discussed here, but also likely because of precedent).</p>
+<h4 id="normalizing">Normalizing</h4>
+<p>A second type of feature scaling that is very popular is known as <strong>normalizing</strong>.  With normalizing, data are scaled between 0 and 1.  Using the same example as above, we could perform normalizing in Python in the following way:</p>
+<pre><code class="python language-python">df["height_normal"] = (df["height"] - df["height"].min()) /     \
+                      (df["height"].max() - df['height'].min())</code></pre>
+<h3 id="when-should-i-use-feature-scaling">When Should I Use Feature Scaling?</h3>
+<p>In many machine learning algorithms, the result will change depending on the units of your data.  This is especially true in two specific cases:</p>
+<ol>
+<li>When your algorithm uses a distance-based metric to predict.  </li>
+<li>When you incorporate regularization.</li>
+</ol>
+<h4 id="distance-based-metrics">Distance Based Metrics</h4>
+<p>In future lessons, you will see one common supervised learning technique that is based on the distance points are from one another called <a href="https://en.wikipedia.org/wiki/Support_vector_machine" rel="noopener noreferrer" target="_blank">Support Vector Machines (or SVMs)</a>.  Another technique that involves distance based methods to determine a prediction is <a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm" rel="noopener noreferrer" target="_blank">k-nearest neighbors (or k-nn)</a>.  With either of these techniques, choosing not to scale your data may lead to drastically different (and likely misleading) ending predictions.  </p>
+<p>For this reason, choosing some sort of feature scaling is necessary with these distance based techniques.  </p>
+<h4 id="regularization">Regularization</h4>
+<p>When you start introducing regularization, you will again want to scale the features of your model.  The penalty on particular coefficients in regularized linear regression techniques depends largely on the scale associated with the features.  When one feature is on a small range, say from 0 to 10, and another is on a large range, say from 0 to 1 000 000, applying regularization is going to unfairly punish the feature with the small range.  Features with small ranges need to have larger coefficients compared to features with large ranges in order to have the same effect on the outcome of the data. (Think about how <span class="mathquill ud-math">ab = ba</span> for two numbers <span class="mathquill ud-math">a</span> and <span class="mathquill ud-math">b</span>.) Therefore, if regularization could remove one of those two features with the same net increase in error, it would rather remove the small-ranged feature with the large coefficient, since that would reduce the regularization term the most.</p>
+<p>Again, this means you will want to scale features any time you are applying regularization.</p>
+<ul>
+<li><a href="https://www.quora.com/Why-do-we-normalize-the-data" rel="noopener noreferrer" target="_blank">A useful Quora post on the importance of feature scaling when using regularization.</a>    </li>
+</ul>
+<p>A point raised in the article above is that feature scaling can speed up convergence of your machine learning algorithms, which is an important consideration when you scale machine learning applications.</p>
+<p>Use the quiz below to get some practice with feature scaling.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="feature-scaling-exercise">Feature Scaling Exercise</h3>
+<p>Previously, you saw how regularization will remove features from a model (by setting their coefficients to zero) if the penalty for removing them is small. In this exercise, you'll revisit the same dataset as before and see how scaling the features changes which features are favored in a regularization step. See the "Quiz: Regularization" page for more details. The only thing different for this quiz compared to the previous one is the addition of a new step after loading the data, where you will use sklearn's <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html" rel="noopener noreferrer" target="_blank"><code>StandardScaler</code></a> to standardize the data before you fit a linear regression model to the data with L1 (Lasso) regularization.</p>
+<h4 id="perform-the-following-steps">Perform the following steps:</h4>
+<p><strong>1. Load in the data</strong></p>
+<ul>
+<li>The data is in the file called 'data.csv'. Note that there's no header row on this file.</li>
+<li>Split the data so that the six predictor features (first six columns) are stored in <code>X</code>, and the outcome feature (last column) is stored in <code>y</code>.</li>
+</ul>
+<p><strong>2. (NEW) Perform feature scaling on data via standardization</strong></p>
+<ul>
+<li>Create an instance of sklearn's <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html" rel="noopener noreferrer" target="_blank"><code>StandardScaler</code></a> and assign it to the variable <code>scaler</code>.</li>
+<li>Compute the scaling parameters by using the <code>.fit_transform()</code> method on the predictor feature array, which also returns the predictor variables in their standardized values. Store those standardized values in <code>X_scaled</code>.</li>
+</ul>
+<p><strong>3. Fit data using linear regression with Lasso regularization</strong></p>
+<ul>
+<li>Create an instance of sklearn's <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html" rel="noopener noreferrer" target="_blank"><code>Lasso</code></a> class and assign it to the variable <code>lasso_reg</code>. You don't need to set any parameter values: use the default values for the quiz.</li>
+<li>Use the <code>Lasso</code> object's <code>.fit()</code> method to fit the regression model onto the data. Make sure that you apply the fit to the <em>standardized</em> data from the previous step (<code>X_scaled</code>), not the original data.</li>
+</ul>
+<p><strong>4. Inspect the coefficients of the regression model</strong></p>
+<ul>
+<li>Obtain the coefficients of the fit regression model using the <code>.coef_</code> attribute of the <code>Lasso</code> object. Store this in the <code>reg_coef</code> variable: the coefficients will be printed out, and you will use your observations to answer the question at the bottom of the page.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+
+  <h4>Start Quiz:</h4>
+  <div>
+  <div class="nav nav-tabs nav-fill" role="tablist" id="question-tabs">
+    <a href="#667119-feature_scaling-py" class="nav-item nav-link  active show" id="tab-667119-feature_scaling-py" data-toggle="tab" role="tab"
+      aria-controls="667119-feature_scaling-py" aria-selected="true">feature_scaling.py</a>
+    <a href="#667119-data-csv" class="nav-item nav-link " id="tab-667119-data-csv" data-toggle="tab" role="tab"
+      aria-controls="667119-data-csv" aria-selected="false">data.csv</a>
+    <a href="#667119-solution-py" class="nav-item nav-link " id="tab-667119-solution-py" data-toggle="tab" role="tab"
+      aria-controls="667119-solution-py" aria-selected="false">solution.py</a>
+  </div>
+
+  <div class="tab-content" style="padding: 20px 0;" id="question-tab-contents">
+    <div class="tab-pane  active show" id="667119-feature_scaling-py" aria-labelledby="tab-667119-feature_scaling-py" role="tabpanel">
+      <pre><code></code># TODO: Add import statements
+
+
+# Assign the data to predictor and outcome variables
+# TODO: Load the data
+train_data &#x3D; None
+X &#x3D; None
+y &#x3D; None
+
+# TODO: Create the standardization scaling object.
+scaler &#x3D; None
+
+# TODO: Fit the standardization parameters and scale the data.
+X_scaled &#x3D; None
+
+# TODO: Create the linear regression model with lasso regularization.
+lasso_reg &#x3D; None
+
+# TODO: Fit the model.
+
+
+# TODO: Retrieve and print out the coefficients from the regression model.
+reg_coef &#x3D; None
+print(reg_coef)</code></pre>
+    </div>
+    <div class="tab-pane " id="667119-data-csv" aria-labelledby="tab-667119-data-csv" role="tabpanel">
+      <pre><code></code>1.25664,2.04978,-6.23640,4.71926,-4.26931,0.20590,12.31798
+-3.89012,-0.37511,6.14979,4.94585,-3.57844,0.00640,23.67628
+5.09784,0.98120,-0.29939,5.85805,0.28297,-0.20626,-1.53459
+0.39034,-3.06861,-5.63488,6.43941,0.39256,-0.07084,-24.68670
+5.84727,-0.15922,11.41246,7.52165,1.69886,0.29022,17.54122
+-2.86202,-0.84337,-1.08165,0.67115,-2.48911,0.52328,9.39789
+-7.09328,-0.07233,6.76632,13.06072,0.12876,-0.01048,11.73565
+-7.17614,0.62875,-2.89924,-5.21458,-2.70344,-0.22035,4.42482
+8.67430,2.09933,-11.23591,-5.99532,-2.79770,-0.08710,-5.94615
+-6.03324,-4.16724,2.42063,-3.61827,1.96815,0.17723,-13.11848
+8.67485,1.48271,-1.31205,-1.81154,2.67940,0.04803,-9.25647
+4.36248,-2.69788,-4.60562,-0.12849,3.40617,-0.07841,-29.94048
+9.97205,-0.61515,2.63039,2.81044,5.68249,-0.04495,-20.46775
+-1.44556,0.18337,4.61021,-2.54824,0.86388,0.17696,7.12822
+-3.90381,0.53243,2.83416,-5.42397,-0.06367,-0.22810,6.05628
+-12.39824,-1.54269,-2.66748,10.82084,5.92054,0.13415,-32.91328
+5.75911,-0.82222,10.24701,0.33635,0.26025,-0.02588,17.75036
+-7.12657,3.28707,-0.22508,13.42902,2.16708,-0.09153,-2.80277
+7.22736,1.27122,0.99188,-8.87118,-6.86533,0.09410,33.98791
+-10.31393,2.23819,-7.87166,-3.44388,-1.43267,-0.07893,-3.18407
+-8.25971,-0.15799,-1.81740,1.12972,4.24165,-0.01607,-20.57366
+13.37454,-0.91051,4.61334,0.93989,4.81350,-0.07428,-12.66661
+1.49973,-0.50929,-2.66670,-1.28560,-0.18299,-0.00552,-6.56370
+-10.46766,0.73077,3.93791,-1.73489,-3.26768,0.02366,23.19621
+-1.15898,3.14709,-4.73329,13.61355,-3.87487,-0.14112,13.89143
+4.42275,-2.09867,3.06395,-0.45331,-2.07717,0.22815,10.29282
+-3.34113,-0.31138,4.49844,-2.32619,-2.95757,-0.00793,21.21512
+-1.85433,-1.32509,8.06274,12.75080,-0.89005,-0.04312,14.54248
+0.85474,-0.50002,-3.52152,-4.30405,4.13943,-0.02834,-24.77918
+0.33271,-5.28025,-4.95832,22.48546,4.95051,0.17153,-45.01710
+-0.07308,0.51247,-1.38120,7.86552,3.31641,0.06808,-12.63583
+2.99294,2.85192,5.51751,8.53749,4.30806,-0.17462,0.84415
+1.41135,-1.01899,2.27500,5.27479,-4.90004,0.19508,23.54972
+3.84816,-0.66249,-1.35364,16.51379,0.32115,0.41051,-2.28650
+3.30223,0.23152,-2.16852,0.75257,-0.05749,-0.03427,-4.22022
+-6.12524,-2.56204,0.79878,-3.36284,1.00396,0.06219,-9.10749
+-7.47524,1.31401,-3.30847,4.83057,1.00104,-0.19851,-7.69059
+5.84884,-0.53504,-0.19543,10.27451,6.98704,0.22706,-29.21246
+6.44377,0.47687,-0.08731,22.88008,-2.86604,0.03142,10.90274
+6.35366,-2.04444,1.98872,-1.45189,-1.24062,0.23626,4.62178
+6.85563,-0.94543,5.16637,2.85611,4.64812,0.29535,-7.83647
+1.61758,1.31067,-2.16795,8.07492,-0.17166,-0.10273,0.06922
+3.80137,1.02276,-3.15429,6.09774,3.18885,-0.00163,-16.11486
+-6.81855,-0.15776,-10.69117,8.07818,4.14656,0.10691,-38.47710
+-6.43852,4.30120,2.63923,-1.98297,-0.89599,-0.08174,20.77790
+-2.35292,1.26425,-6.80877,3.31220,-6.17515,-0.04764,14.92507
+9.13580,-1.21425,1.17227,-6.33648,-0.85276,-0.13366,-0.17285
+-3.02986,-0.48694,0.24329,-0.38830,-4.70410,-0.18065,15.95300
+3.27244,2.22393,-1.96640,17.53694,1.62378,0.11539,-4.29743
+-4.44346,-1.96429,0.22209,15.29785,-1.98503,0.40131,4.07647
+-2.61294,-0.24905,-4.02974,-23.82024,-5.94171,-0.04932,16.50504
+3.65962,1.69832,0.78025,9.88639,-1.61555,-0.18570,9.99506
+2.22893,-4.62231,-3.33440,0.07179,0.21983,0.14348,-19.94698
+-5.43092,1.39655,-2.79175,0.16622,-2.38112,-0.09009,6.49039
+-5.88117,-3.04210,-0.87931,3.96197,-1.01125,0.08132,-6.01714
+0.51401,-0.30742,6.01407,-6.85848,-3.61343,-0.15710,24.56965
+4.45547,2.34283,0.98094,-4.66298,-3.79507,0.37084,27.19791
+0.05320,0.27458,6.95838,7.50119,-5.50256,0.06913,36.21698
+4.72057,0.17165,4.83822,-1.03917,4.11211,-0.14773,-6.32623
+-11.60674,-1.15594,-10.23150,0.49843,0.32477,-0.14543,-28.54003
+-7.55406,0.45765,10.67537,-15.12397,3.49680,0.20350,11.97581
+-1.73618,-1.56867,3.98355,-5.16723,-1.20911,0.19377,9.55247
+2.01963,-1.12612,1.16531,-2.71553,-5.39782,0.01086,21.83478
+-1.68542,-1.08901,-3.55426,3.14201,0.82668,0.04372,-13.11204
+-3.09104,-0.23295,-5.62436,-3.03831,0.77772,0.02000,-14.74251
+-3.87717,0.74098,-2.88109,-2.88103,3.36945,-0.30445,-18.44363
+-0.42754,-0.42819,5.02998,-3.45859,-4.21739,0.25281,29.20439
+8.31292,2.30543,-1.52645,-8.39725,-2.65715,-0.30785,12.65607
+8.96352,2.15330,7.97777,-2.99501,2.19453,0.11162,13.62118
+-0.90896,-0.03845,11.60698,5.39133,1.58423,-0.23637,13.73746
+2.03663,-0.49245,4.30331,17.83947,-0.96290,0.10803,10.85762
+-1.72766,1.38544,1.88234,-0.58255,-1.55674,0.08176,16.49896
+-2.40833,-0.00177,2.32146,-1.06438,2.92114,-0.05635,-8.16292
+-1.22998,-1.81632,-2.81740,12.29083,-1.40781,-0.15404,-6.76994
+-3.85332,-1.24892,-6.24187,0.95304,-3.66314,0.02746,-0.87206
+-7.18419,-0.91048,-2.41759,2.46251,-5.11125,-0.05417,11.48350
+5.69279,-0.66299,-3.40195,1.77690,3.70297,-0.02102,-23.71307
+5.82082,1.75872,1.50493,-1.14792,-0.66104,0.14593,11.82506
+0.98854,-0.91971,11.94650,1.36820,2.53711,0.30359,13.23011
+1.55873,0.25462,2.37448,16.04402,-0.06938,-0.36479,-0.67043
+-0.66650,-2.27045,6.40325,7.64815,1.58676,-0.11790,-3.12393
+4.58728,-2.90732,-0.05803,2.27259,2.29507,0.13907,-16.76419
+-11.73607,-2.26595,1.63461,6.21257,0.73723,0.03777,-7.00464
+-2.03125,1.83364,1.57590,5.52329,-3.64759,0.06059,23.96407
+4.63339,1.37232,-0.62675,13.46151,3.69937,-0.09897,-13.66325
+-0.93955,-1.39664,-4.69027,-5.30208,-2.70883,0.07360,-0.26176
+3.19531,-1.43186,3.82859,-9.83963,-2.83611,0.09403,14.30309
+-0.66991,-0.33925,-0.26224,-6.71810,0.52439,0.00654,-2.45750
+3.32705,-0.20431,-0.61940,-5.82014,-3.30832,-0.13399,9.94820
+-3.01400,-1.40133,7.13418,-15.85676,3.92442,0.29137,-0.19544
+10.75129,-0.08744,4.35843,-9.89202,-0.71794,0.12349,12.68742
+4.74271,-1.32895,-2.73218,9.15129,0.93902,-0.17934,-15.58698
+3.96678,-1.93074,-1.98368,-12.52082,7.35129,-0.30941,-40.20406
+2.98664,1.85034,2.54075,-2.98750,0.37193,0.16048,9.08819
+-6.73878,-1.08637,-1.55835,-3.93097,-3.02271,0.11860,6.24185
+-4.58240,-1.27825,7.55098,8.83930,-3.80318,0.04386,26.14768
+-10.00364,2.66002,-4.26776,-3.73792,-0.72349,-0.24617,0.76214
+-4.32624,-2.30314,-8.16044,4.46366,-3.33569,-0.01655,-10.05262
+-1.90167,-0.15858,-10.43466,4.89762,-0.64606,-0.14519,-19.63970
+2.43213,2.41613,2.49949,-8.03891,-1.64164,-0.63444,12.76193</code></pre>
+    </div>
+    <div class="tab-pane " id="667119-solution-py" aria-labelledby="tab-667119-solution-py" role="tabpanel">
+      <pre><code></code># TODO: Add import statements
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import Lasso
+from sklearn.preprocessing import StandardScaler
+
+# Assign the data to predictor and outcome variables
+# TODO: Load the data
+train_data &#x3D; pd.read_csv(&#x27;data.csv&#x27;, header &#x3D; None)
+X &#x3D; train_data.iloc[:,:-1]
+y &#x3D; train_data.iloc[:,-1]
+
+# TODO: Create the standardization scaling object.
+scaler &#x3D; StandardScaler()
+
+# TODO: Fit the standardization parameters and scale the data.
+X_scaled &#x3D; scaler.fit_transform(X)
+
+# TODO: Create the linear regression model with lasso regularization.
+lasso_reg &#x3D; Lasso()
+
+# TODO: Fit the model.
+lasso_reg.fit(X_scaled, y)
+
+# TODO: Retrieve and print out the coefficients from the regression model.
+reg_coef &#x3D; lasso_reg.coef_
+print(reg_coef)</code></pre>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>For which of the predictor features has the lasso regularization step zeroed the corresponding coefficient, on the standardized data?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1530131865076" name="667135" id="a1530131865076">
+      <label for="a1530131865076"><p>Column X1</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1530131886536" name="667135" id="a1530131886536">
+      <label for="a1530131886536"><p>Column X2</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1530131887334" name="667135" id="a1530131887334">
+      <label for="a1530131887334"><p>Column X3</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1530131887876" name="667135" id="a1530131887876">
+      <label for="a1530131887876"><p>Column X4</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1530131888433" name="667135" id="a1530131888433">
+      <label for="a1530131888433"><p>Column X5</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1530131889024" name="667135" id="a1530131889024">
+      <label for="a1530131889024"><p>Column X6</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Column X1</li>
+      <li>Column X4</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="29. Outro.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('28. Feature Scaling')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
