@@ -1,0 +1,42 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.200 --> 00:00:04.600
+O scikit-learn facilita muito
+a implementação do DBSCAN.
+
+00:00:04.633 --> 00:00:08.067
+Só precisamos declarar,
+passar o épsilon,
+
+00:00:08.100 --> 00:00:09.667
+o número de amostras.
+
+00:00:09.700 --> 00:00:13.133
+Existem valores padrões,
+mas é assim que fazemos.
+
+00:00:13.167 --> 00:00:16.233
+Depois passamos o conjunto
+de dados e mandamos fit.
+
+00:00:16.267 --> 00:00:19.467
+"Db.labels agora contém um array
+representando
+
+00:00:19.500 --> 00:00:22.300
+a qual agrupamento
+cada ponto pertence."
+
+00:00:22.333 --> 00:00:25.133
+Então -1 é ruído,
+
+00:00:25.167 --> 00:00:28.700
+mas zero, um, dois, três
+e assim por diante
+
+00:00:28.733 --> 00:00:32.100
+são os agrupamentos
+aos quais os pontos pertencem.
+

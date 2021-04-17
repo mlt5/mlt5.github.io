@@ -1,0 +1,105 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.267 --> 00:00:03.833
+Vamos ver alguns exemplos
+de agrupamento hierárquico.
+
+00:00:03.867 --> 00:00:07.833
+Antes vamos falar
+sobre as vantagens e desvantagens.
+
+00:00:07.867 --> 00:00:11.033
+A principal vantagem
+do agrupamento hierárquico
+
+00:00:11.067 --> 00:00:14.300
+é que as representações
+hierárquicas resultantes
+
+00:00:14.333 --> 00:00:16.067
+são muito informativas.
+
+00:00:16.100 --> 00:00:19.400
+Elas oferecem uma capacidade
+adicional de visualizar
+
+00:00:19.433 --> 00:00:22.300
+as estruturas de agrupamento
+dos conjuntos de dados.
+
+00:00:22.333 --> 00:00:24.667
+O agrupamento hierárquico
+é especialmente potente
+
+00:00:24.700 --> 00:00:28.767
+quando os dados contêm
+relações hierárquicas,
+
+00:00:28.800 --> 00:00:31.300
+como na biologia
+evolucionária.
+
+00:00:31.333 --> 00:00:34.233
+As desvantagens
+do agrupamento hierárquico
+
+00:00:34.267 --> 00:00:37.733
+é que é sensível ao barulho
+e a valores atípicos,
+
+00:00:37.767 --> 00:00:42.767
+então você precisa tirar os barulhos
+e valores atípicos antes.
+
+00:00:42.800 --> 00:00:44.933
+E é computacionalmente
+intenso.
+
+00:00:44.967 --> 00:00:47.000
+Se o seu conjunto de dados
+for grande
+
+00:00:47.033 --> 00:00:48.933
+e tiver muitas dimensões,
+
+00:00:48.967 --> 00:00:53.200
+pode ficar um pouco lento
+executar o O-grande de N².
+
+00:00:53.233 --> 00:00:57.167
+Um exemplo de aplicação
+do agrupamento hierárquico
+
+00:00:57.200 --> 00:01:00.700
+é este documento
+que usa a ligação média
+
+00:01:00.733 --> 00:01:04.567
+para agrupar
+proteínas produzidas,
+
+00:01:04.600 --> 00:01:09.167
+usando isso para criar
+agrupamentos de tipos de fungos.
+
+00:01:09.367 --> 00:01:14.000
+Outro exemplo usa
+a ligação completa
+
+00:01:14.033 --> 00:01:18.700
+para desenhar este diagrama
+de microbioma humano.
+
+00:01:18.733 --> 00:01:23.400
+Temos links e outras aplicações
+no texto abaixo.
+
+00:01:23.800 --> 00:01:28.633
+Agora podemos ver o agrupamento
+com base em densidade
+
+00:01:28.667 --> 00:01:30.400
+com o DBSCAN.
+
