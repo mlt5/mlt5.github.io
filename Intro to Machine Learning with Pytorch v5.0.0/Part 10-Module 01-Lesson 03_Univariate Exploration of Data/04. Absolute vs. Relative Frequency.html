@@ -1,0 +1,569 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Absolute vs. Relative Frequency</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Univariate Exploration of Data</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Tidy Data.html">02. Tidy Data</a>
+    </li>
+    <li class="">
+      <a href="03. Bar Charts.html">03. Bar Charts</a>
+    </li>
+    <li class="">
+      <a href="04. Absolute vs. Relative Frequency.html">04. Absolute vs. Relative Frequency</a>
+    </li>
+    <li class="">
+      <a href="05. Counting Missing Data.html">05. Counting Missing Data</a>
+    </li>
+    <li class="">
+      <a href="06. Bar Chart Practice.html">06. Bar Chart Practice</a>
+    </li>
+    <li class="">
+      <a href="07. Pie Charts.html">07. Pie Charts</a>
+    </li>
+    <li class="">
+      <a href="08. Histograms.html">08. Histograms</a>
+    </li>
+    <li class="">
+      <a href="09. Histogram Practice.html">09. Histogram Practice</a>
+    </li>
+    <li class="">
+      <a href="10. Figures, Axes, and Subplots.html">10. Figures, Axes, and Subplots</a>
+    </li>
+    <li class="">
+      <a href="11. Choosing a Plot for Discrete Data.html">11. Choosing a Plot for Discrete Data</a>
+    </li>
+    <li class="">
+      <a href="12. Descriptive Statistics, Outliers and Axis Limits.html">12. Descriptive Statistics, Outliers and Axis Limits</a>
+    </li>
+    <li class="">
+      <a href="13. Scales and Transformations.html">13. Scales and Transformations</a>
+    </li>
+    <li class="">
+      <a href="14. Scales and Transformations Practice.html">14. Scales and Transformations Practice</a>
+    </li>
+    <li class="">
+      <a href="15. Lesson Summary.html">15. Lesson Summary</a>
+    </li>
+    <li class="">
+      <a href="16. Extra Kernel Density Estimation.html">16. Extra: Kernel Density Estimation</a>
+    </li>
+    <li class="">
+      <a href="17. Extra Waffle Plots.html">17. Extra: Waffle Plots</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Absolute vs. Relative Frequency</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>L3 041 Absolute V Relative Frequency V5</p></h3>
+  <video controls>
+  <source src="04. L3 041 Absolute V Relative Frequency V5-FpnZ7dH4FqU.mp4" type="video/mp4">
+
+  <track default="false" kind="subtitles" srclang="zh-CN" src="04. L3 041 Absolute V Relative Frequency V5-FpnZ7dH4FqU.zh-CN.vtt" label="zh-CN">
+  <track default="true" kind="subtitles" srclang="en" src="04. L3 041 Absolute V Relative Frequency V5-FpnZ7dH4FqU.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="pt-BR" src="04. L3 041 Absolute V Relative Frequency V5-FpnZ7dH4FqU.pt-BR.vtt" label="pt-BR">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <hr>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>DataVis L3 04 V2</p></h3>
+  <video controls>
+  <source src="04. DataVis L3 04 V2-HLum_ys7RJ0.mp4" type="video/mp4">
+
+  <track default="false" kind="subtitles" srclang="zh-CN" src="04. DataVis L3 04 V2-HLum_ys7RJ0.zh-CN.vtt" label="zh-CN">
+  <track default="true" kind="subtitles" srclang="en" src="04. DataVis L3 04 V2-HLum_ys7RJ0.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="pt-BR" src="04. DataVis L3 04 V2-HLum_ys7RJ0.pt-BR.vtt" label="pt-BR">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <hr>
+<h2 id="absolute-vs-relative-frequency">Absolute vs. Relative Frequency</h2>
+<p>By default, seaborn's <code>countplot</code> function will summarize and plot the data in terms of <strong>absolute frequency</strong>, or pure counts. In certain cases, you might want to understand the distribution of data or want to compare levels in terms of the proportions of the whole. In this case, you will want to plot the data in terms of <strong>relative frequency</strong>, where the height indicates the proportion of data taking each level, rather than the absolute count.</p>
+<p>One method of plotting the data in terms of relative frequency on a bar chart is to just relabel the count's axis in terms of proportions. The underlying data will be the same, it will simply be the scale of the axis ticks that will be changed.</p>
+<h3 id="example-1-demonstrate-data-wrangling-and-plot-a-horizontal-bar-chart">Example 1. Demonstrate data wrangling, and plot a horizontal bar chart.</h3>
+<h4 id="example-1---step-1-make-the-necessary-import">Example 1 - Step 1. Make the necessary import</h4>
+<pre><code class="python language-python">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sb
+%matplotlib inline
+
+# Read the data from a CSV file
+pokemon = pd.read_csv('pokemon.csv')
+print(pokemon.shape)
+pokemon.head(10)</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-10-12-at-8.48.46-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Last time we created the bar chart of pokemon by their <code>type_1</code>. Let's club the rows of both <code>type_1</code> and <code>type_2</code>, so that the resulting dataframe has <strong>new</strong> column, <code>type_level</code>. </p>
+<p>This operation will double the number of rows in pokemon from 807 to 1614. </p>
+<h3 id="data-wrangling-step">Data Wrangling Step</h3>
+<p>We will use the <code>pandas.DataFrame.melt()</code> method to unpivot a DataFrame from wide to long format, optionally leaving identifiers set. The syntax is:</p>
+<pre><code>DataFrame.melt(id_vars, value_vars, var_name, value_name, col_level, ignore_index)</code></pre>
+<p>It is essential to understand the parameters involved:</p>
+<ol>
+<li><code>id_vars</code> - It is a tuple representing the column(s) to use as identifier variables.</li>
+<li><code>value_vars</code> - It is tuple representing the column(s) to unpivot (remove, out of place).</li>
+<li><code>var_name</code> - It is a name of the <strong>new</strong> column. </li>
+<li><code>value_name</code> - It is a name to use for the ‘value’ of the columns that are unpivoted.</li>
+</ol>
+<p>Refer <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.melt.html" rel="noopener noreferrer" target="_blank">here</a> for more details on the parameters.</p>
+<p>The function below will do the following in the pokemon dataframe <em>out of place</em>:</p>
+<ol>
+<li>Select the 'id', and 'species' columns from pokemon. </li>
+<li>Remove the 'type_1', 'type_2' columns from pokemon</li>
+<li>Add a new column 'type_level' that can have a value either 'type_1' or 'type_2'</li>
+<li>Add another column 'type' that will contain the actual value contained in the 'type_1', 'type_2' columns. For example, the first row in the pokemon dataframe having <code>id=1</code>    and <code>species=bulbasaur</code> will now occur twice in the resulting dataframe after the <code>melt()</code> operation. The first occurrence will have <code>type=grass</code>, whereas, the second occurrence will have <code>type=poison</code>.</li>
+</ol>
+<h4 id="example-1---step-2-data-wrangling-to-reshape-the-pokemon-dataframe">Example 1 - Step 2. Data wrangling to reshape the pokemon dataframe</h4>
+<pre><code class="python language-python">pkmn_types = pokemon.melt(id_vars=['id', 'species'], 
+                          value_vars=['type_1', 'type_2'], 
+                          var_name='type_level', 
+                          value_name='type')
+pkmn_types.head(10)
+#pkmn_types.shape</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-10-12-at-8.11.16-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="example-1---step-3-find-the-frequency-of-unique-values-in-the-type-column">Example 1 - Step 3. Find the frequency of unique values in the <code>type</code> column</h4>
+<pre><code class="python language-python"># Count the frequency of unique values in the `type` column of pkmn_types dataframe. 
+# By default, returns the decreasing order of the frequency.
+type_counts = pkmn_types['type'].value_counts()
+type_counts</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-10-12-at-8.14.57-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <pre><code class="python language-python"># Get the unique values of the `type` column, in the decreasing order of the frequency.
+type_order = type_counts.index
+type_order</code></pre>
+<blockquote>
+  <p>Index(['water', 'normal', 'flying', 'grass', 'psychic', 'bug', 'poison',<br />
+         'ground', 'fire', 'rock', 'fighting', 'electric', 'fairy', 'steel', 'dark', 'dragon', 'ghost', 'ice'],<br />
+        dtype='object')</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="example-1---step-4-plot-the-horizontal-bar-charts">Example 1 - Step 4. Plot the horizontal bar charts</h4>
+<pre><code class="python language-python">base_color = sb.color_palette()[0]
+sb.countplot(data=pkmn_types, y='type', color=base_color, order=type_order);</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-6.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="example-2-plot-a-bar-chart-having-the-proportions-instead-of-the-actual-count-on-one-of-the-axes">Example 2. Plot a bar chart having the proportions, instead of the actual count, on one of the axes.</h3>
+<h4 id="example-2---step-1-find-the-maximum-proportion-of-bar">Example 2 - Step 1. Find the maximum proportion of bar</h4>
+<pre><code class="python language-python"># Returns the sum of all not-null values in `type` column
+n_pokemon = pkmn_types['type'].value_counts().sum()
+
+# Return the highest frequency in the `type` column
+max_type_count = type_counts[0]
+
+# Return the maximum proportion, or in other words, 
+# compute the length of the longest bar in terms of the proportion
+max_prop = max_type_count / n_pokemon
+print(max_prop)</code></pre>
+<blockquote>
+  <p>0.1623296158612144</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="example-2---step-2-create-an-array-of-evenly-spaced-proportioned-values">Example 2 - Step 2. Create an array of evenly spaced proportioned values</h4>
+<pre><code class="python language-python"># Use numpy.arange() function to produce a set of evenly spaced proportioned values 
+# between 0 and max_prop, with a step size 2\%
+tick_props = np.arange(0, max_prop, 0.02)
+tick_props</code></pre>
+<blockquote>
+  <p>array([0.  , 0.02, 0.04, 0.06, 0.08, 0.1 , 0.12, 0.14, 0.16])</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>We need x-tick labels that must be evenly spaced on the x-axis. For this purpose, we must have a list of labels ready with us, before using it with <code>plt.xticks()</code> function. </p>
+<h4 id="example-2---step-3-create-a-list-of-string-values-that-can-be-used-as-tick-labels">Example 2 - Step 3. Create a list of String values that can be used as tick labels.</h4>
+<pre><code class="python language-python"># Use a list comprehension to create tick_names that we will apply to the tick labels. 
+# Pick each element `v` from the `tick_props`, and convert it into a formatted string.
+# `{:0.2f}` denotes that before formatting, we 2 digits of precision and `f` is used to represent floating point number.
+# Refer [here](https://docs.python.org/2/library/string.html#format-string-syntax) for more details
+tick_names = ['{:0.2f}'.format(v) for v in tick_props]
+tick_names</code></pre>
+<blockquote>
+  <p>['0.00', '0.02', '0.04', '0.06', '0.08', '0.10', '0.12', '0.14', '0.16']</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xticks.html" rel="noopener noreferrer" target="_blank"><code>xticks</code></a> and <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.yticks.html" rel="noopener noreferrer" target="_blank"><code>yticks</code></a> functions aren't only about rotating the tick labels. You can also get and set their locations and labels as well. The first argument takes the tick locations: in this case, the tick proportions multiplied back to be on the scale of counts. The second argument takes the tick names: in this case, the tick proportions formatted as strings to two decimal places.</p>
+<p>I've also added a <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylabel.html" rel="noopener noreferrer" target="_blank"><code>ylabel</code></a> call to make it clear that we're no longer working with straight counts.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h4 id="example-2---step-4-plot-the-bar-chart-with-new-x-tick-labels">Example 2 - Step 4. Plot the bar chart, with new x-tick labels</h4>
+<pre><code class="python language-python">sb.countplot(data=pkmn_types, y='type', color=base_color, order=type_order);
+# Change the tick locations and labels
+plt.xticks(tick_props * n_pokemon, tick_names)
+plt.xlabel('proportion');</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-14.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="additional-variation">Additional Variation</h2>
+<p>Rather than plotting the data on a relative frequency scale, you might use text annotations to label the frequencies on bars instead. This requires writing a loop over the tick locations and labels and adding one text element for each bar.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="example-3-print-the-text-proportion-on-the-bars-of-a-horizontal-plot">Example 3. Print the text (proportion) on the bars of a horizontal plot.</h3>
+<pre><code class="python language-python"># Considering the same chart from the Example 1 above, print the text (proportion) on the bars
+base_color = sb.color_palette()[0]
+sb.countplot(data=pkmn_types, y='type', color=base_color, order=type_order);
+
+# Logic to print the proportion text on the bars
+for i in range (type_counts.shape[0]):
+    # Remember, type_counts contains the frequency of unique values in the `type` column in decreasing order.
+    count = type_counts[i]
+    # Convert count into a percentage, and then into string
+    pct_string = '{:0.1f}'.format(100*count/n_pokemon)
+    # Print the string value on the bar. 
+    # Read more about the arguments of text() function [here](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.text.html)
+    plt.text(count+1, i, pct_string, va='center')</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-11.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="example-4-print-the-text-proportion-below-the-bars-of-a-vertical-plot">Example 4. Print the text (proportion) below the bars of a Vertical plot.</h3>
+<pre><code class="python language-python"># Considering the same chart from the Example 1 above, print the text (proportion) BELOW the bars
+base_color = sb.color_palette()[0]
+sb.countplot(data=pkmn_types, x='type', color=base_color, order=type_order);
+
+
+# Recalculating the type_counts just to have clarity.
+type_counts = pkmn_types['type'].value_counts()
+
+# get the current tick locations and labels
+locs, labels = plt.xticks(rotation=90) 
+
+# loop through each pair of locations and labels
+for loc, label in zip(locs, labels):
+
+    # get the text property for the label to get the correct count
+    count = type_counts[label.get_text()]
+    pct_string = '{:0.1f}%'.format(100*count/n_pokemon)
+
+    # print the annotation just below the top of the bar
+    plt.text(loc, count+2, pct_string, ha = 'center', color = 'black')</code></pre>
+<p>I use the <code>.get_text()</code> method to obtain the category name, so I can get the count of each category level. At the end, I use the <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" rel="noopener noreferrer" target="_blank"><code>text</code></a> function to print each percentage, with the x-position, y-position, and string as the three main parameters to the function.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-12.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <p><strong>Tip</strong> - Is the text on the bars not readable clearly? Consider changing the size of the plot by using the following:</p>
+</blockquote>
+<pre><code class="python language-python">from matplotlib import rcParams
+# Specify the figure size in inches, for both X, and Y axes
+rcParams['figure.figsize'] = 12,4</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-13.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Counting Missing Data.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Absolute vs. Relative Frequency')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

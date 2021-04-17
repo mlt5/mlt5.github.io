@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.337 --> 00:00:02.011
+Certo. Na aula 1,
+
+00:00:02.045 --> 00:00:04.774
+aprendemos a trabalhar
+com repositórios remotos.
+
+00:00:04.808 --> 00:00:09.134
+Na aula 2, começamos a desenvolver
+em um repositório compartilhado.
+
+00:00:09.168 --> 00:00:11.879
+Agora, vamos ver como sincronizar
+nossas mudanças
+
+00:00:11.913 --> 00:00:13.911
+para nosso repositório
+remoto bifurcado,
+
+00:00:13.945 --> 00:00:17.385
+e como recuperar atualizações
+do repositório de fonte original.
+
+00:00:17.419 --> 00:00:19.512
+Nesta aula,
+entre outras coisas, vamos:
+
+00:00:19.546 --> 00:00:22.876
+aprender o que é um pull request
+e a fazer um,
+
+00:00:22.910 --> 00:00:26.070
+recuperar atualizações feitas
+no repositório fonte
+
+00:00:26.104 --> 00:00:28.519
+e inclui-las
+na nossa bifurcação,
+
+00:00:28.553 --> 00:00:31.212
+trabalhar
+com um pull request ativo,
+
+00:00:31.246 --> 00:00:34.835
+fazer squash de commits
+com o git rebase, e mais.
+
+00:00:34.869 --> 00:00:38.537
+Para começar, vamos aprender o que é
+um pull request e como criar um.
+

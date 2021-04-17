@@ -1,0 +1,445 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Histograms</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Univariate Exploration of Data</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Tidy Data.html">02. Tidy Data</a>
+    </li>
+    <li class="">
+      <a href="03. Bar Charts.html">03. Bar Charts</a>
+    </li>
+    <li class="">
+      <a href="04. Absolute vs. Relative Frequency.html">04. Absolute vs. Relative Frequency</a>
+    </li>
+    <li class="">
+      <a href="05. Counting Missing Data.html">05. Counting Missing Data</a>
+    </li>
+    <li class="">
+      <a href="06. Bar Chart Practice.html">06. Bar Chart Practice</a>
+    </li>
+    <li class="">
+      <a href="07. Pie Charts.html">07. Pie Charts</a>
+    </li>
+    <li class="">
+      <a href="08. Histograms.html">08. Histograms</a>
+    </li>
+    <li class="">
+      <a href="09. Histogram Practice.html">09. Histogram Practice</a>
+    </li>
+    <li class="">
+      <a href="10. Figures, Axes, and Subplots.html">10. Figures, Axes, and Subplots</a>
+    </li>
+    <li class="">
+      <a href="11. Choosing a Plot for Discrete Data.html">11. Choosing a Plot for Discrete Data</a>
+    </li>
+    <li class="">
+      <a href="12. Descriptive Statistics, Outliers and Axis Limits.html">12. Descriptive Statistics, Outliers and Axis Limits</a>
+    </li>
+    <li class="">
+      <a href="13. Scales and Transformations.html">13. Scales and Transformations</a>
+    </li>
+    <li class="">
+      <a href="14. Scales and Transformations Practice.html">14. Scales and Transformations Practice</a>
+    </li>
+    <li class="">
+      <a href="15. Lesson Summary.html">15. Lesson Summary</a>
+    </li>
+    <li class="">
+      <a href="16. Extra Kernel Density Estimation.html">16. Extra: Kernel Density Estimation</a>
+    </li>
+    <li class="">
+      <a href="17. Extra Waffle Plots.html">17. Extra: Waffle Plots</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">08. Histograms</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>L3 081 Histograms V2</p></h3>
+  <video controls>
+  <source src="08. L3 081 Histograms V2-RLez9L0htGQ.mp4" type="video/mp4">
+
+  <track default="false" kind="subtitles" srclang="zh-CN" src="08. L3 081 Histograms V2-RLez9L0htGQ.zh-CN.vtt" label="zh-CN">
+  <track default="true" kind="subtitles" srclang="en" src="08. L3 081 Histograms V2-RLez9L0htGQ.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="pt-BR" src="08. L3 081 Histograms V2-RLez9L0htGQ.pt-BR.vtt" label="pt-BR">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <hr>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>DataVis L3 08 V2</p></h3>
+  <video controls>
+  <source src="08. DataVis L3 08 V2-f1we_0dUSXg.mp4" type="video/mp4">
+
+  <track default="false" kind="subtitles" srclang="zh-CN" src="08. DataVis L3 08 V2-f1we_0dUSXg.zh-CN.vtt" label="zh-CN">
+  <track default="true" kind="subtitles" srclang="en" src="08. DataVis L3 08 V2-f1we_0dUSXg.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="pt-BR" src="08. DataVis L3 08 V2-f1we_0dUSXg.pt-BR.vtt" label="pt-BR">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <hr>
+<h1 id="histograms">Histograms</h1>
+<p>A <strong>histogram</strong> is used to plot the distribution of a numeric variable. It's the quantitative version of the bar chart. However, rather than plot one bar for each unique numeric value, values are grouped into continuous bins, and one bar for each bin is plotted to depict the number. You can use either Matplotlib or Seaborn to plot the histograms. There is a mild variation in the specifics, such as plotting gaussian-estimation line along with bars in Seabron's distplot(), and the arguments that you can use in either case. </p>
+<h2 id="matplotlibpyplothist">Matplotlib.pyplot.hist()</h2>
+<p>You can use  the default settings for matplotlib's <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html" rel="noopener noreferrer" target="_blank">hist()</a> function to plot a histogram with 10 bins:</p>
+<h3 id="example-1-plot-a-default-histogram">Example 1. Plot a default histogram</h3>
+<pre><code class="python language-python">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sb
+%matplotlib inline
+
+pokemon = pd.read_csv('pokemon.csv')
+print(pokemon.shape)
+pokemon.head(10)</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-10-13-at-10.53.51-am.png" alt="We will plot the &#x60;speed&#x60; column on histogram" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>We will plot the <code>speed</code> column on histogram</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Plot a default histogram as shown below:</p>
+<pre><code class="python language-python"># We have intentionally not put a semicolon at the end of the statement below to see the bar-width
+plt.hist(data = pokemon, x = 'speed')</code></pre>
+<blockquote>
+  <p><code>(array([ 31.,  93., 163., 159., 128., 115.,  81.,  26.,   6.,   5.]), 
+ array([  5. ,  20.5,  36. ,  51.5,  67. ,  82.5,  98. , 113.5, 129. ,
+        144.5, 160. ])</code></p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-19.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>You can see a non-uniform distribution of data points in different bins. </p>
+<p>Overall, a generally bimodal distribution is observed (one with two peaks or humps). The direct adjacency of the bars in the histogram, in contrast to the separated bars in a bar chart, emphasizes the fact that the data takes on a continuous range of values. When a data value is on a bin edge, it is counted in the bin to its right. The exception is the rightmost bin edge, which places data values equal to the uppermost limit into the right-most bin (to the upper limit's left).</p>
+<p>By default, the <code>hist</code> function divides the data into 10 bins, based on the range of values taken. In almost every case, we will want to change these settings. Usually, having only ten bins is too few to really understand the distribution of the data. And the default tick marks are often not on nice, 'round' values that make the ranges taken by each bin easy to interpret. </p>
+<p>Wouldn't it be better if I said "between 0 and 2.5" instead of "between <em>about</em> 0 and 2.5", and "from 2.5 to 5" instead of "from <em>about</em> 2.5 to 5" above?</p>
+<p>You can use descriptive statistics (e.g. via <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.describe.html" rel="noopener noreferrer" target="_blank"><code>dataframe['column'].describe()</code></a>) to gauge what minimum and maximum bin limits might be appropriate for the plot. These bin edges can be set using numpy's <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.arange.html" rel="noopener noreferrer" target="_blank"><code>arange</code></a> function:</p>
+<h3 id="example-2-histogram-with-fixed-number-of-bins">Example 2. Histogram with fixed number of bins</h3>
+<pre><code class="python language-python">plt.hist(data = pokemon, x = 'speed', bins = 20)</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-20.png" alt="A histogram having 20 bins" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>A histogram having 20 bins</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="example-3-histogram-with-dynamic-number-of-bins">Example 3. Histogram with dynamic number of bins</h3>
+<pre><code class="python language-python"># Create bins with step-size 5
+bins = np.arange(0, pokemon['speed'].max()+5, 5)
+plt.hist(data = pokemon, x = 'speed', bins = bins)</code></pre>
+<p>The first argument to <code>arange</code> is the leftmost bin edge, the second argument the upper limit, and the third argument the bin width. Note that even though I've specified the "max" value in the second argument, I've added a "+5" (the bin width). That is because <code>arange</code> will only return values that are strictly less than the upper limit. Adding in "+5" is a safety measure to ensure that the rightmost bin edge is at least the maximum data value, so that all of the data points are plotted. The leftmost bin is set as a hardcoded value to get a nice, interpretable value, though you could use functions like numpy's <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.around.html" rel="noopener noreferrer" target="_blank"><code>around</code></a> if you wanted to approach that end programmatically.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-21.png" alt="A histogram with a dynamic number of bins, each with a step-size 5. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>A histogram with a dynamic number of bins, each with a step-size 5. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="alternative-approach---seaborns-distplot">Alternative Approach - Seaborn's <code>distplot()</code></h2>
+<p>This function can also plot histograms, as similar to the <code>pyploy.hist()</code> function, and is integrated with other univariate plotting functions. This is in contrast to our ability to specify a data source and column as separate arguments, like we've seen with and <code>countplot</code> and <code>hist</code>.</p>
+<p>The basic syntax is:</p>
+<blockquote>
+  <p><code>seaborn.distplot(Series, bins,  kde, hist_kws)</code></p>
+</blockquote>
+<p>Let's see the sample usage of the arguments mentioned above. However, there are many other arguments that you can explore in the <a href="https://seaborn.pydata.org/generated/seaborn.distplot.html" rel="noopener noreferrer" target="_blank">syntax definition</a>.</p>
+<blockquote>
+  <p><strong>Note</strong>: From the Seaborn v0.11.0 onwards, this function is deprecated and will be removed in a future version. You can use either of the following two functions: <a href="https://seaborn.pydata.org/generated/seaborn.displot.html#seaborn.displot" rel="noopener noreferrer" target="_blank">displot()</a> or <a href="https://seaborn.pydata.org/generated/seaborn.histplot.html#seaborn.histplot" rel="noopener noreferrer" target="_blank">histplot()</a> to plot histograms using Seaborn. </p>
+</blockquote>
+<h3 id="example-4-plot-the-similar-histogram-with-seaborns-distplot">Example 4. Plot the similar histogram with Seaborn's <code>distplot()</code></h3>
+<pre><code>sb.distplot(pokemon['speed'])
+
+# Set the argument `kde=False` to remove the estimate-line representing the Gaussian kernel density estimate.
+sb.distplot(pokemon['speed'], kde=False)</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-22.png" alt="A default histogram plotted using Seaborn&#x27;s distplot() function." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>A default histogram plotted using Seaborn's distplot() function.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The <code>distplot</code> function has built-in rules for specifying histogram bins, and by default plots a curve depicting the kernel density estimate (KDE) on top of the data. The vertical axis is based on the KDE, rather than the histogram: you shouldn't expect the total heights of the bars to equal 1, but the area under the curve should equal 1. If you want to learn more about KDEs, check out the extra page at the end of the lesson.</p>
+<p>Despite the fact that the default bin-selection formula used by <code>distplot</code> might be better than the choice of ten bins that <code>.hist</code> uses, you'll still want to do some tweaking to align the bins to 'round' values. You can use other parameter settings to plot just the histogram and specify the bins like before:</p>
+<pre><code class="python language-python">bin_edges = np.arange(0, df['num_var'].max()+1, 1)
+sb.distplot(df['num_var'], bins = bin_edges, kde = False,
+            hist_kws = {'alpha' : 1})</code></pre>
+<p>The alpha (transparency) setting must be associated as a dictionary to "hist_kws" since there are other underlying plotting functions, like the KDE, that have their own optional keyword parameters.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="plot-two-histograms-side-by-side">Plot two histograms side-by-side</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>When creating histograms, it's useful to play around with different bin widths to see what represents the data best. Too many bins, and you may see too much noise that interferes with the identification of the underlying signal. Too few bins, and you may not be able to see the true signal in the first place.</p>
+<p>Let's see a new example demonstrating a few new functions, <code>pyplot.subplot()</code> and <code>pyplot.figure()</code>. <em>We will learn more in the upcoming concepts.</em> </p>
+<h3 id="example-5-plot-two-histograms-side-by-side">Example 5. Plot two histograms side-by-side</h3>
+<p>```python</p>
+<h1 id="resize-the-chart-and-have-two-plots-side-by-side">Resize the chart, and have two plots side-by-side</h1>
+<h1 id="set-a-larger-figure-size-for-subplots">Set a larger figure size for subplots</h1>
+<p>plt.figure(figsize = [20, 5]) </p>
+<h1 id="histogram-on-left-example-of-too-large-bin-size">histogram on left, example of too-large bin size</h1>
+<h1 id="1-row-2-cols-subplot-1">1 row, 2 cols, subplot 1</h1>
+<p>plt.subplot(1, 2, 1) <br />
+bins = np.arange(0, pokemon['speed'].max()+4, 4)<br />
+plt.hist(data = pokemon, x = 'speed', bins = bins);</p>
+<h1 id="histogram-on-right-example-of-too-small-bin-size">histogram on right, example of too-small bin size</h1>
+<p>plt.subplot(1, 2, 2) # 1 row, 2 cols, subplot 2<br />
+bins = np.arange(0, pokemon['speed'].max()+1/4, 1/4)<br />
+plt.hist(data = pokemon, x = 'speed', bins = bins);<code>``
+This example puts two plots side by side through use of the [</code>subplot<code>](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplot.html) function, whose arguments specify the number of rows, columns, and index of the active subplot (in that order). The [</code>figure()`](<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html" rel="noopener noreferrer" target="_blank">https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html</a>) function is called with the "figsize" parameter so that we can have a larger figure to support having multiple subplots. (More details on figures and subplots are coming up next in the lesson.)</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-23.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="summary-of-histograms">Summary of Histograms</h2>
+<p>In summary, if your exploration is only interested in the histogram-depiction of the data, and not the additional functionality offered by <code>distplot</code>, then you might be better off with just using Matplotlib's <code>hist</code> function for simplicity. On the other hand, if you want a quick start on choosing a representative bin size for histogram plotting, you might take a quick look at the basic <code>distplot</code> first before getting into the customization.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="09. Histogram Practice.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Histograms')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,506 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Reviewing Existing Work</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Working On Another Developer&#x27;s Repository</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Forking A Repository.html">02. Forking A Repository</a>
+    </li>
+    <li class="">
+      <a href="03. Reviewing Existing Work.html">03. Reviewing Existing Work</a>
+    </li>
+    <li class="">
+      <a href="04. Determining What To Work On.html">04. Determining What To Work On</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">03. Reviewing Existing Work</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="reviewing-existing-work">Reviewing Existing Work</h2>
+<p>When you're the sole developer on a project, it's easy to know what progress has been done on the project because you did everything yourself. Things can become a bit more complicated, though, when you're working on a team - whether that team is local in an office or if you are developing with someone just across the internet.</p>
+<p>Sometimes it can be hard to see what the other developers have been doing on the project. Especially if developers are working across multiple different branches. How can I see all of the commits that Deepesh made? Or what if Christine made a change and said that her commit resolves issue 47 in our project's ticket tracking system. How can we discover the all of this information in the repository?</p>
+<p>We can discover details about what other developers have done by using the extremely powerful <code>git log</code> command.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="clone-lighthouse-project">Clone Lighthouse Project</h3>
+<p>We first need to download a project that is being worked on by multiple different people. Let's download the Lighthouse project by Google that's an app for auditing, performance metrics, and best practices for Progressive web apps. </p>
+<p>Here's the <a href="https://github.com/GoogleChrome/lighthouse" rel="noopener noreferrer" target="_blank">Lighthouse project on GitHub</a>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-03-clone-lighthouse-project.png" alt="_Cloning Google&#x27;s Lighthouse project from GitHub._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>Cloning Google's Lighthouse project from GitHub.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Let's make sure we're both on the same page. Make sure to:</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="48dd32c3-1695-47e9-871d-a19b42a50b5c--0">
+        <label for="48dd32c3-1695-47e9-871d-a19b42a50b5c--0"><p>clone the <a href="https://github.com/GoogleChrome/lighthouse" rel="noopener noreferrer" target="_blank">Lighthouse project</a></p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="48dd32c3-1695-47e9-871d-a19b42a50b5c--1">
+        <label for="48dd32c3-1695-47e9-871d-a19b42a50b5c--1"><p><code>cd</code> into the directory</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Perfect! Let's continue!</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="filtering-collaborators-commits">Filtering Collaborator's Commits</h2>
+<p>Being able to narrow down the commits to just the ones you're looking for can be a chore. Let's look at the different ways we can discover information that our collaborators have done!</p>
+<h3 id="group-by-commit-author">Group By Commit Author</h3>
+<p>This is not a massive project, but it does have well over 1,000 commits. A quick way that we can see how many commits each contributor has added to the repository is to use the <code>git shortlog</code> command:</p>
+<pre><code class="bash language-bash">$ git shortlog</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-03-git-shortlog.png" alt="_The terminal showing the results of running the &#x60;git shortlog&#x60; command. It displays all commits sorted by author._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>The terminal showing the results of running the <code>git shortlog</code> command. It displays all commits sorted by author.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In the screenshot above we can see that:</p>
+<ul>
+<li>Abby Armada has made one commit in the repository</li>
+<li>Addy Osmani has made seven commits</li>
+<li>Adriano Caheté has made one commit</li>
+<li>André Cipriani Bandarra has made one commit</li>
+</ul>
+<p><code>git shortlog</code> displays an alphabetical list of names and the commit messages that go along with them. If we just want to see just the number of commits that each developer has made, we can add a couple of flags: <code>-s</code> to show just the number of commits (rather than each commit's message) and <code>-n</code> to sort them numerically (rather than alphabetically by author name).</p>
+<pre><code class="bash language-bash">$ git shortlog -s -n</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-03-git-shortlog-flags.png" alt="_&#x60;git shortlog&#x60; with the &#x60;-s -n&#x60; flags to show only the number of commits each author has made, sorted numerically._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em><code>git shortlog</code> with the <code>-s -n</code> flags to show only the number of commits each author has made, sorted numerically.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>We can see in the image above that Surma has added five commits to the Lighthouse project. These five commits are spread out throughout the repository.  What if we want to see <em>just</em> these five commits by Surma, though?</p>
+<h3 id="filter-by-author">Filter By Author</h3>
+<p>Another way that we can display all of the commits by an author is to use the regular <code>git log</code> command but include the <code>--author</code> flag to filter the commits to the provided author.</p>
+<pre><code class="bash language-bash">$ git log --author=Surma</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-03-git-log-author.png" alt="_The terminal application showing the result of running &#x60;git log --author&#x3D;Surma&#x60;. The output displays only the commits that Surma made._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>The terminal application showing the result of running <code>git log --author=Surma</code>. The output displays only the commits that Surma made.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>If you run <code>git shortlog -s -n</code>, again, you'll see that there is a "Paul Irish" and a "Paul Lewis". If the following command were run:</p>
+<pre><code class="bash language-bash">$ git log --author=Paul</code></pre>
+<p>What would it display?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1492733508980" name="299338" id="a1492733508980">
+        <label for="a1492733508980"><p>commits by only Paul Irish</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492733586231" name="299338" id="a1492733586231">
+        <label for="a1492733586231"><p>commits by only Paul Lewis</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492733592058" name="299338" id="a1492733592058">
+        <label for="a1492733592058"><p>commits by both Paul Irish and Paul Lewis</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492733603770" name="299338" id="a1492733603770">
+        <label for="a1492733603770"><p>it would ask you to choose either Paul Irish or Paul Lewis</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492733623885" name="299338" id="a1492733623885">
+        <label for="a1492733623885"><p>nothing would display</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    commits by both Paul Irish and Paul Lewis
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>If we wanted to see only the commits by Paul Lewis we have to run:</p>
+<pre><code class="bash language-bash">$ git log --author="Paul Lewis"</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <h3 id="⚠️--quotes-are-important-⚠️">⚠️  Quotes Are Important ⚠️</h3>
+</blockquote>
+<blockquote>
+  <p>Pay attention to the use of the quotes in the previous command. If it were written <em>without</em> the quotes like this <code>git log --author=Paul Lewis</code>, it would not work. If it's formatted this way <em>without</em> the quotes, Git would think that <code>Lewis</code> is not part of the "author" flag, and it would cause an error. </p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <div>
+    <p><strong>QUESTION:</strong> <p>What are the first seven characters of the SHA for Paul Lewis' <em>first</em> commit in the Lighthouse project?</p></p>
+    <div class="" form-group">
+      <label for="answer"><strong>ANSWER:</strong></label>
+      <textarea class="form-control" id="answer"></textarea>
+    </div>
+  </div>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <p><i>These answers need to be solved by yourself, I believe you can do it</i></p>
+
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="filter-commits-by-search">Filter Commits By Search</h2>
+<p>Before going through this section on filtering by searching, I feel like I need to stress how important it is to write good, <em>descriptive</em> commit messages. If you write a descriptive commit message, then it's so much easier to search through the commit messages, later, to find exactly what you're looking for.</p>
+<p>And remember, if the commit message is not enough for you to explain what the commit is for, you can provide a detailed description of exactly why the commit is needed in the description area.</p>
+<p>Let see an example of extra details in a commit in the lighthouse project by looking at commit <code>5966b66</code>:</p>
+<pre><code class="bash language-bash">$ git show 5966b66</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-03-commit-with-description.png" alt="_The terminal application showing commit &#x60;5966b66&#x60; from the Lighthouse project. The author has provided additional information about the commit._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>The terminal application showing commit <code>5966b66</code> from the Lighthouse project. The author has provided additional information about the commit.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>The commit message is <code>Configure Lighthouse run by whitelisting aggregations (#1830)</code>. But there's a lot more text than just that. Beneath the commit message, you'll find a couple of lines with additional information about the commit. This section provides further information on the <em>why</em> this commit was needed.</p>
+<p>So why do we care about all of this detail? For one thing, it's easier for you to go back and review the changes made to the repository, and it easier for others to review the changes to. Another thing is filtering commits by information in the current message or description area.  </p>
+<p>We can filter commits with the <code>--grep</code> flag. </p>
+<p>How about we filter down to just the commits that reference the word "bug". We can do that with either of the following commands:</p>
+<pre><code class="bash language-bash">$ git log --grep=bug
+$ git log --grep bug</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <h3 id="⚠️--watch-out-for-spacing-⚠️">⚠️  Watch Out For Spacing ⚠️</h3>
+</blockquote>
+<blockquote>
+  <p>Remember that spacing is an issue, here, too. If you're trying to search for something that is multiple words and has spaces between the words, you need to wrap everything in quotes. For example, to search for <code>unit tests</code> you would need to use the following command, <code>git log --grep="unit tests"</code>.</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <h3 id="💡-more-on-grep-💡">💡 More On <code>grep</code> 💡</h3>
+</blockquote>
+<blockquote>
+  <p>If you don't know what <code>grep</code> is then the <code>--grep</code> flag might not seem like a logical choice for the flag's name. Grep is a pattern matching tool. It is <em>way</em> beyond the scope of this course to cover grep. But as a brief intro, if you were to run <code>git log --grep "fort"</code>, then Git will display only the commits that have the character <code>f</code> followed by the character <code>o</code> followed by <code>r</code> followed by <code>t</code>.</p>
+</blockquote>
+<blockquote>
+  <p>For more info on Grep, check out our <a href="https://www.udacity.com/course/shell-workshop--ud206" rel="noopener noreferrer" target="_blank">Shell Workshop course</a>.</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>One of the following browsers had a CSS bug that was fixed by a commit. Use <code>git log</code> and the <code>--grep</code> flag to figure out which browser had the bug.</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1492738454425" name="299488" id="a1492738454425">
+        <label for="a1492738454425"><p>Chrome</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492738460183" name="299488" id="a1492738460183">
+        <label for="a1492738460183"><p>Safari</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492738467326" name="299488" id="a1492738467326">
+        <label for="a1492738467326"><p>Firefox</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492738467856" name="299488" id="a1492738467856">
+        <label for="a1492738467856"><p>Edge</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492738468474" name="299488" id="a1492738468474">
+        <label for="a1492738468474"><p>Opera</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Firefox
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="recap">Recap</h2>
+<p>The <code>git log</code> command is extremely powerful, and you can use it to discover a lot about a repository. But it can be especially helpful to discover information about a repository that you're collaborating on with others. You can use <code>git log</code> to:</p>
+<ul>
+<li><p>group commits by author with <code>git shortlog</code><br />
+<code>bash
+$ git shortlog
+</code></p></li>
+<li><p>filter commits with the <code>--author</code> flag</p>
+<pre><code class="bash language-bash">$ git log --author="Richard Kalehoff"</code></pre></li>
+<li><p>filter commits using the <code>--grep</code> flag<br />
+<code>bash
+$ git log --grep="border radius issue in Safari"
+</code></p></li>
+</ul>
+<p>grep is a complicated topic and you can find out more about it <a href="https://en.wikipedia.org/wiki/Grep" rel="noopener noreferrer" target="_blank">here on the Wiki page</a> or in our <a href="https://www.udacity.com/course/shell-workshop--ud206" rel="noopener noreferrer" target="_blank">Shell Workshop course</a>.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="04. Determining What To Work On.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Reviewing Existing Work')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

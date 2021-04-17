@@ -1,0 +1,347 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pie Charts</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Univariate Exploration of Data</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Tidy Data.html">02. Tidy Data</a>
+    </li>
+    <li class="">
+      <a href="03. Bar Charts.html">03. Bar Charts</a>
+    </li>
+    <li class="">
+      <a href="04. Absolute vs. Relative Frequency.html">04. Absolute vs. Relative Frequency</a>
+    </li>
+    <li class="">
+      <a href="05. Counting Missing Data.html">05. Counting Missing Data</a>
+    </li>
+    <li class="">
+      <a href="06. Bar Chart Practice.html">06. Bar Chart Practice</a>
+    </li>
+    <li class="">
+      <a href="07. Pie Charts.html">07. Pie Charts</a>
+    </li>
+    <li class="">
+      <a href="08. Histograms.html">08. Histograms</a>
+    </li>
+    <li class="">
+      <a href="09. Histogram Practice.html">09. Histogram Practice</a>
+    </li>
+    <li class="">
+      <a href="10. Figures, Axes, and Subplots.html">10. Figures, Axes, and Subplots</a>
+    </li>
+    <li class="">
+      <a href="11. Choosing a Plot for Discrete Data.html">11. Choosing a Plot for Discrete Data</a>
+    </li>
+    <li class="">
+      <a href="12. Descriptive Statistics, Outliers and Axis Limits.html">12. Descriptive Statistics, Outliers and Axis Limits</a>
+    </li>
+    <li class="">
+      <a href="13. Scales and Transformations.html">13. Scales and Transformations</a>
+    </li>
+    <li class="">
+      <a href="14. Scales and Transformations Practice.html">14. Scales and Transformations Practice</a>
+    </li>
+    <li class="">
+      <a href="15. Lesson Summary.html">15. Lesson Summary</a>
+    </li>
+    <li class="">
+      <a href="16. Extra Kernel Density Estimation.html">16. Extra: Kernel Density Estimation</a>
+    </li>
+    <li class="">
+      <a href="17. Extra Waffle Plots.html">17. Extra: Waffle Plots</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. Pie Charts</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>L3 071 Pie Charts V3</p></h3>
+  <video controls>
+  <source src="07. L3 071 Pie Charts V3-kSrJGJHTKV8.mp4" type="video/mp4">
+
+  <track default="false" kind="subtitles" srclang="zh-CN" src="07. L3 071 Pie Charts V3-kSrJGJHTKV8.zh-CN.vtt" label="zh-CN">
+  <track default="true" kind="subtitles" srclang="en" src="07. L3 071 Pie Charts V3-kSrJGJHTKV8.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="pt-BR" src="07. L3 071 Pie Charts V3-kSrJGJHTKV8.pt-BR.vtt" label="pt-BR">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <hr>
+<h2 id="pie-charts">Pie Charts</h2>
+<p>A <strong>pie chart</strong> is a common univariate plot type that is used to depict relative frequencies for levels of a categorical variable. Frequencies in a pie chart are depicted as wedges drawn on a circle: the larger the angle or area, the more common the categorical value taken. Use a Pie chart only when the number of categories is less, and you'd like to see the proportion of each category on a chart.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/untitled-drawing.png" alt="Pie chart (left) and bar chart (right) displaying the same categorical counts, &#x27;generation_id&#x27; in the pokemon dataset." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Pie chart (left) and bar chart (right) displaying the same categorical counts, 'generation_id' in the pokemon dataset.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Unfortunately, pie charts are a fairly limited plot type in the range of scenarios where they can be used, and it is easy for chart makers to try and spice up pie charts in a way that makes them more difficult to read. </p>
+<h2 id="guidelines-to-use-a-pie-chart">Guidelines to Use a Pie Chart</h2>
+<p>If you want to use a pie chart, try to follow certain guidelines:</p>
+<ul>
+<li>Make sure that your interest is in <em>relative</em> frequencies. Areas should represent parts of a whole, rather than measurements on a second variable (unless that second variable can logically be summed up into some whole).</li>
+<li>Limit the number of slices plotted. A pie chart works best with two or three slices, though it's also possible to plot with four or five slices as long as the wedge sizes can be distinguished. If you have a lot of categories, or categories that have small proportional representation, consider grouping them together so that fewer wedges are plotted, or use an 'Other' category to handle them.</li>
+<li>Plot the data systematically. One typical method of plotting a pie chart is to start from the top of the circle, then plot each categorical level clockwise from most frequent to least frequent. If you have three categories and are interested in the comparison of two of them, a common plotting method is to place the two categories of interest on either side of the 12 o'clock direction, with the third category filling in the remaining space at the bottom.</li>
+</ul>
+<p>If these guidelines cannot be met, then you should probably make use of a bar chart instead. A bar chart is a safer choice in general. The bar heights are more precisely interpreted than areas or angles, and a bar chart can be displayed more compactly than a pie chart. There's also more flexibility with a bar chart for plotting variables with a lot of levels, like plotting the bars horizontally.</p>
+<h2 id="plot-a-pie-chart">Plot a Pie Chart</h2>
+<h3 id="matplotlibpyplotpie">matplotlib.pyplot.pie()</h3>
+<p>You can create a pie chart with matplotlib's <code>matplotlib.pyplot.pie()</code> function. A basic syntax is:</p>
+<blockquote>
+  <p><code>matplotlib.pyplot.pie(x_data,  labels, colors, startangle, counterclock, wedgeprops)</code></p>
+</blockquote>
+<p>This function requires that the data be in a summarized form: the primary argument to the function will be the wedge sizes. Refer to the <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pie.html" rel="noopener noreferrer" target="_blank">function syntax</a> for details about all other arguments. </p>
+<h3 id="matplotlibpyplotaxis">matplotlib.pyplot.axis()</h3>
+<p>We also need to know about the <code>matplotlib.pyplot.axis()</code> function to set some axis properties. It optionally accepts the axis limits in the form of <code>xmin, xmax, ymin, ymax</code> floats, and returns the updated values. </p>
+<blockquote>
+  <p><code>matplotlib.pyplot.axis(*args, emit=True, **kwargs)</code></p>
+</blockquote>
+<p>In the function above, the <code>*args</code> represents any number of arguments that you can pass to the function, whereas <code>**kwargs</code> stands for keyword arguments, generally passed in the form of a dictionary. </p>
+<p>Refer to the <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axis.html?highlight=pyplot%20axis#matplotlib-pyplot-axis" rel="noopener noreferrer" target="_blank">function syntax</a> for in-depth details on the all possible values of the arguments. </p>
+<h3 id="example-1-plot-a-simple-pie-chart">Example 1. Plot a simple Pie chart</h3>
+<pre><code class="python language-python"># Use the same pokemon dataset
+sorted_counts = pokemon['generation_id'].value_counts()
+
+plt.pie(sorted_counts, labels = sorted_counts.index, startangle = 90, counterclock = False);
+
+# We have the used option `Square`. 
+# Though, you can use either one specified here - https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axis.html?highlight=pyplot%20axis#matplotlib-pyplot-axis
+plt.axis('square')</code></pre>
+<p>To follow the guidelines in the bullet points above, I include the "startangle = 90" and "counterclock = False" arguments to start the first slice at vertically upwards, and will plot the sorted counts in a clockwise fashion. The <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axis.html" rel="noopener noreferrer" target="_blank"><code>axis</code></a> function call and 'square' argument makes it so that the scaling of the plot is equal on both the x- and y-axes. Without this call, the pie could end up looking oval-shaped, rather than a circle.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="to-do">TO DO</h3>
+<p>Did you notice the various arguments in the <code>plt.pie()</code> function? Particularly, the <code>labels = sorted_counts.index</code> argument represents a list of strings serving as labels for each wedge. In the example above, the labels have used the following list:</p>
+<pre><code>sorted_counts.index</code></pre>
+<blockquote>
+  <p><code>([5, 1, 3, 4, 2, 7, 6], dtype='int64')</code> </p>
+</blockquote>
+<p><strong>Can you try using another list of strings, <code>['gen5', 'gen1', 'gen3', 'gen4', 'gen2', 'gen7', 'gen6']</code>, to display labels on each wedge?</strong> Notice that the labels are arranged in the decreasing order of the frequency. The expected output is shown below. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-18.png" alt="A bar chart with an updated label on each wedge. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>A bar chart with an updated label on each wedge. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="donut-plot">Donut Plot</h2>
+<p>A sister plot to the pie chart is the <strong>donut plot</strong>. It's just like a pie chart, except that there's a hole in the center of the plot. Perceptually, there's not much difference between a donut plot and a pie chart, and donut plots should be used with the same guidelines as a pie chart. Aesthetics might be one of the reasons why you would choose one or the other. For instance, you might see statistics reported in the hole of a donut plot to better make use of available space.</p>
+<p>To create a donut plot, you can add a <code>wedgeprops</code> argument to the <code>pie</code> function call. By default, the radius of the pie (circle) is 1; setting the wedges' width property to less than 1 removes coloring from the center of the circle.</p>
+<h3 id="example-2-plot-a-simple-donut-plot">Example 2. Plot a simple Donut plot</h3>
+<pre><code class="python language-python">sorted_counts = pokemon['generation_id'].value_counts()
+
+plt.pie(sorted_counts, labels = sorted_counts.index, startangle = 90,
+        counterclock = False, wedgeprops = {'width' : 0.4});
+plt.axis('square')</code></pre>
+<h4 id="recommended-read">Recommended Read</h4>
+<p>Refer to the documentation: <a href="https://matplotlib.org/api/_as_gen/matplotlib.patches.Wedge.html" rel="noopener noreferrer" target="_blank">Wedge patches</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/download-15.png" alt="Donut plot representing the &#x27;generation_id&#x27; in the pokemon dataset" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Donut plot representing the 'generation_id' in the pokemon dataset</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="further-reading">Further Reading</h2>
+<ul>
+<li>Eager Eyes: <a href="https://eagereyes.org/pie-charts" rel="noopener noreferrer" target="_blank">Understanding Pie Charts</a></li>
+<li>Eager Eyes: <a href="https://eagereyes.org/blog/2016/an-illustrated-tour-of-the-pie-chart-study-results" rel="noopener noreferrer" target="_blank">An Illustrated Tour of the Pie Chart Study Results</a> - how accurately do people perceive different formulations of the pie chart?</li>
+<li>Datawrapper: <a href="https://academy.datawrapper.de/article/127-what-to-consider-when-creating-a-pie-chart" rel="noopener noreferrer" target="_blank">What to Consider when Creating a Pie Chart</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. Histograms.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Pie Charts')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

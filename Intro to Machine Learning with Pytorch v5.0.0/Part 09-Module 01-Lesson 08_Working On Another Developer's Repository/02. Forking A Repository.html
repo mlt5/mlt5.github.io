@@ -1,0 +1,428 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Forking A Repository</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Working On Another Developer&#x27;s Repository</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Forking A Repository.html">02. Forking A Repository</a>
+    </li>
+    <li class="">
+      <a href="03. Reviewing Existing Work.html">03. Reviewing Existing Work</a>
+    </li>
+    <li class="">
+      <a href="04. Determining What To Work On.html">04. Determining What To Work On</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">02. Forking A Repository</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Forking a Repository - What Is Forking</p></h3>
+  <video controls>
+  <source src="02. Forking a Repository - What Is Forking-z4mkVwqVztc.mp4" type="video/mp4">
+
+  <track default="false" kind="subtitles" srclang="ar" src="02. Forking a Repository - What Is Forking-z4mkVwqVztc.ar.vtt" label="ar">
+  <track default="false" kind="subtitles" srclang="zh-CN" src="02. Forking a Repository - What Is Forking-z4mkVwqVztc.zh-CN.vtt" label="zh-CN">
+  <track default="true" kind="subtitles" srclang="en" src="02. Forking a Repository - What Is Forking-z4mkVwqVztc.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="pt-BR" src="02. Forking a Repository - What Is Forking-z4mkVwqVztc.pt-BR.vtt" label="pt-BR">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>In version control terminology if you "fork" a repository that means you <em>duplicate</em> it. Typically you fork a repository that belongs to someone else. So you make an identical copy of <em>their</em> repository and that duplicate copy now belongs to <em>you</em>.</p>
+<p>This concept of "forking" is also different from "cloning". When you clone a repository, you get an identical copy of the repository. But cloning happens on your <em>local</em> machine and you clone a <em>remote</em> repository. When you fork a repository, a new duplicate copy of the <em>remote</em> repository is created. This new copy is <em>also a remote</em> repository, but it now belongs to you.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="a-fork-subcommand">A <code>fork</code> Subcommand?</h2>
+<p>Forking is not done on the command line; there is no <code>git fork</code> command. Go ahead, try running the following command:</p>
+<pre><code class="bash language-bash">$ git fork</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-02-git-fork-error.png" alt="_Running the (nonexistent!) &#x60;git fork&#x60; command on the terminal. Git doesn&#x27;t have a &#x60;fork&#x60; subcommand, so it responds with a suggestion to use an alternative command._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>Running the (nonexistent!) <code>git fork</code> command on the terminal. Git doesn't have a <code>fork</code> subcommand, so it responds with a suggestion to use an alternative command.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>As you can see, trying to run the <code>git fork</code> command produces an error. (Also, <code>fsck</code> is not a rude word, it means "filesystem check" and refers to auditing the files for consistency.)</p>
+<h2 id="alter-a-cloned-repo">Alter a Cloned Repo</h2>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>Do the following steps and answer the question below.</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="4d4a375a-1e39-4cff-ab47-7ba2b2440a98--0">
+        <label for="4d4a375a-1e39-4cff-ab47-7ba2b2440a98--0"><p>use <code>git clone</code> to clone <a href="https://github.com/udacity/course-collaboration-travel-plans" rel="noopener noreferrer" target="_blank">Lam's my-travel-plans project</a></p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="4d4a375a-1e39-4cff-ab47-7ba2b2440a98--1">
+        <label for="4d4a375a-1e39-4cff-ab47-7ba2b2440a98--1"><p>make at least one change to it</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="4d4a375a-1e39-4cff-ab47-7ba2b2440a98--2">
+        <label for="4d4a375a-1e39-4cff-ab47-7ba2b2440a98--2"><p>commit the change(s)</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="4d4a375a-1e39-4cff-ab47-7ba2b2440a98--3">
+        <label for="4d4a375a-1e39-4cff-ab47-7ba2b2440a98--3"><p>use <code>git push</code> to push your change back to Lam's project</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Great job doing each of these steps! Now answer the following question.</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Were you able to successfully push your changes to the remote repository?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1492729065474" name="299278" id="a1492729065474">
+        <label for="a1492729065474"><p>Yes</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492729071965" name="299278" id="a1492729071965">
+        <label for="a1492729071965"><p>No</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    No
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>One of the lines that was displayed after you tried to push includes the word "fatal". What comes right after that word?</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1492729106475" name="299279" id="a1492729106475">
+        <label for="a1492729106475"><p>you don't have the correct permissions</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492729131365" name="299279" id="a1492729131365">
+        <label for="a1492729131365"><p>unable to access</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492729133018" name="299279" id="a1492729133018">
+        <label for="a1492729133018"><p>are you the owner</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492729138160" name="299279" id="a1492729138160">
+        <label for="a1492729138160"><p>try using a different account</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    unable to access
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>We can see from this little experiment that if a repository doesn't belong to your account then it means you do not have permission to modify it. </p>
+<p>This is where forking comes in! Instead of modifying the original repository directly, if you fork the repository to your own account then you will have full control over that repository.</p>
+<h3 id="forking-lams-project">Forking Lam's Project</h3>
+<p>I'm going to clone Lam's project myself. My account does not have permission to edit her repository directly, so I'll fork the repository to my own account.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <div>
+    <h4>Task Description:</h4>
+    <p>I want you to sign into your GitHub account and follow along with the rest of these steps:</p>
+  </div>
+
+  <form>
+    <fieldset>
+      <legend>Task List:</legend>
+
+      <div>
+        <input type="checkbox" id="bfebd9e4-4223-4022-bbf8-8dc72e564fa0--0">
+        <label for="bfebd9e4-4223-4022-bbf8-8dc72e564fa0--0"><p>Go to <a href="https://github.com/udacity/course-collaboration-travel-plans" rel="noopener noreferrer" target="_blank">Lam's my-travel-plans project</a> in your browser</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="bfebd9e4-4223-4022-bbf8-8dc72e564fa0--1">
+        <label for="bfebd9e4-4223-4022-bbf8-8dc72e564fa0--1"><p>Click the fork button to copy over her repository to your account</p></label>
+      </div>
+      <div>
+        <input type="checkbox" id="bfebd9e4-4223-4022-bbf8-8dc72e564fa0--2">
+        <label for="bfebd9e4-4223-4022-bbf8-8dc72e564fa0--2"><p>Verify that you now have Lam's project listed in your Repositories</p></label>
+      </div>
+    </fieldset>
+  </form>
+
+  <div>
+    <h4>Task Feedback:</h4>
+
+
+    <p>Great job doing each of these steps!</p>
+  </div>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Let's take a look at the name of the repository:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-02-clone-linked-to-fork.png" alt="_Forking a project displays the new project name next to your GitHub profile name. Also, below that it says where the original project exists._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>Forking a project displays the new project name next to your GitHub profile name. Also, below that it says where the original project exists.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>See how this shows my account name (richardkalehoff) and the name of the repository? But then just beneath that it says "forked from udacity/course-collaboration-travel-plans". This shows that this project is in <em>my</em> account but that it has a connection to the original project that it was copied from.</p>
+<p>That's pretty neat, right?!? You can fork any public repository that's up on GitHub right now - which means you can get a copy of that repository in your own account that you will have total control over.</p>
+<p>Why don't you go fork a few repositories just to get some practice! Here a few you can try it out on:</p>
+<ul>
+<li><a href="https://github.com/udacity/course-git-blog-project" rel="noopener noreferrer" target="_blank">https://github.com/udacity/course-git-blog-project</a></li>
+<li><a href="https://github.com/udacity/frontend-nanodegree-styleguide" rel="noopener noreferrer" target="_blank">https://github.com/udacity/frontend-nanodegree-styleguide</a></li>
+<li><a href="https://github.com/GoogleChrome/lighthouse" rel="noopener noreferrer" target="_blank">https://github.com/GoogleChrome/lighthouse</a></li>
+<li><a href="https://github.com/jquery/jquery" rel="noopener noreferrer" target="_blank">https://github.com/jquery/jquery</a></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="pushpull-to-the-fork">Push/Pull To The Fork</h2>
+<p>Because forking a repository gives you a copy of it in your account, you can clone the repo down to your computer, make changes to it, and then push those changes back to the forked repository. But you need to keep in mind that it'll be pushing the changes back to <em>your</em> remote repository not to the <em>original</em> remote repository that you forked from.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>L2 - Pushing To A Fork</p></h3>
+  <video controls>
+  <source src="02. L2 - Pushing To A Fork-WRgNpr19t48.mp4" type="video/mp4">
+
+  <track default="false" kind="subtitles" srclang="ar" src="02. L2 - Pushing To A Fork-WRgNpr19t48.ar.vtt" label="ar">
+  <track default="false" kind="subtitles" srclang="zh-CN" src="02. L2 - Pushing To A Fork-WRgNpr19t48.zh-CN.vtt" label="zh-CN">
+  <track default="true" kind="subtitles" srclang="en" src="02. L2 - Pushing To A Fork-WRgNpr19t48.en.vtt" label="en">
+  <track default="false" kind="subtitles" srclang="pt-BR" src="02. L2 - Pushing To A Fork-WRgNpr19t48.pt-BR.vtt" label="pt-BR">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="recap">Recap</h2>
+<p>Forking is an action that's done on a hosting service, like GitHub. Forking a repository creates an identical copy of the original repository and moves this copy to your account. You have total control over this forked repository. Modifying your forked repository does not alter the original repository in any way.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="03. Reviewing Existing Work.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Forking A Repository')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

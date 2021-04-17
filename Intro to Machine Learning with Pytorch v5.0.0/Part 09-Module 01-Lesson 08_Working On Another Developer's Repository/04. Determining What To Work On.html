@@ -1,0 +1,464 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Determining What To Work On</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Working On Another Developer&#x27;s Repository</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Intro.html">01. Intro</a>
+    </li>
+    <li class="">
+      <a href="02. Forking A Repository.html">02. Forking A Repository</a>
+    </li>
+    <li class="">
+      <a href="03. Reviewing Existing Work.html">03. Reviewing Existing Work</a>
+    </li>
+    <li class="">
+      <a href="04. Determining What To Work On.html">04. Determining What To Work On</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. Determining What To Work On</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="what-to-work-on">What To Work On</h2>
+<p>Let's say you're using some third-party library to help you build a project. What happens if, while you're using this third-party library, you come across a bug or a misspelling? You have the skill to be able to fix it, but you don't have direct access to make modifications to the original library. Well that's not a problem because you know that forking another developer's repository copies it to your account and gives you full access to <code>git pull</code> and <code>git push</code> to it!</p>
+<p>But what are you supposed to do now that you've got full access to a duplicate of the other developer's project. We'll look at this in the next section but if you have forked a project and you have code in your fork that's not in the original project, you can get code into the original project by sending the original project's maintainer a request to include your code changes. This request is known as a "Pull Requests". Again, we'll look at sending and working with pull requests in the next lesson.</p>
+<p>So you know it's possible to get your code in the original project and you know you want to help and fix this spelling/code mistake. So you got something to work on! But how do you go about actually contributing to the project in the way that the original project maintainer will be happy with and will end up actually incorporating your changes?</p>
+<p>The first thing you should always look for in a project is a file with the name <code>CONTRIBUTING.md</code>.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="contributingmd-file">CONTRIBUTING.md File</h2>
+<p>The name of the `CONTRIBUTING.md file is typically written in all caps so that it's easily seen. As you could probably tell by its name, this file lists out the information you should follow to contribute to the project. You should look for this file before you start doing development work of any kind. </p>
+<p>Let's look at the lighthouse project's contributing file:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-04-lighthouse-contributing-file.png" alt="_Google&#x27;s Lighthouse project&#x27;s CONTRIBUTING.md file._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>Google's Lighthouse project's CONTRIBUTING.md file.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>You can see that the top line of the file says:</p>
+<blockquote>
+  <p>We'd love your help! This doc covers how to become a contributor and submit code to the project.</p>
+</blockquote>
+<p>There are two main sections to this file:</p>
+<ul>
+<li>the "For Contributors" section</li>
+<li>the "For Maintainers" section</li>
+</ul>
+<p>Each one of these sections has subsections of its own to instruct readers on how to contribute to and work with this project. </p>
+<p>Let's take a look at the section on signing the contributors license. Here's what it looks like at the time of making the course:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-04-sign-contributor-license.png" alt="_The Contributor License Agreement section of Google&#x27;s Lighthouse project&#x27;s CONTRIBUTING.md file._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>The Contributor License Agreement section of Google's Lighthouse project's CONTRIBUTING.md file.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>You can see that to be able to contribute to this project you need to sign Google's Contributor License Agreement.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <div>
+    <p><strong>QUESTION:</strong> <p>Take a look through <a href="https://github.com/GoogleChrome/lighthouse/blob/master/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank">the Lighthouse project's contributing file</a>. What file contains the information about the code styles for the Lighthouse project?</p></p>
+    <div class="" form-group">
+      <label for="answer"><strong>ANSWER:</strong></label>
+      <textarea class="form-control" id="answer"></textarea>
+    </div>
+  </div>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <p><i>These answers need to be solved by yourself, I believe you can do it</i></p>
+
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>As you can see this contributor file has a ton of information in it. So you should definitely look for a CONTRIBUTING.md file when you want to contribute to a project.</p>
+<h2 id="github-issues">GitHub Issues</h2>
+<p>If your code change is a simple spelling mistake then you can probably just go ahead and make that change. But if your change is more substantial where it modifies a number of files in a significant way, then you probably want to get approval by the project's maintainer(s) before you start working on it. You definitely don't want to spend a couple hours making changes to the project only to find out that someone else is doing the exact same thing. You'd just be wasting a lot of time and energy duplicating work.</p>
+<p>In a CONTRIBUTING.md file it explains <em>how</em> your code should be formatted and the steps you should go about to contribute, but how do you know <em>what</em> you should contribute? You should talk to the project maintainers directly. GitHub has a fantastic interface for asking questions of the project maintainer in an open way that lets everyone see what's being done with the project.</p>
+<p>This is the GitHub Issues interface:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-04-lighthouse-issues.png" alt="_The Issues page of the Lighthouse project._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>The Issues page of the Lighthouse project.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Now, "issues" doesn't mean that there's actually a bug, it can just be any change that needs to be made to the project. GitHub's issue tractor is quite sophisticated. Each issue can:</p>
+<ul>
+<li>have a label or multiple labels applied to it</li>
+<li>can be assigned to an individual</li>
+<li>can be assigned a milestone (for example the issue will be resolved by the next major release)</li>
+</ul>
+<p>But probably one of the most important aspects of the issue tracker is that each issue can have its own comments, so a conversation can form around the issue.</p>
+<p>Check out <a href="https://github.com/GoogleChrome/lighthouse/issues/1842" rel="noopener noreferrer" target="_blank">this issue</a> that has a number of comments:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-04-issue-comments.png" alt="_The first few comments of an issue dealing with compatibility of Chrome and the Lighthouse extension._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>The first few comments of an issue dealing with compatibility of Chrome and the Lighthouse extension.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Another thing that's nice about issues is:</p>
+<ul>
+<li>they let you subscribe to an issue so you'll be notified of new comments and code changes</li>
+<li>you can communicate back and forth with a project maintainer on a specific change</li>
+</ul>
+<p>Before you contribute anything to a file, check out the instructions in <code>CONTRIBUTING.md</code>. Then check out the project's issues and look to see if there's anything that's similar to what you want to contribute. If there is, then subscribe to that issue and read the existing conversation to see if you can help.</p>
+<p>If you've looked through the list of issues and don't see one that similar to what you want to do, then you can create a new issue of your own. On every page of the GitHub issues interface, you'll find the new issue button:</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-04-new-issue-button.png" alt="_The new issue button on the Lighthouse project&#x27;s issue page._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>The new issue button on the Lighthouse project's issue page.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Clicking on that button brings you to create a new issue </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/ud456-l2-04-submit-new-issue.png" alt="_The new issue page for the Lighthouse project. A notice about reviewing the guidelines for contributing displays above the form._" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p><em>The new issue page for the Lighthouse project. A notice about reviewing the guidelines for contributing displays above the form.</em></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="new-issue-page">New Issue Page</h2>
+<p>One really cool thing about the new issue page is that, if the project has a CONTRIBUTING.md file, it will display a notification at the top of the page recommending that you check out the guidelines on how to contribute to the project. Clicking on the "guidelines for contributing" link takes you to the CONTRIBUTING.md file. </p>
+<p>The GitHub issues interface support markdown so when you create your issue you can use Markdown to format it and exactly the way you want by including links, images, bulleted lists, and code blocks. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <h3 id="💡-learn-markdown-💡">💡 Learn Markdown! 💡</h3>
+</blockquote>
+<blockquote>
+  <p>From the README file, to the New Issue Page, to commenting, Markdown is incredibly important! If you're new to Markdown, we discuss everything about it in our <a href="https://www.udacity.com/course/writing-readmes--ud777" rel="noopener noreferrer" target="_blank">Writing READMEs</a> course. It's short, so why not take an hour to learn this incredible skill!</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Just like crafting a descriptive commit message, you want to create an issue with an informative title that explains briefly what you want to do. Then, in the comments section, provide plenty of detail on what the change is, or why you think it's needed, or how this will make the project better.</p>
+<p>Typically, the project's maintainer has a full-time job and works on their project on the side, so give them some time to respond to your issue before you dive in and start making your changes. Once the project maintainer has given you the go-ahead it's time to start working on the changes you want to contribute back to the project.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="topic-branches">Topic Branches</h2>
+<p>The best way to organize the set of commits/changes you want to contribute back to the project is to <em>put them all on a topic branch</em>. Now what do I mean by a <strong>topic branch</strong>? Unlike the master branch which is the default branch that holds all of the commits for your entire project, a topic branch host commits for just a single concept or single area of change.</p>
+<p>For example if there is a problem with the login form for logging into the website, then a branch name to address this specific issue could be called:</p>
+<ul>
+<li><code>login</code></li>
+<li><code>login-bug</code></li>
+<li><code>signup-bug</code></li>
+<li><code>login-form-bug</code></li>
+<li>etc.</li>
+</ul>
+<p>There are plenty of names that can be used for a topic branch's name. You just want to use a clear descriptive name for the branch so that if, for example, you list out all of the branches you can immediately see what changes are supposed to be in a branch just by its name.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>One of the branches in the Lighthouse project is named <code>add-a11y-tests</code>. Do you think that's a good name for a topic branch?</p>
+<p>(Hint - <code>a11y</code> stands for "accessibility". In the word "accessibility", there are eleven letters between the <code>a</code> and the <code>y</code>, so it gets shortened to just <code>a11y</code>!)</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1492989843579" name="299722" id="a1492989843579">
+        <label for="a1492989843579"><p>Yes</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1492989849879" name="299722" id="a1492989849879">
+        <label for="a1492989849879"><p>No</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Yes
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>One thing to keep in mind is that sometimes a project has specific requirements on what to name your topic branch. For example, if a branch is going to be addressing bug fixes, then many projects require a <code>bugfix-</code> prefix. Going back to our branch that was dealing with a bug with the login form, it would have to be named something like <code>bugfix-login-form</code>. So definitely check out the CONTRIBUTING.md file to see if they provide instructions on what you should name your topic branches.</p>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="write-descriptive-commit-messages">Write Descriptive Commit Messages</h3>
+<p>While we're talking about naming branches clearly that describe <em>what</em> changes the branch contains, I need to throw in another reminder about how critical it is to write clear, descriptive, commit messages. The more descriptive your branch name and commit messages are the more likely it is that the project's maintainer will not have to ask you questions about the purpose of your code or have dig into the code themselves. The less work the maintainer has to do, the faster they'll include your changes into the project.</p>
+<h3 id="create-small-focused-commits">Create Small, Focused Commits</h3>
+<p>This has been stressed numerous times before but make sure when you are committing changes to the project that you make smaller commits. Don't make massive commits that record 10+ file changes and changes to hundreds of lines of code. You want to make smaller, more frequent commits that record just a handful of file changes with a smaller number of line changes. </p>
+<p>Think about it this way: if the developer does not like <em>a portion</em> of the changes you're adding to a massive commit, there's no way for them to say, "I like commit A, but just not the part where you change the sidebar's background color." A commit can't be broken down into smaller chunks, so make sure your commits are in small enough chunks and that each commit is focused on altering just one thing. This way the maintainer can say I like commits A, B, C, D,  and F but not commit E. </p>
+<h3 id="update-the-readme">Update The README</h3>
+<p>And lastly if any of the code changes that you're adding drastically changes the project you should update the README file to instruct others about this change. </p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="recap">Recap</h2>
+<p>Before you start doing any work, make sure to look for the project's CONTRIBUTING.md file.</p>
+<p>Next, it's a good idea to look at the GitHub issues for the project</p>
+<ul>
+<li>look at the existing issues to see if one is similar to the change you want to contribute</li>
+<li>if necessary create a new issue</li>
+<li>communicate the changes you'd like to make to the project maintainer in the issue</li>
+</ul>
+<p>When you start developing, commit all of your work on a topic branch:</p>
+<ul>
+<li>do not work on the master branch</li>
+<li>make sure to give the topic branch clear, descriptive name</li>
+</ul>
+<p>As a general best practice for writing commits:</p>
+<ul>
+<li>make frequent, smaller commits</li>
+<li>use clear and descriptive commit messages</li>
+<li>update the README file, if necessary</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Determining What To Work On')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
